@@ -1,0 +1,106 @@
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Order /</span> Order Approval
+</h4>
+<ng-template #ct let-r="result" let-t="term">
+  <div class="row">
+    <div class="col-md-3">{{ r.name}}</div>
+    <div class="col-md-9">{{ r.address}}</div>
+  </div>
+</ng-template>
+
+
+<div class="card mb-4"> 
+  <div class="card-header">
+      <div class="row">
+          <div class="col">
+            Per page: &nbsp;
+            <select
+              [(ngModel)]="perPage"
+              (change)="update()"
+              class="custom-select custom-select-md d-inline-block w-auto">
+              <option *ngFor="let limit of [10, 20, 30, 40, 50]">{{limit}}</option>
+            </select>
+          </div>
+     
+          <div class="col">
+            <input type="text"
+              [(ngModel)]="filterVal"
+              (input)="currentPage = 1; update()"
+              class="form-control form-control-md d-inline-block w-auto float-sm-right"
+              placeholder="Search...">
+          </div>
+        </div>
+  </div>
+  <div class="card-body">
+    
+
+    <form autocomplete="off">
+      <div class="form-group">
+        <div class="table-responsive mb-4">
+          <table class="table table-hover table-striped mb-0">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Order No.</th>
+                <th>Order Date</th>
+                <th>Customer</th>
+                <th>Total</th>
+                <th>Discount</th>
+                <th>VAT</th>
+                <th>Net Total</th>
+                <th>Received</th>
+                <th></th>               
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="orders.length==0">
+                <td colspan="10" class="font-italic text-center">No order available</td>
+              </tr>
+              <tr *ngFor="let order of orders; let i=index">
+                <td>{{ i+1 }}</td>
+                <td>{{ order.orderNo }}</td>
+                <td>{{ order.orderDate | date:'dd/MM/yyyy' }}</td>
+                <td>{{ order.customerName }}</td>
+                <td align="right">{{ order.total | number: '1.2-2' }}</td>
+                <td align="right">{{ order.discAmount | number: '1.2-2' }} <span
+                    class="badge badge-pill badge-info">{{ order.discount | number: '1.2-2' }}%</span></td>
+                <td align="right">{{ order.vatAmount | number: '1.2-2' }} <span
+                    class="badge badge-pill badge-info">{{ order.vat | number: '1.2-2' }}%</span></td>
+                <td align="right">{{ order.netPayable | number: '1.2-2' }}</td>
+                <td align="right">{{ order.receiveAmount | number: '1.2-2' }}</td>
+                <td class="text-center text-nowrap align-middle">                  
+                    <a href="javascript:void(0)" (click)="approve(order.id)" ngbTooltip="Approve order" class="btn btn-success btn-sm md-btn-flat" >Approve</a>
+                    <a href="javascript:void(0)" (click)="reject(order.id)" ngbTooltip="Reject order" class="btn btn-danger btn-sm md-btn-flat">Reject</a>
+                </td>               
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        
+  <!-- Pagination -->
+  <div class="card-body py-0">
+
+      <div class="row">
+        <div class="col-sm text-sm-left text-center pt-3">
+          <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+        </div>
+        <div class="col-sm pt-3">
+          <ngb-pagination
+            [collectionSize]="totalItems"
+            [pageSize]="perPage"
+            [(page)]="currentPage"
+            (pageChange)="update()"        
+            size="sm"
+            class="d-flex justify-content-center justify-content-sm-end m-0">           
+          </ngb-pagination>       
+        </div>
+      </div>
+  
+    </div>
+    <!-- / Pagination -->
+
+      </div>
+ </form>
+  </div>
+</div>

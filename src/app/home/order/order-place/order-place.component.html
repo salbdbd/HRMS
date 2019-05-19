@@ -1,0 +1,292 @@
+<ng-template #pageBlockTemplate>
+  <div class="block-ui-template">
+    <div class="sk-folding-cube sk-primary">
+      <div class="sk-cube1 sk-cube"></div>
+      <div class="sk-cube2 sk-cube"></div>
+      <div class="sk-cube4 sk-cube"></div>
+      <div class="sk-cube3 sk-cube"></div>
+    </div>
+    <h5 class="text-center mb-0">{{ processingText }}</h5>
+  </div>
+</ng-template>
+<block-ui [template]="pageBlockTemplate" class="block-ui-white"></block-ui>
+
+<h4 class="font-weight-bold py-3 mb-4">
+  <span class="text-muted font-weight-light">Order /</span> Order Place
+</h4>
+<div class="card mb-4">
+  <div class="card-body">
+    <form autocomplete="off">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <label class="form-label">Order No.</label>
+          <input type="text" value="{{order.orderNo}}" name="orderNo" class="form-control" placeholder="Processing..."
+            readonly>
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label">Order Date</label>
+          <div class="input-group">
+            <input class="form-control" name="dp1" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="order.orderDate"
+              #d1="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="input-group-text" (click)="d1.toggle()" type="button">
+                <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label">Delivery Date</label>
+          <div class="input-group">
+            <input class="form-control" placeholder="dd-mm-yyyy" name="dp2" ngbDatepicker
+              [(ngModel)]="order.deliveryDate" [displayMonths]="1" 
+              #d2="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="input-group-text" (click)="d2.toggle()" type="button">
+                <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-8 searchbox">
+          <label class="form-label">Customer</label>
+          <input #customer type="text" id="customerId"  name="cusotmerId" class="form-control" [(ngModel)]="customerModel"
+            [ngbTypeahead]="searchCustomer"
+            [inputFormatter]="customerFormatter" [resultTemplate]="ct" (selectItem)="customerSelected($event)"
+            placeholder="Search...">
+
+        </div>
+        <div class="form-group col-md-4">
+          <label class="form-label">Balance</label>
+          <input type="text" name="balance" value="{{ order.balance | number: '1.2-2' }}" class="form-control"
+            placeholder="0.00" readonly>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Address</label>
+        <textarea name="address" class="form-control" [(ngModel)]="order.address" placeholder="Address"
+          readonly></textarea>
+      </div>
+
+      <div class="form-group">
+        <button type="button" [disabled]="order.customerId == 0" class="btn btn-primary" (click)="addItem(productModal)">Add
+          Product</button>
+      </div>
+      <div class="form-group">
+
+        <div class="table-responsive mb-4">
+          <table class="table table-bordered table-striped mb-0">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Code</th>
+                <th>Description</th>
+                <th>Qty</th>
+                <th>Price</th>
+                <th>Amount</th>
+                <th>Discount</th>
+                <th>Disc Amount</th>
+                <th>Net Amount</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="items.length==0">
+                <td colspan="10" class="font-italic text-center">No item selected for this order</td>
+              </tr>
+              <tr *ngFor="let item of items; let i=index">
+                <td>{{ i+1 }}</td>
+                <td>{{ item.itemCode }}</td>
+                <td>{{ item.description }}</td>
+                <td>{{ item.qty | number: '1.2-2' }}</td>
+                <td>{{ item.price | number: '1.2-2' }}</td>
+                <td>{{ item.amount | number: '1.2-2' }}</td>
+                <td>{{ item.discount | number: '1.2-2' }}</td>
+                <td>{{ item.discAmount | number: '1.2-2' }}</td>
+                <td>{{ item.netAmount | number: '1.2-2' }}</td>
+                <td class="text-center text-nowrap align-middle">
+                  <a href="javascript:void(0)" (click)="editOrderItem(i, productModal)"
+                    class="btn btn-primary btn-sm icon-btn md-btn-flat" ngbTooltip="Edit">
+                    <i class="ion ion-md-create"></i>
+                  </a>
+                  <a href="javascript:void(0)" (click)="removeOrderItem(i)"
+                    class="btn btn-danger btn-sm icon-btn md-btn-flat" ngbTooltip="Remove">
+                    <i class="ion ion-md-trash"></i>
+                  </a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-3">
+          <label class="form-label">Total</label>
+          <input type="text" value="{{ order.total | number: '1.2-2' }}" class="form-control" placeholder="0.00"
+            readonly>
+        </div>
+        <div class="form-group col-md-9">
+          <label class="form-label">Note</label>
+          <input type="text" name="note" [(ngModel)]="order.note" class="form-control" placeholder="Note">
+        </div>
+      </div>
+      <button [disabled]="items.length==0" (click)="placeOrder(submitModal)" class="btn btn-primary">Place
+        Order</button>
+      <button *ngIf="editable == false"  [disabled]="!items.length>0" (click)="draftOrder()" class="btn btn-info">Draft</button>
+      <button (click)="resetOrder()" class="btn btn-danger">Reset</button>
+    </form>
+    <ng-template #ct let-r="result" let-t="term">
+      <div class="row">
+        <div class="col-md-3">{{ r.name}}</div>
+        <div class="col-md-9">{{ r.address}}</div>
+      </div>
+    </ng-template>
+
+    <ng-template #it let-r="result" let-t="term">
+      <div class="row">
+        <div class="col-md-3">{{ r.itemCode}}</div>
+        <div class="col-md-9">{{ r.description}}</div>
+      </div>
+    </ng-template>
+
+    <!-- Modal template -->
+    <ng-template #productModal let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          {{ selectedIndex >=0? "Edit" : "Add" }} <span class="font-weight-light">Order Item</span></h5>
+        <!-- <button type="button" class="close" (click)="d('Cross click')">&times;</button> -->
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group col searchbox">
+            <label class="form-label">Search</label>
+            <input type="text" class="form-control" [(ngModel)]="searchModel" [ngbTypeahead]="searchItem"
+              [placement]="isRTL ? 'bottom-right' : 'bottom-left'" [inputFormatter]="formatter" [resultTemplate]="it"
+              (selectItem)="itemSelected($event)" placeholder="Search...">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-4">
+            <label class="form-label">Item Code</label>
+            <input type="text" [(ngModel)]="item.itemCode" name="itemCode" class="form-control" placeholder="Item Code"
+              readonly>
+          </div>
+          <div class="form-group col-md-8">
+            <label class="form-label">Description</label>
+            <input type="text" [(ngModel)]="item.description" name="description" class="form-control"
+              placeholder="Description" readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label">Item Type</label>
+            <input type="text" class="form-control" placeholder="Item Type">
+          </div>
+          <div class="form-group col">
+            <label class="form-label">Note</label>
+            <input type="text" class="form-control" placeholder="Note">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label">Qty</label>
+            <input type="number" [(ngModel)]="item.qty" (ngModelChange)="calcPrice()" name="qty" class="form-control"
+              placeholder="0.00">
+          </div>
+          <div class="form-group col">
+            <label class="form-label">Discount</label>
+            <input type="text" value="{{ item.discount | number:'1.2-2' }}" name="discount" class="form-control"
+              placeholder="10.00%" readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label">Price</label>
+            <input type="text" value="{{ item.price | number:'1.2-2' }}" name="price" class="form-control"
+              placeholder="0.00" readonly>
+          </div>
+          <div class="form-group col">
+            <label class="form-label">Amount</label>
+            <input type="text" value="{{ item.amount | number:'1.2-2' }}" name="amount" class="form-control"
+              placeholder="0.00" readonly>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button (click)="cancelOrderItem()" class="btn btn-danger">Cancel</button>
+        <button [disabled]="!item.amount>0" (click)="addNextOrderItem()"
+          class="btn btn-info">{{ selectedIndex >=0 ? "Update & New" : "Add & New" }}</button>
+        <button [disabled]="!item.amount>0" (click)="addOrderItem()"
+          class="btn btn-primary">{{ selectedIndex >=0 ? "Update" : "Add" }}</button>
+      </div>
+    </ng-template>
+
+
+    <!-- Modal template -->
+    <ng-template #submitModal let-c="close" let-d="dismiss">
+      <div class="modal-header">
+        <h5 class="modal-title">
+          Order <span class="font-weight-light">Confirmation</span></h5>
+        <button type="button" class="close" (click)="d('Cross click')">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label">Discount (%)</label>
+            <input type="text" value="{{ order.discount | number: '1.2-2' }}" class="form-control" placeholder="0.00"
+              readonly>
+          </div>
+          <div class="form-group col">
+            <label class="form-label">Discount Amount</label>
+            <input type="text" value="{{ order.discAmount | number: '1.2-2'}}" class="form-control" placeholder="0.00"
+              readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label">VAT (%)</label>
+            <input type="text" value="{{ order.vat | number: '1.2-2' }}" class="form-control" placeholder="0.00"
+              readonly>
+          </div>
+          <div class="form-group col">
+            <label class="form-label">VAT Amount</label>
+            <input type="text" value="{{ order.vatAmount | number: '1.2-2' }}" class="form-control" placeholder="0.00"
+              readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col">
+            <label class="form-label">Payment Type</label>
+            <select class="custom-select" [(ngModel)]="order.paymentTypeId">
+              <option *ngFor="let type of paymentTypes" value="{{type.id}}">{{type.name}}</option>
+            </select>
+          </div>
+          <div class="form-group col">
+            <label class="form-label">Net Payable</label>
+            <input type="text" value="{{ order.netPayable | number: '1.2-2' }}" class="form-control" placeholder="0.00"
+              readonly>
+          </div>
+        </div>
+        <div class="form-row">
+          <div *ngIf="order.paymentTypeId > 1" class="form-group col">
+            <label class="form-label">Payment Ref.</label>
+            <input type="text" [(ngModel)]="order.paymentRef" class="form-control" placeholder="Payment referrence">
+          </div>
+          <div class="form-group col">
+            <label class="form-label">Receive Amount</label>
+            <input type="text" [(ngModel)]="order.receiveAmount" class="form-control" placeholder="0.00">
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="c('Close click')">Cancel</button>
+        <!-- <button [swal]="{title:'Are you sure?', text:'Once it has been submitted, you won\'t be able to change or remove!', type:'info', showCancelButton:true, confirmButtonText:'Yes, submit', showCloseButton:true, confirmButtonClass:'btn btn-lg btn-primary'}" (confirm)="confirmOrder()" (cancel)="declineDialog.show()" class="btn btn-default mb-1">
+         Submit
+        </button> -->
+        <button type="button" (click)="confirmOrder()" class="btn btn-primary">Submit</button>
+      </div>
+    </ng-template>
+  </div>
+</div>
