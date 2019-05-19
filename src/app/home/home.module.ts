@@ -12,7 +12,7 @@ import { StartupComponent } from './startup/startup.component';
 
 @NgModule({
   imports: [
-    CommonModule,    
+    CommonModule,
     FormsModule,
     NgbModule,
     Ng2ChartsModule,
