@@ -13,14 +13,20 @@
           <linearGradient id="e" x1="76.9" x2="92.64" y1="26.38" y2="31.49" xlink:href="#a"></linearGradient>
           <linearGradient id="d" x1="107.12" x2="122.74" y1="53.41" y2="48.33" xlink:href="#a"></linearGradient>
         </defs>
-        <path style="fill: #fff;" transform="translate(-.1)" d="M121.36,0,104.42,45.08,88.71,3.28A5.09,5.09,0,0,0,83.93,0H64.27A5.09,5.09,0,0,0,59.5,3.28L43.79,45.08,26.85,0H.1L29.43,76.74A5.09,5.09,0,0,0,34.19,80H53.39a5.09,5.09,0,0,0,4.77-3.26L74.1,35l16,41.74A5.09,5.09,0,0,0,94.82,80h18.95a5.09,5.09,0,0,0,4.76-3.24L148.1,0Z"></path>
-        <path transform="translate(-.1)" d="M52.19,22.73l-8.4,22.35L56.51,78.94a5,5,0,0,0,1.64-2.19l7.34-19.2Z" fill="url(#a)"></path>
-        <path transform="translate(-.1)" d="M95.73,22l-7-18.69a5,5,0,0,0-1.64-2.21L74.1,35l8.33,21.79Z" fill="url(#e)"></path>
-        <path transform="translate(-.1)" d="M112.73,23l-8.31,22.12,12.66,33.7a5,5,0,0,0,1.45-2l7.3-18.93Z" fill="url(#d)"></path>
+        <path style="fill: #fff;" transform="translate(-.1)"
+          d="M121.36,0,104.42,45.08,88.71,3.28A5.09,5.09,0,0,0,83.93,0H64.27A5.09,5.09,0,0,0,59.5,3.28L43.79,45.08,26.85,0H.1L29.43,76.74A5.09,5.09,0,0,0,34.19,80H53.39a5.09,5.09,0,0,0,4.77-3.26L74.1,35l16,41.74A5.09,5.09,0,0,0,94.82,80h18.95a5.09,5.09,0,0,0,4.76-3.24L148.1,0Z">
+        </path>
+        <path transform="translate(-.1)" d="M52.19,22.73l-8.4,22.35L56.51,78.94a5,5,0,0,0,1.64-2.19l7.34-19.2Z"
+          fill="url(#a)"></path>
+        <path transform="translate(-.1)" d="M95.73,22l-7-18.69a5,5,0,0,0-1.64-2.21L74.1,35l8.33,21.79Z" fill="url(#e)">
+        </path>
+        <path transform="translate(-.1)" d="M112.73,23l-8.31,22.12,12.66,33.7a5,5,0,0,0,1.45-2l7.3-18.93Z"
+          fill="url(#d)"></path>
       </svg>
     </span>
     <a routerLink="/" class="app-brand-text demo sidenav-text font-weight-normal ml-2">Appwork</a>
-    <a href="javascript:void(0)" class="layout-sidenav-toggle sidenav-link text-large ml-auto" (click)="toggleSidenav()">
+    <a href="javascript:void(0)" class="layout-sidenav-toggle sidenav-link text-large ml-auto"
+      (click)="toggleSidenav()">
       <i class="ion ion-md-menu align-middle"></i>
     </a>
   </div>
@@ -30,33 +36,323 @@
   <div class="sidenav-inner" [ngClass]="{ 'py-1': orientation !== 'horizontal' }">
 
     <!-- <sidenav-router-link icon="ion ion-md-speedometer" route="/dashboard" [active]="isActive('/dashboard')">Dashboard</sidenav-router-link> -->
- 
-  
+
+
     <!-- <sidenav-menu icon="ion ion-md-speedometer" text="Order" [active]="isMenuActive('/order')" [open]="isMenuOpen('/order')">
       <sidenav-router-link route="/order/order-place" [active]="isActive('/order/order-place')">Order Place</sidenav-router-link>
       <sidenav-router-link route="/order/order-list" [active]="isActive('/order/order-list')">Order List</sidenav-router-link>
       <sidenav-router-link route="/order/order-approval" [active]="isActive('/order/order-approval')">Order Approval</sidenav-router-link>
       <sidenav-router-link route="/order/section4" [active]="isActive('/module1/section4')">Section 4</sidenav-router-link>
     </sidenav-menu>    -->
-    <!-- Module1 -->
-    <sidenav-menu icon="ion ion-md-speedometer" text="Module 1" [active]="isMenuActive('/module1')" [open]="isMenuOpen('/module1')">
-    <sidenav-router-link route="/module1/section1" [active]="isActive('/module1/section1')">Section 1</sidenav-router-link>
-    <sidenav-router-link route="/module1/section2" [active]="isActive('/module1/section2')">Section 2</sidenav-router-link>
-    <sidenav-router-link route="/module1/section3" [active]="isActive('/module1/section3')">Section 3</sidenav-router-link>
-    </sidenav-menu>
-    <!-- Module2 -->
-    <sidenav-menu icon="ion ion-md-speedometer" text="Module 2" [active]="isMenuActive('/module2')" [open]="isMenuOpen('/module2')">
-    <sidenav-router-link route="/module2/section1" [active]="isActive('/module2/section1')">Section 1</sidenav-router-link>
-    <sidenav-router-link route="/module2/section2" [active]="isActive('/module2/section2')">Section 2</sidenav-router-link>
-    <sidenav-router-link route="/module2/section3" [active]="isActive('/module2/section3')">Section 3</sidenav-router-link>
-    </sidenav-menu>
 
-    <!-- Module3 -->
-    <sidenav-menu icon="ion ion-md-speedometer" text="Module 3" [active]="isMenuActive('/module3')" [open]="isMenuOpen('/module3')">
-    <sidenav-router-link route="/module3/section1" [active]="isActive('/Module3/section1')">Section 1</sidenav-router-link>
-    <sidenav-router-link route="/module3/section2" [active]="isActive('/module3/section2')">Section 2</sidenav-router-link>
-    <sidenav-router-link route="/module3/section3" [active]="isActive('/module3/section3')">Section 3</sidenav-router-link>
+    <sidenav-router-link icon="ion ion-md-home" route="/startup" [active]="isActive('/startup')">Home
+    </sidenav-router-link>
+    <sidenav-router-link icon="ion ion-md-pulse" route="/dashboard" [active]="isActive('/dashboard')">Dashboard
+    </sidenav-router-link>
+    <!-- System-setup -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="System Setup" [active]="isMenuActive('/system-setup')"
+      [open]="isMenuOpen('/system-setup')">
+      <sidenav-menu icon="ion ion-md-arrow-dropright" text="Basic Entry"
+        [active]="isMenuActive('/system-setup/basic-entry')" [open]="isMenuOpen('/system-setup/basic-entry')">
+        <sidenav-router-link route="/system-setup/basic-entry/emp-info"
+          [active]="isActive('/system-setup/basic-entry/emp-info')">Employee Information</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/department"
+          [active]="isActive('/system-setup/basic-entry/department')">Department</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/department-gl"
+          [active]="isActive('/system-setup/basic-entry/department-gl')">Department GL</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/section"
+          [active]="isActive('/system-setup/basic-entry/section')">Section</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/location"
+          [active]="isActive('/system-setup/basic-entry/location')">Location</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/country"
+          [active]="isActive('/system-setup/basic-entry/')">Country</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/nationality"
+          [active]="isActive('/system-setup/basic-entry/nationality')">Nationality</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/gender"
+          [active]="isActive('/system-setup/basic-entry/gender')">Gender</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/religion"
+          [active]="isActive('/system-setup/basic-entry/religion')">Religion</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/blood-group"
+          [active]="isActive('/system-setup/basic-entry/blood-group')">Blood Group</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/education-level"
+          [active]="isActive('/system-setup/basic-entry/education-level')">Education Level</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/education-board"
+          [active]="isActive('/system-setup/basic-entry/education-board')">Education Board</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/institute"
+          [active]="isActive('/system-setup/basic-entry/institute')">Institute</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/result"
+          [active]="isActive('/system-setup/basic-entry/result')">Result</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/passing-year"
+          [active]="isActive('/system-setup/basic-entry/passing')">Passing Year</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/training-type"
+          [active]="isActive('/system-setup/basic-entry/training-type')">Training Type</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/training-country"
+          [active]="isActive('/system-setup/basic-entry/training-country')">Training Country</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/training-institute"
+          [active]="isActive('/system-setup/basic-entry/training-institute')">Training Institute</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/training-nature"
+          [active]="isActive('/system-setup/basic-entry/training-nature')">Training Nature</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/training-sponsor-by"
+          [active]="isActive('/system-setup/basic-entry/training-sponsor-by')">Training Sponsor By</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/project"
+          [active]="isActive('/system-setup/basic-entry/project')">Project</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/job-type"
+          [active]="isActive('/system-setup/basic-entry/job-type')">Job Type</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/designation"
+          [active]="isActive('/system-setup/basic-entry/designation')">Designation</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/occupation"
+          [active]="isActive('/system-setup/basic-entry/occupation')">Occupation</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/experience-type"
+          [active]="isActive('/system-setup/basic-entry/experience-type')">Experience Type</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/punishment"
+          [active]="isActive('/system-setup/basic-entry/punishment')">Punishment</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/bank"
+          [active]="isActive('/system-setup/basic-entry/bank')">Bank</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/branch"
+          [active]="isActive('/system-setup/basic-entry/branch')">Branch</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/unit"
+          [active]="isActive('/system-setup/basic-entry/unit')">Unit</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/signatory"
+          [active]="isActive('/system-setup/basic-entry/signatory')">Signatory</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/misconduct"
+          [active]="isActive('/system-setup/basic-entry/misconduct')">Misconduct</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/prefix"
+          [active]="isActive('/system-setup/basic-entry/prefix')">Prefix</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/suffix"
+          [active]="isActive('/system-setup/basic-entry/suffix')">Suffix</sidenav-router-link>
+        <sidenav-router-link route="/system-setup/basic-entry/publication-type"
+          [active]="isActive('/system-setup/basic-entry/publication-type')">Publication Type</sidenav-router-link>
+      </sidenav-menu>
+      <sidenav-router-link route="/system-setup/bank-branch" [active]="isActive('/system-setup/bank-branch')">Bank
+        Branch</sidenav-router-link>
+      <sidenav-router-link route="/system-setup/division" [active]="isActive('/system-setup/division')">Division
+      </sidenav-router-link>
+      <sidenav-router-link route="/system-setup/group" [active]="isActive('/system-setup/group')">Academic Decipline
+      </sidenav-router-link>
+      <sidenav-router-link route="/system-setup/holyday-calender" [active]="isActive('/system-setup/holyday-calender')">
+        Holyday Calender</sidenav-router-link>
+      <sidenav-router-link route="/system-setup/assign-dept-gl" [active]="isActive('/system-setup/assign-dept-gl')">
+        Assign Department GL</sidenav-router-link>
+      <sidenav-router-link route="/system-setup/production-unit" [active]="isActive('/system-setup/production-unit')">
+        Production Unit</sidenav-router-link>
+      <sidenav-router-link route="/system-setup/production-floor" [active]="isActive('/system-setup/production-floor')">
+        Production Floor</sidenav-router-link>
+      <sidenav-router-link route="/system-setup/production-line" [active]="isActive('/system-setup/production-line')">
+        Production Line</sidenav-router-link>
+      <sidenav-router-link route="/system-setup/production-machine"
+        [active]="isActive('/system-setup/production-machine')">Production Machine</sidenav-router-link>
     </sidenav-menu>
-
+    <!-- Attendance -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Attendance" [active]="isMenuActive('/attendance')"
+      [open]="isMenuOpen('/attendance')">
+      <sidenav-router-link route="/attendance/application" [active]="isActive('/attendance/application')">Application
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/approve" [active]="isActive('/attendance/approve')">Approve
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/weekend-setup" [active]="isActive('/attendance/weekend-setup')">Weekend
+        Setup
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/weekend-update" [active]="isActive('/attendance/weekend-update')">Weekend
+        Update
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/duty-hours-setup" [active]="isActive('/attendance/duty-hours-setup')">Duty
+        Hours Setup
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/manual-attendance" [active]="isActive('/attendance/manual-attendance')">
+        Manual Attendance
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/monthly-attendance" [active]="isActive('/attendance/monthly-attendance')">
+        Monthly Attendance
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/process-attendance" [active]="isActive('/attendance/process-attendance')">
+        Process Attendance
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/summery" [active]="isActive('/attendance/Summery')">Summery
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/shift-setup" [active]="isActive('/attendance/shift-setup')">Shift Setup
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/assign-shift" [active]="isActive('/attendance/assign-shift')">Assign Shift
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/monthly-data-process"
+        [active]="isActive('/attendance/monthly-data-process')">Monthly Data Process
+      </sidenav-router-link>
+      <sidenav-router-link route="/attendance/import" [active]="isActive('/attendance/import')">Import
+      </sidenav-router-link>
+    </sidenav-menu>
+    <!-- shift-allowance -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Shift Allowance" [active]="isMenuActive('/shift-allowance')"
+      [open]="isMenuOpen('/shift-allowance')">
+      <sidenav-router-link route="/shift-allowance/setup" [active]="isActive('/shift-allowance/setup')">Setup
+      </sidenav-router-link>
+      <sidenav-router-link route="/shift-allowance/assign" [active]="isActive('/shift-allowance/assign')">Assign
+      </sidenav-router-link>
+      <sidenav-router-link route="/shift-allowance/auto-payment" [active]="isActive('/shift-allowance/auto-payment')">
+        Auto Payment
+      </sidenav-router-link>
+      <sidenav-router-link route="/shift-allowance/manual-payment"
+        [active]="isActive('/shift-allowance/manual-payment')">Manual Payment
+      </sidenav-router-link>
+      <sidenav-router-link route="/shift-allowance/shift-allowance-report"
+        [active]="isActive('/shift-allowance/shift-allowance-report')">Report
+      </sidenav-router-link>
+    </sidenav-menu>
+    <!-- Show Cause -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Disciplinary Action" [active]="isMenuActive('/disciplinary')"
+      [open]="isMenuOpen('/disciplinary')">
+      <sidenav-router-link route="/disciplinary/show-cause" [active]="isActive('/disciplinary/show-cause')">Show Cause
+        Info
+      </sidenav-router-link>
+      <sidenav-router-link route="/disciplinary/show-cause-result"
+        [active]="isActive('/disciplinary/show-cause-result')">Show Cause Result
+      </sidenav-router-link>
+      <sidenav-router-link route="/disciplinary/notice-enquiry" [active]="isActive('/disciplinary/notice-enquiry')">
+        Notice Enquiry
+      </sidenav-router-link>
+      <sidenav-router-link route="/disciplinary/punishment" [active]="isActive('/disciplinary/punishment')">Punishment
+      </sidenav-router-link>
+      <sidenav-router-link route="/disciplinary/disciplinary-report"
+        [active]="isActive('/disciplinary/disciplinary-report')">Report
+      </sidenav-router-link>
+    </sidenav-menu>
+    <!-- Loan -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Loan" [active]="isMenuActive('/loan')"
+      [open]="isMenuOpen('/loan')">
+      <sidenav-router-link route="/loan/loan-info" [active]="isActive('/loan/loan-info')">Loan Information
+      </sidenav-router-link>
+      <sidenav-router-link route="/loan/cash-receive" [active]="isActive('/loan/cash-receive')">Cash Receive
+      </sidenav-router-link>
+      <sidenav-router-link route="/loan/stop-deduction" [active]="isActive('/loan/stop-deduction')">Stop Deduction
+      </sidenav-router-link>
+      <sidenav-router-link route="/loan/loan-report" [active]="isActive('/loan/loan-report')">Report
+      </sidenav-router-link>
+    </sidenav-menu>
+    <!-- Addition -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Addition" [active]="isMenuActive('/addition')"
+      [open]="isMenuOpen('/addition')">
+      <sidenav-router-link route="/addition/employee-allowance" [active]="isActive('/addition/employee-allowance')">
+        Employee Allowance
+      </sidenav-router-link>
+      <sidenav-router-link route="/addition/driver-allowance" [active]="isActive('/addition/driver-allowance')">Driver
+        Allowance
+      </sidenav-router-link>
+      <sidenav-router-link route="/addition/driver-bonus" [active]="isActive('/addition/driver-bonus')">Driver Bonus
+      </sidenav-router-link>
+      <sidenav-router-link route="/addition/import-addition" [active]="isActive('/addition/import-addition')">Import
+      </sidenav-router-link>
+      <sidenav-router-link route="/addition/process-import" [active]="isActive('/addition/import-import')"> Process
+        Salary Import
+      </sidenav-router-link>
+    </sidenav-menu>
+    <!-- Deduction -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Deduction" [active]="isMenuActive('/deduction')"
+      [open]="isMenuOpen('/deduction')">
+      <sidenav-router-link route="/deduction/salary-deduct" [active]="isActive('/deduction/salary-deduct')">Salary
+        Deduct
+      </sidenav-router-link>
+      <sidenav-router-link route="/deduction/loan-deduct" [active]="isActive('/deduction/loan-deduct')">Loan Deduct
+      </sidenav-router-link>
+      <sidenav-router-link route="/deduction/lwp-deduct" [active]="isActive('/deduction/lwp-deduct')">LWP Deduct
+      </sidenav-router-link>
+      <sidenav-router-link route="/deduction/other-deduct" [active]="isActive('/deduction/other-deduct')">Other Deduct
+      </sidenav-router-link>
+      <sidenav-router-link route="/deduction/import-deduction" [active]="isActive('/deduction/import-deduction')">Import
+      </sidenav-router-link>
+      <sidenav-router-link route="/addition/process-import" [active]="isActive('/addition/import-import')"> Process
+        Salary Import
+      </sidenav-router-link>
+    </sidenav-menu>
+    <!-- Incentive -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Incentive Other" [active]="isMenuActive('/incentive')"
+      [open]="isMenuOpen('/incentive')">
+      <sidenav-router-link route="/incentive/leave-type-setup" [active]="isActive('/incentive/leave-type-setup')">Leave
+        Type Setup
+      </sidenav-router-link>
+      <sidenav-router-link route="/incentive/leave-amount-setup" [active]="isActive('/incentive/leave-amount-setup')">
+        Leave Amount Setup
+      </sidenav-router-link>
+      <sidenav-router-link route="/incentive/leave-payment" [active]="isActive('/incentive/leave-payment')">Leave
+        Payment
+      </sidenav-router-link>
+      <sidenav-router-link route="/incentive/sales-commission" [active]="isActive('/incentive/sales-commission')">Sales
+        Commission
+      </sidenav-router-link>
+      <sidenav-router-link route="/incentive/encashment-payment" [active]="isActive('/incentive/encashment-payment')">
+        Encashment Payment
+      </sidenav-router-link>
+      <sidenav-router-link route="/incentive/arrear-payment-auto" [active]="isActive('/incentive/arrear-payment-auto')">
+        Arrear Payment Auto
+      </sidenav-router-link>
+      <sidenav-router-link route="/incentive/arrear-payment-manual"
+        [active]="isActive('/incentive/arrear-payment-manual')">Arrear Payment Manual
+      </sidenav-router-link>
+    </sidenav-menu>
+    <!-- Settlement -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Settlement" [active]="isMenuActive('/settlement')"
+      [open]="isMenuOpen('/settlement')">
+      <sidenav-router-link route="/settlement/notice-day-setup" [active]="isActive('/settlement/notice-day-setup')">
+        Notice
+        Day Setup
+      </sidenav-router-link>
+      <sidenav-router-link route="/settlement/notice-pay-amount" [active]="isActive('/settlement/notice-pay-amount')">
+        Notice
+        Pay Amount
+      </sidenav-router-link>
+      <sidenav-router-link route="/settlement/gratuity-setup" [active]="isActive('/settlement/gratuity-setup')">
+        Gratuity Setup
+      </sidenav-router-link>
+      <sidenav-router-link route="/settlement/gratuity-year-setup"
+        [active]="isActive('/settlement/gratuity-year-setup')">
+        Gratuity Year Setup
+      </sidenav-router-link>
+      <sidenav-router-link route="/settlement/final-settlement" [active]="isActive('/settlement/final-settlement')">
+        Final Settlement
+      </sidenav-router-link>
+      <sidenav-router-link route="/settlement/settlement-report" [active]="isActive('/settlement/settlement-report')">
+        Report
+      </sidenav-router-link>
+    </sidenav-menu>
+    <!-- Security -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Security" [active]="isMenuActive('/security')"
+      [open]="isMenuOpen('/security')">
+      <sidenav-router-link route="/security/create-user" [active]="isActive('/security/create-user')">Create User
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/create-user-type" [active]="isActive('/security/create-user-type')">Create
+        User Type
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/create-company" [active]="isActive('/security/create-company')">Create
+        Company
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/log-history" [active]="isActive('/security/log-history')">Log History
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/assign-page-access" [active]="isActive('/security/assign-page-access')">
+        Assign Page Access
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/web-portal-page-access"
+        [active]="isActive('/security/web-portal-page-access')">Web Portal Page Access
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/change-password" [active]="isActive('/security/change-password')">Change
+        Password
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/lock-unlock-salary" [active]="isActive('/security/lock-unlock-salary')">
+        Lock/Unlock Salary Process
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/assign-company" [active]="isActive('/security/assign-company')">Assign
+        Company
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/assign-branch" [active]="isActive('/security/assign-branch')">Assign Branch
+      </sidenav-router-link>
+      <sidenav-router-link route="/security/password-show" [active]="isActive('/security/password-show')">Password Show
+      </sidenav-router-link>
+    </sidenav-menu>
+    <!-- Tour -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Tour" [active]="isMenuActive('/tour')"
+      [open]="isMenuOpen('/tour')">
+      <sidenav-router-link route="/tour/tour-apply" [active]="isActive('/tour/tour-apply')">Apply
+      </sidenav-router-link>
+      <sidenav-router-link route="/tour/tour-approve" [active]="isActive('/tour/tour-approve')">Approve
+      </sidenav-router-link>
+      <sidenav-router-link route="/tour/tour-approve-hr" [active]="isActive('/tour/tour-approve-hr')">Approve by HR
+      </sidenav-router-link>
+    </sidenav-menu>
   </div>
 </sidenav>

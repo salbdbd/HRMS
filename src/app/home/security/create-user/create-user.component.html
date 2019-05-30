@@ -1,0 +1,133 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">{{title}}</h4>
+  <div class="card-body">
+    <form action="">
+      <div class="row">
+        <div class="col-md-6 center">
+          <div class="form-group row">
+            <label for="company" class="col-md-3">Company</label>
+            <div class="col-md-8">
+              <select name="company" id="company" class="form-control">
+                <option value="">Select Company</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="userName" class="col-md-3">User Name</label>
+            <div class="col-md-8">
+              <input type="text" name="userName" id="userName" class="form-control" placeholder="User Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="loginId" class="col-md-3">Login Id</label>
+            <div class="col-md-8">
+              <input type="text" name="loginId" id="loginId" class="form-control" placeholder="Login Id">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="password" class="col-md-3">Password</label>
+            <div class="col-md-8">
+              <input type="password" name="password" id="password" class="form-control">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="userType" class="col-md-3">User Type</label>
+            <div class="col-md-8">
+              <select name="userType" id="userType" class="form-control">
+                <option value="">Select User Type</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="empCode" class="col-md-3">Employee Code</label>
+            <div class="input-group col-md-8">
+              <input type="text" name="employeeCode" id="empCode" class="form-control" placeholder="Employee Code">
+              <div class="input-group-append">
+                <button class="input-group-text btn btn-info" type="button">
+                  <span class="fas fa-search" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="accessArea" class="col-md-3">Access Area</label>
+            <div class="col-md-8">
+              <select name="accessArea" id="accessArea" class="form-control">
+                <option value="">Select Area</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-md-3"></label>
+            <div class="col-md-8 demo-inline-spacing">
+              <button class="btn btn-success"><span class="fas fa-save"></span> Save</button>
+              <button class="btn btn-secondary"><span class="ion ion-ios-close"></span> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="row">
+      <div class="card mb-4 center">
+        <div class="card-header">
+          <div class="form-group row">
+            <div class="col-md-6 demo-inline-spacing">
+              <input type="radio" name="type" id="adminUser">
+              <label for="adminUser"> Admin/User</label>
+            </div>
+            <div class="col-md-6 demo-inline-spacing">
+              <input type="radio" name="type" id="empUser">
+              <label for="empUser"> Employee</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              Per page: &nbsp;
+              <select [(ngModel)]="perPage" (change)="update()"
+                class="custom-select custom-select-md d-inline-block w-auto">
+                <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+              </select>
+            </div>
+            <div class="col">
+              <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+                class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+            </div>
+          </div>
+        </div>
+        <div class="card-body py-0">
+          <div class="row">
+            <table class="table table-hover table-striped mb-2">
+              <thead>
+                <tr>
+                  <th>User Name</th>
+                  <th>User Type</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngIf="tempItems.length==0">
+                  <td colspan="11" class="font-italic text-center">No Item available</td>
+                </tr>
+                <tr *ngFor="let item of tempItems">
+                  <td>{{item}}</td>
+                  <td>{{item}}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <!-- Pagination -->
+          <div class="row">
+            <div class="col-sm text-sm-left text-center pt-3">
+              <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+            </div>
+            <div class="col-sm pt-3">
+              <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+                (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+              </ngb-pagination>
+            </div>
+          </div>
+        </div>
+        <!-- / Pagination -->
+      </div>
+    </div>
+  </div>
+</div>

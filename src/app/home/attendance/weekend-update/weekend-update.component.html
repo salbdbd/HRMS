@@ -1,0 +1,131 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">
+    {{title}}
+  </h4>
+  <div class="card-body">
+    <form>
+      <div class="row">
+        <div class="col-md-9">
+          <div class="row">
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label for="empId" class="col-md-5">Employee Id</label>
+                <div class="input-group col-md-7">
+                  <input type="text" name="employeeId" id="empId" class="form-control" placeholder="Id">
+                  <div class="input-group-append">
+                    <button class="input-group-text btn btn-info" type="button">
+                      <span class="fas fa-search" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="form-label col-md-4 text-sm-right">From</label>
+                <div class="input-group col-md-8">
+                  <input class="form-control" placeholder="dd-mm-yyyy" name="from" ngbDatepicker [(ngModel)]="from"
+                    [displayMonths]="1" #d1="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="input-group-text" (click)="d1.toggle()" type="button">
+                      <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="form-group row">
+                <label class="form-label col-md-4 text-sm-right">To</label>
+                <div class="input-group col-md-8">
+                  <input class="form-control" placeholder="dd-mm-yyyy" name="to" ngbDatepicker [(ngModel)]="to"
+                    [displayMonths]="1" #d2="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="input-group-text" (click)="d2.toggle()" type="button">
+                      <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-7 center">
+              <div class=" form-group row">
+                <label class="col-form-label col-md-3" for="empName">Name</label>
+                <div class="col-md-9">
+                  <input type="text" name="employeeName" id="empName" class="form-control" placeholder="Employee Name">
+                </div>
+              </div>
+              <div class=" form-group row">
+                <label class="col-form-label col-md-3" for="department">Department</label>
+                <div class="col-md-9">
+                  <input type="text" name="department" id="department" class="form-control" placeholder="Department">
+                </div>
+              </div>
+              <div class=" form-group row">
+                <label class="col-form-label col-md-3" for="designation">Designation</label>
+                <div class="col-md-9">
+                  <input type="text" name="designation" id="designation" class="form-control" placeholder="Designation">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class=" form-group row">
+            <label class="col-form-label col-md-12" for="days">Select Weekend</label>
+            <div class="col-md-12">
+              <select multiple name="days" id="days" class="form-control" style="height: 150px;">
+                <option value="">Friday</option>
+                <option value="">Saturday</option>
+                <option value="">Sunday</option>
+                <option value="">Monday</option>
+                <option value="">Tuesday</option>
+                <option value="">Wednesday</option>
+                <option value="">Thursday</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary center">Show</button>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6 center">
+          <table class="table table-bordered table-striped">
+            <thead>
+              <tr>
+                <th>Date</th>
+                <th>Weekend Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1.1</td>
+                <td>1.2</td>
+              </tr>
+              <tr>
+                <td>2.1</td>
+                <td>2.2</td>
+              </tr>
+              <tr>
+                <td>3.1</td>
+                <td>3.2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row">
+        <div class="demo-inline-spacing center mt-3 col-md-6">
+          <button class="btn btn-primary">Update</button>
+          <button class="btn btn-info">Refresh</button>
+          <button class="btn btn-secondary">Close</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

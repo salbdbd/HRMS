@@ -1,0 +1,153 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">
+    {{title}}
+  </h4>
+  <div class="card-body">
+    <form>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group row">
+            <label for="empId" class="col-md-4">Employee Id</label>
+            <div class="input-group col-md-8">
+              <input type="text" name="employeeId" id="empId" class="form-control" placeholder="Employee Id">
+              <div class="input-group-append">
+                <button class="input-group-text btn btn-info" type="button">
+                  <span class="fas fa-search" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div> 
+          <div class=" form-group row">
+            <label class="col-form-label col-md-4" for="department">Department</label>
+            <div class="col-md-8">
+              <select name="department" id="department" class="form-control">
+                <option value="">Select Department</option>
+              </select>
+            </div>
+          </div>
+          <div class=" form-group row">
+            <label class="col-form-label col-md-4" for="designation">Designation</label>
+            <div class="col-md-8">
+              <select name="designation" id="designation" class="form-control">
+                <option value="">Select Designation</option>
+              </select>
+            </div>
+          </div>
+          <div class=" form-group row">
+            <label class="col-form-label col-md-4" for="branch">Office Branch</label>
+            <div class="col-md-8">
+              <select name="branch" id="branch" class="form-control">
+                <option value="">Select Branch</option>
+              </select>
+            </div>
+          </div>
+          <div class=" form-group row">
+            <label class="col-form-label col-md-4" for="location">Location</label>
+            <div class="col-md-8">
+              <select name="location" id="location" class="form-control">
+                <option value="">Select Location</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class=" form-group row">
+                <label class="col-form-label col-md-4 text-sm-right" for="days">Days</label>
+                <div class="col-md-8">
+                  <select multiple name="days" id="days" class="form-control" style="height: 150px;">
+                    <option value="">Friday</option>
+                    <option value="">Saturday</option>
+                    <option value="">Sunday</option>
+                    <option value="">Monday</option>
+                    <option value="">Tuesday</option>
+                    <option value="">Wednesday</option>
+                    <option value="">Thursday</option>
+                  </select>
+                </div>
+              </div>
+        </div>
+        <div class="col-md-4">
+          <div class="demo-inline-spacing mt-3 col-md-6">
+            <button class="btn btn-info col-md-12 col-sm-6"> <span class="ion ion-ios-refresh"></span></button>
+            <button class="btn btn-primary col-md-12 col-sm-6">Get Employee(s)</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            Per page: &nbsp;
+            <select [(ngModel)]="perPage" (change)="update()"
+              class="custom-select custom-select-md d-inline-block w-auto">
+              <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+              class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+          </div>
+        </div>
+      </div>
+      <table class="table table-hover table-striped mb-0">
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" id="all">
+            </th>
+            <th>Code</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>Designation</th>
+            <th>Weekend</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="tempItems.length==0">
+            <td colspan="3" class="font-italic text-center">No Item available</td>
+          </tr>
+          <tr *ngFor="let item of tempItems">
+            <td>
+              <input type="checkbox">
+            </td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>
+              <button class="btn btn-danger"> <span class="fas fa-trash"></span> </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Pagination -->
+      <div class="card-body py-0">
+        <div class="row">
+          <div class="col-sm text-sm-left text-center pt-3">
+            <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+          </div>
+          <div class="col-sm pt-3">
+            <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+              (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+            </ngb-pagination>
+          </div>
+        </div>
+      </div>
+      <!-- / Pagination -->
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Total Employee(s): 0</p>
+      </div>
+      <div class="col-md-6 demo-inline-spacing mt-3">
+        <button class="btn btn-primary">Save</button>
+        <button class="btn btn-secondary">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,9 +11,19 @@ import { AppErrorComponent } from './error/app-error/app-error.component';
 const routes: Routes = [
   { path: '', component:  Layout2Component,  canActivate: [HomeGuard], loadChildren: './home/home.module#HomeModule' },
   { path: 'user', component: LayoutBlankComponent, loadChildren: './user/user.module#UserModule' },
-  { path: 'module1', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/module1/module1.module#Module1Module' },
-  { path: 'module2', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/module2/module2.module#Module2Module' },
-  { path: 'module3', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/module3/module3.module#Module3Module' },
+  { path: 'home', component: LayoutBlankComponent, loadChildren: './home/home.module#HomeModule' },
+  { path: 'system-setup', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/system-setup/setup.module#SetupModule' },
+  { path: 'system-setup/basic-entry', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/system-setup/basic-entry/basic-entry.module#BasicEntryModule' },
+  { path: 'attendance', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/attendance/attendance.module#AttendanceModule' },
+  { path: 'shift-allowance', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/shift-allowance/shift-allowance.module#ShiftAllowanceModule' },
+  { path: 'disciplinary', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/disciplinary/disciplinary.module#DisciplinaryModule' },
+  { path: 'loan', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/loan/loan.module#LoanModule' },
+  { path: 'addition', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/addition/addition.module#AdditionModule' },
+  { path: 'deduction', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/deduction/deduction.module#DeductionModule' },
+  { path: 'incentive', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/incentive/incentive.module#IncentiveModule' },
+  { path: 'settlement', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/settlement/settlement.module#SettlementModule' },
+  { path: 'security', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/security/security.module#SecurityModule' },
+  { path: 'tour', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/tour/tour.module#TourModule' },
   { path: 'error', component: AppErrorComponent },
   { path: '**', component: NoPageComponent }
 ];

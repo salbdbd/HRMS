@@ -1,0 +1,65 @@
+<div class="card">
+  <h4 class="card-header text-center bg-light">{{title}}</h4>
+  <div class="card-body">
+    <form action="">
+      <div class="row">
+        <div class="col-md-7 center">
+          <div class="form-group row">
+            <label for="startMonth" class="col-md-4">Start Month</label>
+            <div class="col-md-8">
+              <select name="startMonth" id="startMonth" class="form-control">
+                <option value="">Select Start Month</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="compareMonth" class="col-md-4">Compare Month</label>
+            <div class="col-md-8">
+              <select name="compareMonth" id="compareMonth" class="form-control">
+                <option value="">Select Compare Month</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="paymentMonth" class="col-md-4">Payment Month</label>
+            <div class="col-md-8">
+              <select name="paymentMonth" id="paymentMonth" class="form-control">
+                <option value="">Select Payment Month</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="form-label col-md-4" for="incrDate">Increment Effective Date</label>
+            <div class="input-group col-md-8">
+              <input class="form-control" placeholder="dd-mm-yyyy" id="incrDate" name="incrDate" ngbDatepicker
+                [(ngModel)]="incrDate" [displayMonths]="1" #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="form-label col-md-4" for="paymentDate">Payment Date</label>
+            <div class="input-group col-md-8">
+              <input class="form-control" placeholder="dd-mm-yyyy" id="paymentDate" name="paymentDate" ngbDatepicker
+                [(ngModel)]="paymentDate" [displayMonths]="1" #d2="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d2.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="demo-inline-spacing center">
+              <button class="btn btn-success">Auto Process Access</button>
+              <button class="btn btn-secondary"><span class="ion ion-ios-close"></span> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
