@@ -29,34 +29,111 @@
   <!-- Links -->
   <div class="sidenav-inner" [ngClass]="{ 'py-1': orientation !== 'horizontal' }">
 
-    <!-- <sidenav-router-link icon="ion ion-md-speedometer" route="/dashboard" [active]="isActive('/dashboard')">Dashboard</sidenav-router-link> -->
- 
-  
-    <!-- <sidenav-menu icon="ion ion-md-speedometer" text="Order" [active]="isMenuActive('/order')" [open]="isMenuOpen('/order')">
-      <sidenav-router-link route="/order/order-place" [active]="isActive('/order/order-place')">Order Place</sidenav-router-link>
-      <sidenav-router-link route="/order/order-list" [active]="isActive('/order/order-list')">Order List</sidenav-router-link>
-      <sidenav-router-link route="/order/order-approval" [active]="isActive('/order/order-approval')">Order Approval</sidenav-router-link>
-      <sidenav-router-link route="/order/section4" [active]="isActive('/module1/section4')">Section 4</sidenav-router-link>
-    </sidenav-menu>    -->
-    <!-- Module1 -->
-    <sidenav-menu icon="ion ion-md-speedometer" text="Module 1" [active]="isMenuActive('/module1')" [open]="isMenuOpen('/module1')">
-    <sidenav-router-link route="/module1/section1" [active]="isActive('/module1/section1')">Section 1</sidenav-router-link>
-    <sidenav-router-link route="/module1/section2" [active]="isActive('/module1/section2')">Section 2</sidenav-router-link>
-    <sidenav-router-link route="/module1/section3" [active]="isActive('/module1/section3')">Section 3</sidenav-router-link>
-    </sidenav-menu>
-    <!-- Module2 -->
-    <sidenav-menu icon="ion ion-md-speedometer" text="Module 2" [active]="isMenuActive('/module2')" [open]="isMenuOpen('/module2')">
-    <sidenav-router-link route="/module2/section1" [active]="isActive('/module2/section1')">Section 1</sidenav-router-link>
-    <sidenav-router-link route="/module2/section2" [active]="isActive('/module2/section2')">Section 2</sidenav-router-link>
-    <sidenav-router-link route="/module2/section3" [active]="isActive('/module2/section3')">Section 3</sidenav-router-link>
+
+    <!--HR Menu-->
+     <sidenav-menu icon="ion ion-md-speedometer" text="HR Menu" [active]="isMenuActive('/hr-menu')" [open]="isMenuOpen('/hr-menu')">
+     <sidenav-router-link route="/hr-menu/emp-gen-info" [active]="isActive('/hr-menu/emp-gen-info')">Employee General Information</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/employent-info" [active]="isActive('/hr-menu/employent-info')">Employment Information</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/additional-duties" [active]="isActive('/hr-menu/additional-duties')">Additional Duties</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/emp-company-transfer" [active]="isActive('/hr-menu/emp-company-transfer')">Employee Company Transfer</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/emp-pro-info" [active]="isActive('/hr-menu/emp-pro-info')">Employee Promotion Information</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/holiday-info" [active]="isActive('/hr-menu/holiday-info')">Holiday Information</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/casual-join-date" [active]="isActive('/hr-menu/casual-join-date')">Non-Management Casual Date Of Joining</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/emp-block-info" [active]="isActive('/hr-menu/emp-block-info')">Employee Block Information</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/emp-for-attendance" [active]="isActive('/hr-menu/emp-for-attendance')">Employee Select For Attendance</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/resignation-letter" [active]="isActive('/hr-menu/resignation-letter')">Resignation Letter</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/resignation-letter-approve" [active]="isActive('/hr-menu/resignation-letter-approve')">Resignation Letter Approve</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/emp-for-resignation" [active]="isActive('/hr-menu/emp-for-resignation')">Employee For Resignation</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/notice-by-company" [active]="isActive('/hr-menu/notice-by-company')">Notice By Company</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/emp-separation-info" [active]="isActive('/hr-menu/emp-separation-info')">Employee Separation Info</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/emp-objective-info" [active]="isActive('/hr-menu/emp-objective-info')">Employee Objective Info</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/production-position-info" [active]="isActive('/hr-menu/production-position-info')">Production Position Info</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/emp-certificate-upload" [active]="isActive('/hr-menu/emp-certificate-upload')">Employee Certificate Upload</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/download-certificate" [active]="isActive('/hr-menu/download-certificate')">Download Certificate</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/upload-file" [active]="isActive('/hr-menu/upload-file')">Upload Word,Excle,Pdf,jpg,png Files</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/download-img-signature" [active]="isActive('/hr-menu/download-img-signature')">Download Image And Signature</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/basic-hr-report" [active]="isActive('/hr-menu/basic-hr-report')">Basic HR Report</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/upload-files" [active]="isActive('/hr-menu/upload-files')">Upload Files(JPG)</sidenav-router-link>
+     <sidenav-router-link route="/hr-menu/personal-file" [active]="isActive('/hr-menu/personal-file')">Personal Information</sidenav-router-link>
+      </sidenav-menu>
+
+      <!--Overtime-->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Overtime" [active]="isMenuActive('/Overtime')" [open]="isMenuOpen('/overtime')">
+     <sidenav-router-link route="/overtime/overtime-supervisor" [active]="isActive('/overtime/overtime-supervisor')">Overtime Supervisor</sidenav-router-link>
+     <sidenav-router-link route="/overtime/application-for-overtime" [active]="isActive('/overtime/application-for-overtime')">Application For Overtime</sidenav-router-link>
+     <sidenav-router-link route="/overtime/overtime-approve" [active]="isActive('/overtime/overtime-approve')">Overtime Approve</sidenav-router-link>
+     <sidenav-router-link route="/overtime/overtime-approve-by-hr" [active]="isActive('/overtime/overtime-approve-by-hr')">Overtime Approve By HR</sidenav-router-link>
+     <sidenav-router-link route="/overtime/ot-method" [active]="isActive('/overtime/ot-method')">OT Method</sidenav-router-link>
+     <sidenav-router-link route="/overtime/entitle-over-time" [active]="isActive('/overtime/entitle-over-time')">Entitle Overtime</sidenav-router-link>
+     <sidenav-router-link route="/overtime/update-over-time-allowance" [active]="isActive('/overtime/update-over-time-allowance')">Update Overtime Allowance</sidenav-router-link>
+     <sidenav-router-link route="/overtime/assign-over-time-requisition" [active]="isActive('/overtime/assign-over-time-requisition')">Assign overtime Requisition</sidenav-router-link>
+     <sidenav-router-link route="/overtime/update-over-time-requisition" [active]="isActive('/overtime/update-over-time-requisition')">Update Overtime Requisition</sidenav-router-link>
+     <sidenav-router-link route="/overtime/over-time-requisition-approve" [active]="isActive('/overtime/over-time-requisition-approve')">Over Time Requisition Approve</sidenav-router-link>
+     <sidenav-router-link route="/overtime/Over-time-setup" [active]="isActive('/overtime/Over-time-setup')">Over Time Setup</sidenav-router-link>
+     <sidenav-router-link route="/overtime/Over-time-condition-setup" [active]="isActive('/overtime/Over-time-condition-setup')">Over Time Condition  Setup</sidenav-router-link>
+     <sidenav-router-link route="/overtime/assign-over-time" [active]="isActive('/overtime/assign-over-time')">Assign Over Time</sidenav-router-link>
+     <sidenav-router-link route="/overtime/over-time-auto" [active]="isActive('/overtime/over-time-auto')">Over Time Auto</sidenav-router-link>
+     <sidenav-router-link route="/overtime/over-time-menual" [active]="isActive('/overtime/over-time-menual')">Over Time Manual</sidenav-router-link>
+     <sidenav-router-link route="/overtime/over-time-payment-auto" [active]="isActive('/overtime/over-time-payment-auto')">Over Time Payment Auto</sidenav-router-link>
+     <sidenav-router-link route="/overtime/over-time-payment-manual" [active]="isActive('/overtime/over-time-payment-manual')">Over Time Payment Manual</sidenav-router-link>
+     <sidenav-router-link route="/overtime/over-time-report" [active]="isActive('/overtime/over-time-report')">Over Time Report</sidenav-router-link>
+      </sidenav-menu>
+      <!--Bonus-->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Bonus" [active]="isMenuActive('/Overtime')" [open]="isMenuOpen('/overtime')">
+      <sidenav-router-link route="/bonus/allowance-setup" [active]="isActive('/bonus/allowance-setup')">Bonus And Allowance Setup</sidenav-router-link>
+      <sidenav-router-link route="/bonus/bonus-setup" [active]="isActive('/bonus/bonus-setup')">Bonus  Setup</sidenav-router-link>
+      <sidenav-router-link route="/bonus/emp-festival-bonus" [active]="isActive('/bonus/emp-festival-bonus')">Employee Festival Bonus Info</sidenav-router-link>
+      <sidenav-router-link route="/bonus/emp-performance-bonus" [active]="isActive('/bonus/emp-performance-bonus')">Employee Performance Bonus Info</sidenav-router-link>
+      <sidenav-router-link route="/bonus/update-bonus" [active]="isActive('/bonus/update-bonus')">Update Bonus</sidenav-router-link>
+      <sidenav-router-link route="/bonus/upload-emp-payment" [active]="isActive('/bonus/upload-emp-payment')">Upload Employee Bonus Payment</sidenav-router-link>
+      <sidenav-router-link route="/bonus/process-import-bonus" [active]="isActive('/bonus/process-import-bonus')">Process Import Bonus</sidenav-router-link>
     </sidenav-menu>
 
-    <!-- Module3 -->
-    <sidenav-menu icon="ion ion-md-speedometer" text="Module 3" [active]="isMenuActive('/module3')" [open]="isMenuOpen('/module3')">
-    <sidenav-router-link route="/module3/section1" [active]="isActive('/Module3/section1')">Section 1</sidenav-router-link>
-    <sidenav-router-link route="/module3/section2" [active]="isActive('/module3/section2')">Section 2</sidenav-router-link>
-    <sidenav-router-link route="/module3/section3" [active]="isActive('/module3/section3')">Section 3</sidenav-router-link>
-    </sidenav-menu>
+     <!--Subsistence Allowance-->
+     <sidenav-menu icon="ion ion-md-speedometer" text="Subsistance Allowance" [active]="isMenuActive('/subsistance-allowance')" [open]="isMenuOpen('/subsistance-allowance')">
+      <sidenav-router-link route="/subsistance-allowance/amount-setup" [active]="isActive('/subsistance-allowance/amount-setup')">Subsistence Allowance Amount Setup</sidenav-router-link>
+      <sidenav-router-link route="/subsistance-allowance/allowance-auto" [active]="isActive('/subsistance-allowance/allowance-auto')">Subsistence Allowance Auto</sidenav-router-link>
+      <sidenav-router-link route="/subsistance-allowance/allowance-manual" [active]="isActive('/subsistance-allowance/allowance-manual')">Subsistence Allowance Manual</sidenav-router-link>
+      <sidenav-router-link route="/subsistance-allowance/allowance-report" [active]="isActive('/subsistance-allowance/allowance-report')">Subsistence Allowance Report</sidenav-router-link>
+       </sidenav-menu>
+
+         <!--Income Tax-->
+     <sidenav-menu icon="ion ion-md-speedometer" text="Income Tax" [active]="isMenuActive('/income-tax')" [open]="isMenuOpen('/income-tax')">
+      <sidenav-router-link route="/income-tax/tax-year-info" [active]="isActive('/income-tax/tax-year-info')">Tax Year Information</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/income-tax-slab" [active]="isActive('/income-tax/income-tax-slab')">Income Tax Slab</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/income-tax-setup" [active]="isActive('/income-tax/income-tax-setup')">Income Tax Setup</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/minimum-tax-setup" [active]="isActive('/income-tax/minimum-tax-setup')">Minimum Tax Setup</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/surcharge-assign" [active]="isActive('/income-tax/surcharge-assign')">Surcharge Assign</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/search-charge-setup" [active]="isActive('/income-tax/search-charge-setup')">Search Charge Setup</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/block-tax-calculation" [active]="isActive('/income-tax/block-tax-calculation')">Block Tax Calculation</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/tax-challan" [active]="isActive('/income-tax/tax-challan')">Tax Challan</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/additional-tax-info" [active]="isActive('/income-tax/additional-tax-info')">Additional Tax Information</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/other-tax-calculation" [active]="isActive('/income-tax/other-tax-calculation')">Other Tax Calculation</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/challan-prepare" [active]="isActive('/income-tax/challan-prepare')">Challan Prepare</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/challan-number-assign" [active]="isActive('/income-tax/challan-number-assign')">Challan Number Assign</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/txt-card-report" [active]="isActive('/income-tax/txt-card-report')">Tax Card Report</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/tax-report" [active]="isActive('/income-tax/tax-report')">Tax Report</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/tax-paid-payroll" [active]="isActive('/income-tax/tax-paid-payroll')">Tax Paid Payroll</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/tax-adjust" [active]="isActive('/income-tax/tax-adjust')">Tax Adjust</sidenav-router-link>
+      <sidenav-router-link route="/income-tax/process-income-tax" [active]="isActive('/income-tax/process-income-tax')">Process Income Tax</sidenav-router-link>
+       </sidenav-menu>
+
+         <!--Subsistence Allowance-->
+     <sidenav-menu icon="ion ion-md-speedometer" text="Apprisal" [active]="isMenuActive('/apprisal')" [open]="isMenuOpen('/apprisal')">
+      <sidenav-router-link route="/apprisal/competencies-type" [active]="isActive('/apprisal/competencies-type')">Competencies Type</sidenav-router-link>
+      <sidenav-router-link route="/apprisal/competencies" [active]="isActive('/apprisal/competencies')">Competencies</sidenav-router-link>
+      <sidenav-router-link route="/apprisal/point" [active]="isActive('/apprisal/point')">Point</sidenav-router-link>
+      <sidenav-router-link route="/apprisal/emp-apprisal" [active]="isActive('/apprisal/emp-apprisal')">Employee Appraisal</sidenav-router-link>
+       </sidenav-menu>
+
+       
+     <!--Apps-->
+     <sidenav-menu icon="ion ion-md-speedometer" text="Apps" [active]="isMenuActive('/apps')" [open]="isMenuOpen('/apps')">
+      <sidenav-router-link route="/apps/location-setup" [active]="isActive('/apps/location-setup')">Location Setup</sidenav-router-link>
+      <sidenav-router-link route="/apps/location-show" [active]="isActive('/apps/location-show')">Location Show</sidenav-router-link>
+      <sidenav-router-link route="/apps/active-lnactive" [active]="isActive('/apps/active-lnactive')">Employee Active Location Update</sidenav-router-link>
+       </sidenav-menu>
+ 
 
   </div>
 </sidenav>

@@ -11,9 +11,13 @@ import { AppErrorComponent } from './error/app-error/app-error.component';
 const routes: Routes = [
   { path: '', component:  Layout2Component,  canActivate: [HomeGuard], loadChildren: './home/home.module#HomeModule' },
   { path: 'user', component: LayoutBlankComponent, loadChildren: './user/user.module#UserModule' },
-  { path: 'module1', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/module1/module1.module#Module1Module' },
-  { path: 'module2', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/module2/module2.module#Module2Module' },
-  { path: 'module3', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/module3/module3.module#Module3Module' },
+  { path: 'hr-menu', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/hr-menu/hr-menu.module#HrMenuModule' },
+  { path: 'overtime', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/overtime/overtime.module#OvertimeModule' },
+  { path: 'bonus', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/bonus/bonus.module#BonusModule' },
+  { path: 'subsistance-allowance', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/subsistance-allowance/subsistance-allowance.module#SubsistanceAllowanceModule' },
+  { path: 'income-tax', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/income-tax/income-tax.module#IncomeTaxModule' },
+  { path: 'apprisal', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/apprisal/apprisal.module#ApprisalModule' },
+  { path: 'apps', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/apps/apps.module#AppsModule' },
   { path: 'error', component: AppErrorComponent },
   { path: '**', component: NoPageComponent }
 ];

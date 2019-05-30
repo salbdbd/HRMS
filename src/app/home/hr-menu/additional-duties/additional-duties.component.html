@@ -1,0 +1,263 @@
+<div class="card mb-4 section">
+  <h4 class="card-header text-center bg-light">
+    Employment Additional Duties Information
+  </h4>
+  <div class="card-body">
+    <form>
+
+      <div class="row">
+        <br />
+        <div class="col-md-6">
+          <br />
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right"> Employee Id
+
+            </label>
+
+            <div class="input-group col-sm-8">
+              <input class="form-control" name="" placeholder="Employee-Id">
+              <div class="input-group-append">
+                <button class="input-group-text btn btn-info" type="button">
+                  <span class="ion ion-md-search" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Employee Name
+            </label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" placeholder="Employee Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Designation
+
+            </label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" placeholder="Designation">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <br />
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Department
+
+            </label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" placeholder="Department">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Joining Date
+            </label>
+
+            <div class="input-group col-sm-8">
+              <input class="form-control" name="dp" placeholder="dd-mm-yyyy" ngbDatepicker #d="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Type/Catagory
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Select type</option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Designation
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Responsibilities
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8" style="height: 40px">
+              <input type="text" class="form-control" placeholder="Responsibilities">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">From Date
+              <i class="text-danger">*</i>
+            </label>
+
+            <div class="input-group col-sm-8">
+              <input class="form-control" name="dp2" placeholder="dd-mm-yyyy" ngbDatepicker #d2="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d2.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Duration
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8" style="height: 40px">
+              <input type="text" class="form-control" placeholder="Duration">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Remarks
+            </label>
+            <div class="col-sm-8" style="height: 40px">
+              <input type="text" class="form-control" placeholder="Remarks">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Department/sub committee
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Select type</option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">School/Office/Committee
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Select type</option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+                <option></option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Notice Issue Date
+              <i class="text-danger">*</i>
+            </label>
+            <div class="input-group col-sm-8">
+              <input class="form-control" name="dp1" placeholder="dd-mm-yyyy" ngbDatepicker #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">To Date
+              <i class="text-danger">*</i>
+            </label>
+            <div class="input-group col-sm-8">
+              <input class="form-control" name="dp3" placeholder="dd-mm-yyyy" ngbDatepicker #d3="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d3.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Payment Amount
+
+            </label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" placeholder="Payment Amount">
+            </div>
+          </div>
+
+        </div>
+        <div class="demo-inline-spacing mt-3" style="margin:0 auto">
+          <button type="" class="btn btn-success">
+            <span class="fas fa-save"></span> Save
+          </button>
+          <button type="clear" class="btn btn-info">
+            <span class="ion ion-ios-refresh"></span> Reset
+          </button>
+          <button type="" class="btn btn-secondary ">
+            <span class="fas fa-window-close"></span> Close
+          </button>
+        </div>
+
+      </div>
+      <br />
+      <div class="row">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Responsibilities</th>
+              <th>Duration</th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>2</th>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+            <tr>
+              <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,43 @@
+<div class="card mb-4 section">
+  <h4 class="card-header text-center bg-light">
+    Holiday Information
+  </h4>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-7 center">
+          <div class="form-group row">
+              <label class="col-form-label col-sm-4 ">Start Date
+              </label>
+        
+              <div class="input-group col-sm-8">
+                <input class="form-control" name="dp1" placeholder="dd-mm-yyyy" ngbDatepicker #d1="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="input-group-text" (click)="d1.toggle()" type="button">
+                    <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label class="col-form-label col-sm-4 ">End Date
+              </label>
+        
+              <div class="input-group col-sm-8">
+                <input class="form-control" name="dp1" placeholder="dd-mm-yyyy" ngbDatepicker #d1="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="input-group-text" (click)="d1.toggle()" type="button">
+                    <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="demo-inline-spacing mt-3 " style="margin:0 auto">
+                <button type="submit" class="btn btn-success">
+                  <span class="fas fa-file-download"></span> Generate Report </button>
+              </div>
+            </div>
+      </div>
+    </div>
+
+  </div>
