@@ -1,0 +1,109 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">
+    {{title}}
+  </h4>
+  <div class="card-body">
+    <form action="">
+      <div class="col-md-8 center">
+        <div class="form-group row">
+          <label for="type" class="col-md-3">Select Type</label>
+          <div class="col-md-6">
+            <select name="type" id="type" class="form-control">
+              <option value="">Select type</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="date" class="col-md-3">Payment Date</label>
+          <div class="col-md-6">
+            <select name="date" id="date" class="form-control">
+              <option value="">Select Payment Date</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="month" class="col-md-3">Payment Month</label>
+          <div class="col-md-6">
+            <select name="month" id="month" class="form-control">
+              <option value="">Select Payment Month</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="salaryHead" class="col-md-3">Salary Head</label>
+          <div class="col-md-6">
+            <select name="salaryHead" id="salaryHead" class="form-control">
+              <option value="">Select Salary Head</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="card mb-4">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            Per page: &nbsp;
+            <select [(ngModel)]="perPage" (change)="update()"
+              class="custom-select custom-select-md d-inline-block w-auto">
+              <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+              class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+          </div>
+        </div>
+      </div>
+      <table class="table table-hover table-striped mb-2">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Employee Name</th>
+            <th>Designation</th>
+            <th>Department</th>
+            <th>Shift Amount</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="tempItems.length==0">
+            <td colspan="11" class="font-italic text-center">No Item available</td>
+          </tr>
+          <tr *ngFor="let item of tempItems">
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td><button class="btn btn-danger"><span class="fas fa-trash"></span></button></td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Pagination -->
+      <div class="card-body py-0">
+        <div class="row">
+          <div class="col-sm text-sm-left text-center pt-3">
+            <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+          </div>
+          <div class="col-sm pt-3">
+            <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+              (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+            </ngb-pagination>
+          </div>
+        </div>
+      </div>
+      <!-- / Pagination -->
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <p>Total Employee (s) : 0</p>
+      </div>
+      <div class="demo-inline-spacing col-md-6">
+        <button class="btn btn-success">Save</button>
+        <button class="btn btn-secondary">Close</button>
+        <button class="btn btn-info"><span class="fas fa-plus"></span> Add Row</button>
+      </div>
+    </div>
+  </div>
+</div>

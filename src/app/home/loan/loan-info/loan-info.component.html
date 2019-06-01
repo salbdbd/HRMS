@@ -1,0 +1,257 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">{{title}}</h4>
+  <div class="card-body">
+    <div class="card">
+      <h5 class="card-header">Employee Basic Information</h5>
+      <div class="card-body row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label for="empCode" class="col-md-4">Employee Code</label>
+            <div class="input-group col-md-6">
+              <input type="text" name="employeeCode" id="empCode" class="form-control" placeholder="Employee Code">
+              <div class="input-group-append">
+                <button class="input-group-text btn btn-info" type="button">
+                  <span class="fas fa-search" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="empName" class="col-md-4">Employee Name</label>
+            <div class="col-md-6">
+              <input type="text" name="employeeName" id="empName" class="form-control" disabled>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="location" class="col-md-4">Location</label>
+            <div class="col-md-6">
+              <input type="text" name="location" id="location" class="form-control" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="form-label col-md-4" for="joiningDate">Joining Date</label>
+            <div class="input-group col-md-6">
+              <input class="form-control" placeholder="dd-mm-yyyy" id="joiningDate" name="joiningDate" ngbDatepicker
+                [(ngModel)]="joiningDate" [displayMonths]="1" #d1="ngbDatepicker" disabled>
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="designation" class="col-md-4">Designation</label>
+            <div class="col-md-6">
+              <input type="text" name="designation" id="designation" class="form-control" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <br>
+    <div class="card">
+      <h5 class="card-header">Employee Loan Information</h5>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-4 border padding-top">
+            <div class="form-group row">
+              <label for="type" class="col-md-4">Loan Type</label>
+              <div class="col-md-8">
+                <select name="type" id="type" class="form-control">
+                  <option value="">Select Type</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group-row">
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    <th>Salary Head</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Provident fund loan</td>
+                    <td><button class="btn btn-default">Select</button></td>
+                  </tr>
+                  <tr>
+                    <td>Advance Salary</td>
+                    <td><button class="btn btn-default">Select</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col-md-4 border padding-top">
+            <div class="form-group row">
+              <label class="form-label col-md-5" for="loanDate">Loan Date</label>
+              <div class="input-group col-md-7">
+                <input class="form-control" placeholder="dd-mm-yyyy" id="loanDate" name="loanDate" ngbDatepicker
+                  [(ngModel)]="loanDate" [displayMonths]="1" #d2="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="input-group-text" (click)="d2.toggle()" type="button">
+                    <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="amount" class="col-md-5">Loan Amount</label>
+              <div class="col-md-7">
+                <input type="number" name="amount" id="amount" class="form-control" placeholder="Amount">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="downPayment" class="col-md-5">Down Payment</label>
+              <div class="col-md-7">
+                <input type="number" name="downPayment" id="downPayment" class="form-control"
+                  placeholder="Down Payment">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="netLoan" class="col-md-5">Net Loan</label>
+              <div class="col-md-7">
+                <input type="number" name="netLoan" id="netLoan" class="form-control" placeholder="Net Loan">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="remarks" class="col-md-5">Remarks</label>
+              <div class="col-md-7">
+                <textarea rows="2" name="remarks" id="remarks" class="form-control" placeholder="Remarks"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 border padding-top">
+            <div class="form-group row">
+              <label for="installment" class="col-md-5">Installment Start</label>
+              <div class="col-md-7">
+                <select name="installment" id="installment" class="form-control">
+                  <option value="">Select Installment</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="noOfInst" class="col-md-5">No of Installment</label>
+              <div class="col-md-7">
+                <input type="number" name="noOfInstallment" id="noOfInst" class="form-control"
+                  placeholder="No Of Installment">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="installmentType" class="col-md-5">Installment Type</label>
+              <div class="col-md-7">
+                <select name="installmentType" id="installmentType" class="form-control">
+                  <option value="">Select Type</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="interest" class="col-md-5">Interest</label>
+              <div class="col-md-7">
+                <input type="number" name="interest" id="interest" class="form-control" placeholder="Interest">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="size" class="col-md-5">Installment Size</label>
+              <div class="col-md-7">
+                <input type="number" name="size" id="size" class="form-control" placeholder="Installment Size">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-4"></div>
+          <div class="col-md-4 demo-inline-spacing">
+            <button class="btn btn-success"><span class="fas fa-save"></span> Save</button>
+            <button class="btn btn-info"><span class="ion ion-ios-refresh"></span> Clear</button>
+            <button class="btn btn-secondary"><span class="ion ion-ios-close"></span> Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-4 center">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="card-header">
+            <div class="row">
+              <div class="col">
+                Per page: &nbsp;
+                <select [(ngModel)]="perPage" (change)="update()"
+                  class="custom-select custom-select-md d-inline-block w-auto">
+                  <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+                </select>
+              </div>
+              <div class="col">
+                <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+                  class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+              </div>
+            </div>
+          </div>
+          <div class="card-body py-0">
+            <div class="row">
+              <table class="table table-hover table-striped mb-2">
+                <thead>
+                  <tr>
+                    <th>Loan Date</th>
+                    <th>Loan Amount</th>
+                    <th>Net Loan</th>
+                    <th>Monthly Adjust</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngIf="tempItems.length==0">
+                    <td colspan="11" class="font-italic text-center">No Item available</td>
+                  </tr>
+                  <tr *ngFor="let item of tempItems">
+                    <td>{{item}}</td>
+                    <td>{{item}}</td>
+                    <td>{{item}}</td>
+                    <td>{{item}}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- Pagination -->
+            <div class="row">
+              <div class="col-sm text-sm-left text-center pt-3">
+                <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+              </div>
+              <div class="col-sm pt-3">
+                <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+                  (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+                </ngb-pagination>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 padding-top">
+          <div class="form-group row">
+            <label for="totalLoan" class="col-md-5">Total Loan</label>
+            <div class="col-md-7">
+              <input type="number" name="totalLoan" id="totalLoan" class="form-control" placeholder="Total Loan">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="totalLoanBack" class="col-md-5">Total Loan Back</label>
+            <div class="col-md-7">
+              <input type="number" name="totalLoanBack" id="totalLoanBack" class="form-control"
+                placeholder="Total Loan Back">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="totalDue" class="col-md-5">Total Due</label>
+            <div class="col-md-7">
+              <input type="number" name="totalDue" id="totalDue" class="form-control" placeholder="Total Due">
+            </div>
+          </div>
+
+        </div>
+        <!-- / Pagination -->
+      </div>
+    </div>
+  </div>
+</div>
