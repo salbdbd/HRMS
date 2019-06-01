@@ -1,0 +1,124 @@
+<div class="card mb-4">
+  <h4 class="card-header text-center">
+    Leave Type Setup
+  </h4>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <!--Employee Id-->
+        <div class="form-group row ">
+          <label class="col-form-label col-sm-5 text-sm-right">Employee Id</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Employee Id">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Employee Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Employee Name</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Employee Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Designation Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Designation Name</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Designation Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Start Date-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Leave Start From Date</label>
+          <div class="col-sm-7">
+            <div class="input-group">
+              <input class="form-control" name="fromDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="fromDate"
+                #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--End Date-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">To Date</label>
+          <div class="col-sm-7">
+            <div class="input-group">
+              <input class="form-control" name="toDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="toDate"
+                #d2="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d2.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--End Row-->
+    <!--Button-->
+    <div class="row">
+      <button type="submit" class="btn btn-success" style="margin:0 auto">
+        <span class="fas fa-save"></span> Show</button>
+    </div>
+    <!-- Table-->
+    <hr class="border-light container-m--x mt-0 mb-4">
+
+    <div class="demo-vertical-spacing">
+      <div class="table-responsive ">
+        <table class="table table-bordered w-100">
+          <thead>
+            <tr class="text-center">
+              <th>ID</th>
+              <th>Employee Name</th>
+              <th>Designation</th>
+              <th>Department</th>
+              <th>Leave Type</th>
+              <th>Apply Date</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>With Pay</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <!--Button-->
+    <div class="form-group row text-right">
+      <label class="col-form-label col-sm-5 text-sm-right"></label>
+      <div class="demo-inline-spacing mt-3">
+        <button type="submit" class="btn btn-success">
+          <span class="fas fa-save"></span> Save</button>
+        <button type="" class="btn btn-secondary">
+          <span class="fas fa-window-close"></span> Close</button>
+      </div>
+    </div>
+  </div>
+</div>

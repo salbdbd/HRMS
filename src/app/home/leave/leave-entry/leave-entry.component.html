@@ -1,0 +1,333 @@
+<div class="card mb-4">
+  <h4 class="card-header text-center">Leave Entry</h4>
+  <div class="card-body">
+    <!--1st Row -->
+    <div class="row pt-3" style="border: 1px solid lightgray;">
+      <!--Left column-->
+      <div class="col-6">
+        <!--Employee Id-->
+        <div class="form-group row ">
+          <label class="col-form-label col-sm-4 text-sm-right">Employee Id</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Employee Id">
+          </div>
+          <button type="button" class="btn icon-btn btn-outline-primary">
+            <span class="fas fa-search"></span>
+          </button>
+        </div>
+        <!--Employee Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">Employee Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" placeholder="Employee Name">
+          </div>
+        </div>
+        <!--Designation Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">Designation Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" placeholder="Designation Name">
+          </div>
+        </div>
+        <!--Department Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">Department Name</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" placeholder="Department Name">
+          </div>
+        </div>
+      </div>
+
+      <div class="vertical"></div>
+      <!--Right column-->
+      <div class="col-6">
+        <!--Leave Type-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">Leave Type</label>
+          <div class="col-sm-8">
+            <select class="form-control">
+              <option>Select</option>
+              <option>Option-1</option>
+              <option>Option-2</option>
+              <option>Option-3</option>
+              <option>Option-4</option>
+            </select>
+          </div>
+        </div>
+        <!--From Date-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">From Date</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <input class="form-control" name="fromDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="fromDate"
+                #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--To Date-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">To Date</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <input class="form-control" name="toDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="toDate"
+                #d2="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d2.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Leave Duration-->
+        <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Leave Duration</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" placeholder="Leave Duration">
+            </div>
+          </div>
+        <!--Apply Date-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">Apply Date</label>
+          <div class="col-sm-8">
+            <div class="input-group">
+              <input class="form-control" name="applyDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="applyDate"
+                #d3="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d3.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--Reason-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">Reason</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" placeholder="Reason">
+          </div>
+        </div>
+        <!--Emergency Contact-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">Emergency Contact No</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" placeholder="Emergency Contact">
+          </div>
+        </div>
+        <!--Address-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right">Address</label>
+          <div class="col-sm-8">
+            <input type="text" class="form-control" placeholder="Address">
+          </div>
+        </div>
+        <!--Radios-->
+        <div class="form-group row ">
+          <label class="col-form-label col-sm-4 text-sm-right"></label>
+          <div class="col-sm-4">
+            <label class="custom-control custom-radio">
+              <input name="custom-radio-3" type="radio" class="custom-control-input" checked>
+              <span class="custom-control-label"> With Pay</span>
+            </label>
+          </div>
+          <div class="col-sm-4">
+            <label class="custom-control custom-radio">
+              <input name="custom-radio-3" type="radio" class="custom-control-input">
+              <span class="custom-control-label"> Without Pay</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!--1st End row-->
+    <!--2nd row-->
+    <div class="row pt-3">
+      <!--Left column-->
+      <div class="col-6" style="border: 1px solid lightgray; ">
+            <!-- Table-->
+    <div class="demo-vertical-spacing card-footer">
+      <div class="table-responsive" style="height: 229px;" >
+        <table class="table table-bordered ">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Leave Type</th>
+              <th>Total</th>
+              <th>Availed</th>
+              <th>Balance</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th></th>
+              <td> </td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+      </div>
+      <!-- end Left column-->
+
+      <div class="vertical"></div>
+      <!--Right column-->
+      <div class="col-6 p-3" style="border: 1px solid lightgray;">
+        <!--Employee Id-->
+        <h5 >Apply To</h5>
+        <div class="form-group row " >
+            <label class="col-form-label col-sm-4 text-sm-right">Employee Id</label>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" placeholder="Employee Id">
+            </div>
+            <button type="button" class="btn icon-btn btn-outline-primary">
+              <span class="fas fa-search"></span>
+            </button>
+          </div>
+          <!--Employee Name-->
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Employee Name</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" placeholder="Employee Name">
+            </div>
+          </div>
+          <!--Designation Name-->
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Designation Name</label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" placeholder="Designation Name">
+            </div>
+          </div>
+      </div>
+    </div>
+    <!--end 2nd row-->
+    
+    <!--Start 3rd row-->
+    <div class="row pt-3">
+        <!--Left column-->
+        <div class="col-6" style="border: 1px solid lightgray; ">
+              <!-- Table-->
+      <div class="demo-vertical-spacing card-footer">
+        <div class="table-responsive" style="height: 229px;" >
+          <table class="table table-bordered ">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Apply Date</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Duration</th>
+                <th>Print</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th></th>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+        </div>
+        <!-- end Left column-->
+        <div class="vertical"></div>
+        <!--Right column-->
+        <div class="col-6 p-3" style="border: 1px solid lightgray;">
+          <!--Employee Id-->
+          <h5 >Apply To</h5>
+          <div class="form-group row " >
+              <label class="col-form-label col-sm-4 text-sm-right">Employee Id</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control" placeholder="Employee Id">
+              </div>
+              <button type="button" class="btn icon-btn btn-outline-primary">
+                <span class="fas fa-search"></span>
+              </button>
+            </div>
+            <!--Employee Name-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-4 text-sm-right">Employee Name</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="Employee Name">
+              </div>
+            </div>
+            <!--Designation Name-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-4 text-sm-right">Designation Name</label>
+              <div class="col-sm-8">
+                <input type="text" class="form-control" placeholder="Designation Name">
+              </div>
+            </div>
+        </div>
+      </div>
+
+    <!--End 3rd row-->
+    <!--Start 4th row-->
+    <div class="row pt-3">
+        <!--Left column-->
+        <div class="col-8" style="border: 1px solid lightgray; ">
+              <!-- Table-->
+      <div class="demo-vertical-spacing card-footer">
+        <div class="table-responsive" style="height: 229px;" >
+          <table class="table table-bordered ">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Leave Name</th>
+                <th>Duration</th>
+                <th>Last Position</th>
+                <th>Remark</th>
+                <th>Status</th>
+                <th>Details</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th></th>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+        </div>
+        <!-- end Left column-->
+        <div class="vertical"></div>
+        <!--Right column-->
+        <div class="col-4 p-3">
+         <!--Button-->
+         <div class="form-group row m-auto">
+            <label class="col-form-label col-sm-2 text-sm-right"></label>
+            <div class="demo-inline-spacing mt-3">
+              <button type="submit" class="btn btn-success">
+                <span class="fas fa-save"></span> Apply</button>
+              <button type="" class="btn btn-secondary">
+                <span class="far fa-window-close"></span> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    <!--End 4th row-->
+
+  </div>
+  <!--end Card body-->
+</div>

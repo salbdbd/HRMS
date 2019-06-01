@@ -14,6 +14,8 @@ const routes: Routes = [
   { path: 'module1', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/module1/module1.module#Module1Module' },
   { path: 'module2', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/module2/module2.module#Module2Module' },
   { path: 'module3', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/module3/module3.module#Module3Module' },
+  { path: 'property', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/property/property.module#PropertyModule' },
+  { path: 'leave', component: Layout2Component, canActivate: [HomeGuard], loadChildren: './home/leave/leave.module#LeaveModule' },
   { path: 'error', component: AppErrorComponent },
   { path: '**', component: NoPageComponent }
 ];

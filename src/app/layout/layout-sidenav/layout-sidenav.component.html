@@ -38,6 +38,31 @@
       <sidenav-router-link route="/order/order-approval" [active]="isActive('/order/order-approval')">Order Approval</sidenav-router-link>
       <sidenav-router-link route="/order/section4" [active]="isActive('/module1/section4')">Section 4</sidenav-router-link>
     </sidenav-menu>    -->
+      <!-- Property -->
+      <sidenav-menu icon="ion ion-md-speedometer" text="Property" [active]="isMenuActive('/property')" [open]="isMenuOpen('/property')">
+        <sidenav-router-link route="/property/property-category" [active]="isActive('/property/property-category')">Property Category</sidenav-router-link>
+        <sidenav-router-link route="/property/property-name" [active]="isActive('/property/property-Name')">Property Name</sidenav-router-link>
+        <sidenav-router-link route="/property/vehicle-tax-assagin" [active]="isActive('/property/vehicle-tax-assagin')">Vehicle Tax Assagin</sidenav-router-link>
+        <sidenav-router-link route="/property/asset-addition" [active]="isActive('/property/asset-addition')">Asset Addition</sidenav-router-link>
+        <sidenav-router-link route="/property/property-assaign" [active]="isActive('/property/property-assaign')">Property Assaign</sidenav-router-link>
+        <sidenav-router-link route="/property/property-disposal" [active]="isActive('/property/property-disposal')">Property Disposal</sidenav-router-link>
+        <sidenav-router-link route="/property/report" [active]="isActive('/property/report')">Report</sidenav-router-link>
+
+        </sidenav-menu>
+      <!-- Leave  -->
+      <sidenav-menu icon="ion ion-md-speedometer" text="Leave" [active]="isMenuActive('/leave')" [open]="isMenuOpen('/leave')">
+        <sidenav-router-link route="/leave/leave-setup" [active]="isActive('/leave/leave-setup')">Leave Setup</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-entry" [active]="isActive('/leave/leave-entry')">Leave Entry</sidenav-router-link>
+        <sidenav-router-link route="/leave/manual-leave-entry" [active]="isActive('/leave/manual-leave-entry')">Manual Leave Entry</sidenav-router-link>
+        <sidenav-router-link route="/leave/update-leave-entry" [active]="isActive('/leave/update-leave-entry')">Update Leave Entry</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-approval" [active]="isActive('/leave/leave-approval')">Leave Approval</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-approval-by-hr" [active]="isActive('/leave/leave-approval-by-hr')">Leave Approval By HR</sidenav-router-link>
+        <sidenav-router-link route="/leave/emp-leave-opening-balance" [active]="isActive('/leave/emp-leave-opening-balance')">Employee Leave Opening Balance</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-carry-forward" [active]="isActive('/leave/leave-carry-forward')">Leave Carry Forward</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-encashment" [active]="isActive('/leave/leave-encashment')">Leave Encashment</sidenav-router-link>
+
+        </sidenav-menu>
+
     <!-- Module1 -->
     <sidenav-menu icon="ion ion-md-speedometer" text="Module 1" [active]="isMenuActive('/module1')" [open]="isMenuOpen('/module1')">
     <sidenav-router-link route="/module1/section1" [active]="isActive('/module1/section1')">Section 1</sidenav-router-link>

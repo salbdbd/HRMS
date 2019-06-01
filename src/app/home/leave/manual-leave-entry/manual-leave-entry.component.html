@@ -1,0 +1,203 @@
+<div class="card mb-4">
+  <h4 class="card-header text-center">
+    Leave Type Setup
+  </h4>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-6">
+        <!--Employee Id-->
+        <div class="form-group row ">
+          <label class="col-form-label col-sm-5 text-sm-right">Employee Id</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Employee Id">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Employee Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Employee Name</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Employee Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Designation Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Designation Name</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Designation Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Department Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Department Name</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Department Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Leave Type-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Leave Type</label>
+          <div class="col-sm-7">
+            <select class="form-control">
+              <option>Select</option>
+              <option>Option-1</option>
+              <option>Option-2</option>
+              <option>Option-3</option>
+              <option>Option-4</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Apply Date-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Apply Date</label>
+          <div class="col-sm-7">
+            <div class="input-group">
+              <input class="form-control" name="applyDate" placeholder="dd-mm-yyyy" ngbDatepicker
+                [(ngModel)]="applyDate" #d3="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d3.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Start Date-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Start Date</label>
+          <div class="col-sm-7">
+            <div class="input-group">
+              <input class="form-control" name="fromDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="fromDate"
+                #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--End Date-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">End Date</label>
+          <div class="col-sm-7">
+            <div class="input-group">
+              <input class="form-control" name="toDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="toDate"
+                #d2="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d2.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Duration-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Duration</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Duration">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Duration-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Duration</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Duration">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Employee Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Contact No</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Employee Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <!--Designation Name-->
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">Address</label>
+          <div class="col-sm-7">
+            <input type="text" class="form-control" placeholder="Designation Name">
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="form-group row">
+          <label class="col-form-label col-sm-5 text-sm-right">With Pay</label>
+          <label class="col-form-label col-sm-3 text-sm-right"></label>
+          <div class="col-4" style="padding-top: 10px"> <input class="form-check-input" type="checkbox" checked></div>
+        </div>
+      </div>
+      <div class="col-6"></div>
+    </div>
+    <!--End Row-->
+    <!--Button-->
+    <div class="row">
+      <button type="submit" class="btn btn-success" style="margin:0 auto">
+        <span class="fas fa-save"></span> Add</button>
+    </div>
+    <!-- Table-->
+    <th>Departent</th>
+    <hr class="border-light container-m--x mt-0 mb-4">
+    <div class="demo-vertical-spacing">
+      <div class="table-responsive ">
+        <table class="table table-bordered" style="width: auto">
+          <thead>
+            <tr class="text-center">
+              <th>ID</th>
+              <th>Employee Name</th>
+              <th>Designation</th>
+              <th>Leave Type</th>
+              <th>Apply Date</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>With Pay</th>
+              <th>Duration</th>
+              <th>Reason</th>
+              <th>Contact No</th>
+              <th>Address</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
