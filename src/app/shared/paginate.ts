@@ -1,4 +1,5 @@
 export class Pagination{
+
     perPage = 5;
     filterVal = '';
     currentPage = 1;
@@ -8,7 +9,7 @@ export class Pagination{
     searchKeys = ['name'];
     items:any[]=[];
     tempItems:any[]=[];
-  
+
     constructor() { }
   
     ngOnInit() {
@@ -77,3 +78,4 @@ export class Pagination{
       this.tempItems = this.paginate(data);
     }
   }
+ 
