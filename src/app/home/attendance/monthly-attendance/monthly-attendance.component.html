@@ -1,0 +1,166 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">
+    {{title}}
+  </h4>
+  <div class="card-body">
+    <form action="">
+      <div class="row center">
+        <div class="col-md-6 border">
+          <div class="form-group row">
+            <label for="year" class="col-md-3">Year</label>
+            <div class="col-md-9">
+              <select name="year" id="year" class="form-control">
+                <option value="">Select Year</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="period" class="col-md-3">Period</label>
+            <div class="col-md-9">
+              <select name="period" id="period" class="form-control">
+                <option value="">Select Period</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="form-label col-md-3" for="fromDate">From Date</label>
+            <div class="input-group col-md-9">
+              <input class="form-control" placeholder="dd-mm-yyyy" name="fromDate" ngbDatepicker [(ngModel)]="fromDate"
+                [displayMonths]="1" #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="form-label col-md-3" for="toDate">To Date</label>
+            <div class="input-group col-md-9">
+              <input class="form-control" placeholder="dd-mm-yyyy" name="toDate" ngbDatepicker [(ngModel)]="toDate"
+                [displayMonths]="1" #d2="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d2.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 border">
+          <div class="form-group row">
+            <label for="department" class="col-md-3">Department</label>
+            <div class="col-md-9">
+              <select name="department" id="department" class="form-control">
+                <option value="">Select Department</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="project" class="col-md-3">Project</label>
+            <div class="col-md-9">
+              <select name="project" id="project" class="form-control">
+                <option value="">Select Project</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="branch" class="col-md-3">Branch</label>
+            <div class="col-md-9">
+              <select name="branch" id="branch" class="form-control">
+                <option value="">Select Branch</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="empCode" class="col-md-3">Employee Code</label>
+            <div class="input-group col-md-9">
+              <input type="text" name="employeeCode" id="empCode" class="form-control" placeholder="Employee Code">
+              <div class="input-group-append">
+                <button class="input-group-text btn btn-info" type="button">
+                  <span class="fas fa-search" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="demo-inline-spacing center">
+          <button class="btn btn-primary">Show Data</button>
+          <button class="btn btn-info">For Edit</button>
+          <button class="btn btn-success"><span class="fas fa-save"></span> Save</button>
+        </div>
+      </div>
+    </form>
+    <div class="card mb-4">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            Per page: &nbsp;
+            <select [(ngModel)]="perPage" (change)="update()"
+              class="custom-select custom-select-md d-inline-block w-auto">
+              <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+              class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+          </div>
+        </div>
+      </div>
+      <table class="table table-hover table-striped mb-2 table-responsive">
+        <thead>
+          <tr>
+            <th>Code</th>
+            <th>Action</th>
+            <th>Employee Name</th>
+            <th>Designation</th>
+            <th>Department</th>
+            <th>Working Day</th>
+            <th>Attendance</th>
+            <th>With Pay</th>
+            <th>Without Pay</th>
+            <th>Holyday</th>
+            <th>Absent</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="tempItems.length==0">
+            <td colspan="11" class="font-italic text-center">No Item available</td>
+          </tr>
+          <tr *ngFor="let item of tempItems">
+            <td>{{item}}</td>
+            <td>
+              <button class="btn btn-danger"><span class="fas fa-trash"></span></button>
+            </td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Pagination -->
+      <div class="card-body py-0">
+        <div class="row">
+          <div class="col-sm text-sm-left text-center pt-3">
+            <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+          </div>
+          <div class="col-sm pt-3">
+            <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+              (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+            </ngb-pagination>
+          </div>
+        </div>
+      </div>
+      <!-- / Pagination -->
+    </div>
+  </div>
+</div>

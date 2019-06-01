@@ -1,0 +1,397 @@
+<div class="card mb-4 section">
+  <h4 class="card-header text-center bg-light">
+    Employee General Information
+  </h4>
+  <div class="card-body">
+    <form>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right"> Employee Id
+              <i class="text-danger">*</i>
+            </label>
+
+            <div class="input-group col-sm-6">
+              <input class="form-control" name="" placeholder="Employee-Id">
+              <div class="input-group-append">
+                <button class="input-group-text btn btn-info" type="button">
+                  <span class="ion ion-md-search" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <button type="submit" class="btn btn-success">
+                <span class="fas fa-plus"></span> new</button>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">State</label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Select state</option>
+                <option>California</option>
+                <option>Hawaii</option>
+                <option>Florida</option>
+                <option>Texas</option>
+                <option>Massachusetts</option>
+                <option>Alabama</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">First Name
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <input type="text" class="form-control" placeholder="First Name">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Last Name
+
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Last Name">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Surname
+
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Surname">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Suffix
+
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Select state</option>
+                <option>California</option>
+                <option>Hawaii</option>
+                <option>Florida</option>
+                <option>Texas</option>
+                <option>Massachusetts</option>
+                <option>Alabama</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Gender
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Male</option>
+                <option>Female</option>
+                <option>Other</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Birth Date
+              <i class="text-danger">*</i>
+            </label>
+
+            <div class="input-group col-sm-8">
+              <input class="form-control" name="dp1" placeholder="dd-mm-yyyy" ngbDatepicker #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Blood Group
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>A+</option>
+                <option>B+</option>
+                <option>Ab+</option>
+                <option>Ab+</option>
+                <option>Ab-</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Hight In Inch
+
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Hight In Inch">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Weight In Kg
+
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Weight In Kg">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Religion
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Muslim</option>
+                <option>Hindu</option>
+                <option>Buddhist</option>
+                <option>Khristan</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Nationality
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Bangladeshi</option>
+                <option>Indian</option>
+                <option>Pakhistani</option>
+
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">National Id
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="National Id">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Passport No
+
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Passport No">
+            </div>
+
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Issue Date
+            </label>
+
+            <div class="input-group col-sm-8">
+              <input class="form-control" name="dp1" placeholder="dd-mm-yyyy" ngbDatepicker #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Expire Date
+
+            </label>
+
+            <div class="input-group col-sm-8">
+              <input class="form-control" name="dp1" placeholder="dd-mm-yyyy" ngbDatepicker #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Tin no
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Tin No">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-4 text-sm-right">Picture
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-md-8">
+              <div class="row">
+                <input type="file" class="form-input-file">
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="" class="btn btn-danger">
+                    Remove
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <img id="preview" class="" src="../../../../assets/img/default.png" alt="image preview place"
+                    name="Picture" class="form-control" style="height: 100px; width:100px;" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-md-4 text-sm-right">Picture
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-md-8">
+              <div class="row">
+                <input type="file" class="form-input-file">
+              </div>
+              <br />
+              <div class="row">
+                <div class="col-md-6">
+                  <button type="" class="btn btn-danger">
+                    Remove
+                  </button>
+                </div>
+                <div class="col-md-6">
+                  <img id="preview" class="" src="../../../../assets/img/default.png" alt="image preview place"
+                    name="Picture" class="form-control" style="height: 100px; width:100px;" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Maritial Status
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Single </option>
+                <option>mrried</option>
+                <option></option>
+                <option></option>
+
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Age
+
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Age">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Spouse Name
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Spouse Name">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Father's Name
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Father's Name">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right ">Father's Occupation
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Select</option>
+                <option></option>
+                <option></option>
+                <option></option>
+
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Mother's Name
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Mother's Name">
+            </div>
+
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Mother's Occupation
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <select class="custom-select ">
+                <option>Select</option>
+                <option></option>
+                <option></option>
+                <option></option>
+
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Remarks
+              <i class="text-danger">*</i>
+            </label>
+            <div class="col-sm-8">
+              <input id="" type="text" class="form-control" placeholder="Remarks">
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class=" row">
+
+        <div class="demo-inline-spacing mt-3" style="margin:0 auto">
+          <button type="" class="btn btn-success">
+            <span class="fas fa-save"></span> Save
+          </button>
+          <button type="clear" class="btn btn-info">
+            <span class="ion ion-ios-refresh"></span> Reset
+          </button>
+          <button type="" class="btn btn-secondary ">
+            <span class="fas fa-window-close"></span> Close
+          </button>
+          <button type="" class="btn btn-danger">
+            <span class="fas fa-trash-alt"></span> Delete
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <div class="card-footer">
+    <div class="row">
+    <div class="demo-inline-spacing mt-3 center">
+        <button type="" class="btn btn-secondary">Contact</button>
+        <button type="" class="btn btn-secondary">Family</button>
+        <button type="" class="btn btn-secondary">Reference</button>
+        <button type="" class="btn btn-secondary">Education</button>
+        <button type="" class="btn btn-secondary">Experience</button>
+      </div>
+    </div>
+    <div class="row">
+      
+    <div class="demo-inline-spacing mt-3 center">
+        <button type="" class="btn btn-secondary">Professional</button>
+        <button type="" class="btn btn-secondary">Award</button>
+        <button type="" class="btn btn-secondary">Publication</button>
+        <button type="" class="btn btn-secondary">Scholarship</button>
+        <button type="" class="btn btn-secondary">Training</button>
+      </div>
+    </div>
+  </div>
+</div>

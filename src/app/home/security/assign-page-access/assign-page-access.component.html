@@ -1,0 +1,53 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">{{title}}</h4>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6 center">
+        <div class="form-group row">
+          <label for="userName" class="col-md-4">User Name</label>
+          <div class="col-md-8">
+            <select name="userName" id="userName" class="form-control">
+              <option value="">Select User</option>
+            </select>
+          </div>
+        </div>
+        <ul class="list-group">
+          <li class="list-group-item">
+            <input type="checkbox" name="system" id="system" class="form-input-check"> &nbsp; &nbsp;
+            <label (click)="toggle()" for="system" class="">System Setup </label>
+            <span class="fas fa-caret-down" style="float:right"></span>
+            <ul *ngIf="isCollapse" class="list-group">
+              <li @listAnimation class="list-group-item">
+                <input type="checkbox" name="basicEntry" id="basicEntry" class="form-input-check"> &nbsp; &nbsp;
+                <label for="basicEntry" class="">Basic Entry </label>
+                <span class="fas fa-caret-down" style="float:right"></span>
+              </li>
+              <li @listAnimation class="list-group-item">
+                <input type="checkbox" name="bankBranch" id="bankBranch" class="form-input-check"> &nbsp; &nbsp;
+                <label for="bankBranch" class="">Bank Branch </label>
+              </li>
+              <li @listAnimation class="list-group-item">
+                <input type="checkbox" name="division" id="division" class="form-input-check"> &nbsp; &nbsp;
+                <label for="division" class="">Division </label>
+              </li>
+            </ul>
+          </li>
+          <li class="list-group-item">
+            <input type="checkbox" name="attendance" id="attendance" class="form-input-check"> &nbsp; &nbsp;
+            <label for="attendance" class="">Attendance </label>
+            <span class="fas fa-caret-down" style="float:right"></span>
+          </li>
+          <li class="list-group-item">
+            <input type="checkbox" name="shift" id="shift" class="form-input-check"> &nbsp; &nbsp;
+            <label for="shift" class="">Shift Allowance </label>
+            <span class="fas fa-caret-down" style="float:right"></span>
+          </li>
+        </ul>
+        <br>
+        <div class="row">
+          <button class="btn btn-success center"><span class="fas fa-save"></span> Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

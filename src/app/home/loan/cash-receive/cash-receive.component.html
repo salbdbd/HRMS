@@ -1,0 +1,167 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">{{title}}</h4>
+  <div class="card-body">
+    <div class="card">
+      <h5 class="card-header">Employee Basic Information</h5>
+      <div class="card-body row">
+        <div class="col-md-6">
+            <div class="form-group row">
+                <label for="empCode" class="col-md-4">Employee Code</label>
+                <div class="input-group col-md-6">
+                  <input type="text" name="employeeCode" id="empCode" class="form-control" placeholder="Employee Code">
+                  <div class="input-group-append">
+                    <button class="input-group-text btn btn-info" type="button">
+                      <span class="fas fa-search" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+          <div class="form-group row">
+            <label for="empName" class="col-md-4">Employee Name</label>
+            <div class="col-md-6">
+              <input type="text" name="employeeName" id="empName" class="form-control" disabled>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label class="form-label col-md-4" for="joiningDate">Joining Date</label>
+            <div class="input-group col-md-6">
+              <input class="form-control" placeholder="dd-mm-yyyy" id="joiningDate" name="joiningDate" ngbDatepicker
+                [(ngModel)]="joiningDate" [displayMonths]="1" #d1="ngbDatepicker" disabled>
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="designation" class="col-md-4">Designation</label>
+            <div class="col-md-6">
+              <input type="text" name="designation" id="designation" class="form-control" disabled>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> <br>
+    <div class="card">
+      <h5 class="card-header">Employee Payment Information</h5>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-md-6 border padding-top">
+            <div class="form-group row">
+              <label for="type" class="col-md-4">Loan Type</label>
+              <div class="col-md-8">
+                <select name="type" id="type" class="form-control">
+                  <option value="">Select Type</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="principalAmount" class="col-md-4">Principal Amount</label>
+              <div class="col-md-8">
+                <input type="number" name="principalAmount" id="principalAmount" class="form-control"
+                  placeholder="Principal Amount">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="netAmount" class="col-md-4">Net Amount</label>
+              <div class="col-md-8">
+                <input type="number" name="netAmount" id="netAmount" class="form-control" placeholder="Net Amount">
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6 border padding-top">
+            <div class="form-group row">
+              <label class="form-label col-md-5" for="paymentDate">Payment Date</label>
+              <div class="input-group col-md-7">
+                <input class="form-control" placeholder="dd-mm-yyyy" id="paymentDate" name="paymentDate" ngbDatepicker
+                  [(ngModel)]="paymentDate" [displayMonths]="1" #d1="ngbDatepicker">
+                <div class="input-group-append">
+                  <button class="input-group-text" (click)="d1.toggle()" type="button">
+                    <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="interest" class="col-md-5">Interest</label>
+              <div class="col-md-7">
+                <input type="number" name="interest" id="interest" class="form-control" placeholder="Interest">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="remarks" class="col-md-5">Remarks</label>
+              <div class="col-md-7">
+                <textarea rows="2" name="remarks" id="remarks" class="form-control" placeholder="Remarks"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6"></div>
+          <div class="col-md-6 demo-inline-spacing">
+            <button class="btn btn-success"><span class="fas fa-save"></span> Save</button>
+            <button class="btn btn-info"><span class="ion ion-ios-refresh"></span> Clear</button>
+            <button class="btn btn-secondary"><span class="ion ion-ios-close"></span> Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card mb-4 center">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            Per page: &nbsp;
+            <select [(ngModel)]="perPage" (change)="update()"
+              class="custom-select custom-select-md d-inline-block w-auto">
+              <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+              class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+          </div>
+        </div>
+      </div>
+      <div class="card-body py-0">
+        <div class="row">
+          <table class="table table-hover table-striped mb-2">
+            <thead>
+              <tr>
+                <th>Payment Date</th>
+                <th>Principal Amount</th>
+                <th>Interest</th>
+                <th>Net Payment</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="tempItems.length==0">
+                <td colspan="11" class="font-italic text-center">No Item available</td>
+              </tr>
+              <tr *ngFor="let item of tempItems">
+                <td>{{item}}</td>
+                <td>{{item}}</td>
+                <td>{{item}}</td>
+                <td>{{item}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <!-- Pagination -->
+        <div class="row">
+          <div class="col-sm text-sm-left text-center pt-3">
+            <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+          </div>
+          <div class="col-sm pt-3">
+            <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+              (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+            </ngb-pagination>
+          </div>
+        </div>
+      </div>
+      <!-- / Pagination -->
+    </div>
+  </div>
+</div>

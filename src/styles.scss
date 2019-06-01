@@ -182,12 +182,22 @@ ngb-typeahead-window .dropdown-item {
 .swal2-container {
   z-index: 9999 !important;
 }
-thead{
-  background-color: #007b84;
-  color: white;
-  text-align: center;
-}
 .center{
   margin: 0 auto;
-
+}
+.section{
+   box-shadow: 1px 1px 2px 0px;
+}
+thead{
+  background: #007b84;
+  color: #fff;
+}
+.padding-top{
+  padding: 10px;
+}
+.margin{
+  padding: 1%;
+  height: 90%;
+  width: 90%;
+  border-radius: 50%;
 }

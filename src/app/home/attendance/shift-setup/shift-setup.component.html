@@ -1,0 +1,175 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">
+    {{title}}
+  </h4>
+  <div class="card-body">
+    <form action="">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label for="name" class="col-md-3">Shift Name</label>
+            <div class="col-md-8">
+              <input type="text" name="name" id="name" class="form-control" placeholder="Shift Name">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="startHour" class="col-md-3">Shift Start Hour</label>
+            <div class="col-md-8">
+              <input type="text" name="startHour" id="startHour" class="form-control" placeholder="Start Hour">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="lateHour" class="col-md-3">Late Hour</label>
+            <div class="col-md-8">
+              <input type="text" name="lateHour" id="lateHour" class="form-control" placeholder="Late Hour">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label for="endHour" class="col-md-3">Shift End Hour</label>
+            <div class="col-md-8">
+              <input type="text" name="endHour" id="startHour" class="form-control" placeholder="End Hour">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="nextShift" class="col-md-3">Next Day Shift</label>
+            <div class="col-md-8">
+              <div class="row">
+                <div class="col-md-4 demo-inline-spacing">
+                  <input type="radio" name="nextShift" id="yes" value="1">
+                  <label for="yes">Yes</label>
+                </div>
+                <div class="col-md-4 demo-inline-spacing">
+                  <input type="radio" name="nextShift" id="no" value="0">
+                  <label for="no">No</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="roaster" class="col-md-3">Roaster Shift</label>
+            <div class="col-md-8">
+              <select name="roaster" id="roaster" class="form-control">
+                <option value="">Select Roaster</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-md-2">Duty</label>
+            <div class="col-md-10">
+              <div class="row">
+                <div class="col-md-5">
+                  <div class="form-group row">
+                    <label for="hour" class="col-md-5">Hour</label>
+                    <div class="col-md-7">
+                      <input type="number" name="hour" id="hour" class="form-control" placeholder="Hour">
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-7">
+                  <div class="form-group row">
+                    <label for="minute" class="col-md-5">Minutes</label>
+                    <div class="col-md-7">
+                      <input type="number" name="minute" id="minute" class="form-control" placeholder="Min">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group row">
+            <label for="earlyOut" class="col-md-4">Early Out Minute</label>
+            <div class="col-md-8">
+              <input type="text" name="earlyOut" id="earlyOut" class="form-control" placeholder="Early Out Minute">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="minLogOut" class="col-md-4">Minimum Logout Hour</label>
+            <div class="col-md-8">
+              <input type="text" name="minLogOut" id="minLogOut" class="form-control" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="maxLogOut" class="col-md-4">Maximum Logout Hour</label>
+            <div class="col-md-8">
+              <input type="text" name="maxLogOut" id="maxLogOut" class="form-control" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="minIn" class="col-md-4">Minimum In tme Hour</label>
+            <div class="col-md-8">
+              <input type="text" name="minIn" id="minIn" class="form-control" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="maxIn" class="col-md-4">Maximum In tme Hour</label>
+            <div class="col-md-8">
+              <input type="text" name="maxIn" id="maxIn" class="form-control" placeholder="">
+            </div>
+          </div>
+          <div class="form-group row">
+            <label for="" class="col-md3"></label>
+            <div class="demo-inline-spacing">
+              <button class="btn btn-success"><span class="fas fa-save"></span> Save</button>
+              <button class="btn btn-info"><span class="ion ion-ios-refresh"></span> Reset</button>
+              <button class="btn btn-secondary"><span class="ion ion-ios-close"></span> Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    
+    <div class="card mb-4">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              Per page: &nbsp;
+              <select [(ngModel)]="perPage" (change)="update()"
+                class="custom-select custom-select-md d-inline-block w-auto">
+                <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+              </select>
+            </div>
+            <div class="col">
+              <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+                class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+            </div>
+          </div>
+        </div>
+        <table class="table table-hover table-striped mb-2">
+          <thead>
+            <tr>
+              <th>Shift Name</th>
+              <th>Shift Start Hour</th>
+              <th>Shift End Hour</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngIf="tempItems.length==0">
+              <td colspan="11" class="font-italic text-center">No Item available</td>
+            </tr>
+            <tr *ngFor="let item of tempItems">
+              <td>{{item}}</td>
+              <td>{{item}}</td>
+              <td>{{item}}</td>
+            </tr>
+          </tbody>
+        </table>
+        <!-- Pagination -->
+        <div class="card-body py-0">
+          <div class="row">
+            <div class="col-sm text-sm-left text-center pt-3">
+              <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+            </div>
+            <div class="col-sm pt-3">
+              <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+                (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+              </ngb-pagination>
+            </div>
+          </div>
+        </div>
+        <!-- / Pagination -->
+      </div>
+  </div>
+</div>
