@@ -1,0 +1,154 @@
+<div class="card mb-4">
+  <h4 class="card-header text-center bg-light">
+    Create New Salary Period
+  </h4>
+  <div class="card-body">
+    <div class="col-md-7 center">
+        <form>
+            <!--Year-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">Year</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control" placeholder="Year">
+              </div>
+            </div>
+            <!--Month-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">Month</label>
+              <div class="col-sm-7">
+                <select class="form-control">
+                  <option>Select</option>
+                  <option>Option-1</option>
+                  <option>Option-2</option>
+                  <option>Option-3</option>
+                  <option>Option-4</option>
+                </select>
+              </div>
+            </div>
+            <!--Period Name-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">Period Name</label>
+              <div class="col-sm-7">
+                <input type="text" class="form-control" placeholder="Period Name">
+              </div>
+            </div>
+            <!--Tex Year-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">Year</label>
+              <div class="col-sm-7">
+                <select class="form-control">
+                  <option>Select</option>
+                  <option>Option-1</option>
+                  <option>Option-2</option>
+                  <option>Option-3</option>
+                  <option>Option-4</option>
+                </select>
+              </div>
+            </div>
+            <!--Start Date-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">Star Date</label>
+              <div class="col-sm-7">
+                <div class="input-group">
+                  <input class="form-control" name="fromDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="fromDate"
+                    #d1="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="input-group-text" (click)="d1.toggle()" type="button">
+                      <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--End Date-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">End Date</label>
+              <div class="col-sm-7">
+                <div class="input-group">
+                  <input class="form-control" name="toDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="toDate"
+                    #d2="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="input-group-text" (click)="d2.toggle()" type="button">
+                      <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Button-->
+            <div class="form-group row text-right">
+              <div class="demo-inline-spacing mt-3 center">
+                <button type="submit" class="btn btn-success">
+                  <span class="fas fa-save"></span> Save</button>
+                <button type="" class="btn btn-secondary">
+                  <span class="fas fa-window-close"></span> Close</button>
+              </div>
+            </div>
+          </form>
+      
+    </div>
+  </div>
+</div>
+<div class="card mb-4">
+  <div class="card-header">
+    <div class="row">
+      <div class="col">
+        Per page: &nbsp;
+        <select [(ngModel)]="perPage" (change)="update()" class="custom-select custom-select-md d-inline-block w-auto">
+          <option *ngFor="let limit of [10, 20, 30, 40, 50]">{{limit}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+          class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <form autocomplete="off">
+      <div class="form-group">
+        <div class="table-responsive mb-4">
+          <table class="table table-hover table-striped mb-0">
+            <thead>
+              <tr>
+                <th>Period</th>
+                <th>Month</th>
+                <th> Year </th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="tempItems.length==0">
+                <td colspan="13" class="font-italic text-center">No item available</td>
+              </tr>
+              <tr *ngFor="let item of tempItems; let i=index">
+                <td>{{item}}</td>
+                <td>{{item}}</td>
+                <td>{{item}}</td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <!-- Pagination -->
+        <div class="card-body py-0">
+
+          <div class="row">
+            <div class="col-sm text-sm-left text-center pt-3">
+              <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+            </div>
+            <div class="col-sm pt-3">
+              <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+                (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+              </ngb-pagination>
+            </div>
+          </div>
+
+        </div>
+        <!-- / Pagination -->
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,109 @@
+<div class="card mb-4">
+  <h4 class="card-header text-center bg-light">
+    Salary View
+  </h4>
+  <div class="card-body">
+    <div class="col-md-7 center">
+        <form>
+            <!--Employee Id-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">Employee ID</label>
+              <div class="col-sm-7">
+                <div class="input-group">
+                  <input class="form-control" type="text" placeholder="Employee ID">
+                  <div class="input-group-append">
+                    <button class="input-group-text btn btn-primary" type="button">
+                      <span class="fas fa-search" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Name-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">Name</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Name">
+              </div>
+            </div>
+            <!--Designation-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">Designation</label>
+              <div class="col-sm-9">
+                <input type="text" class="form-control" placeholder="Designation">
+              </div>
+            </div>
+          </form>
+    </div>
+  </div>
+</div>
+<!--Table-->
+<div class="card mb-4">
+  <div class="card-header">
+    <div class="row">
+      <div class="col">
+        Per page: &nbsp;
+        <select [(ngModel)]="perPage" (change)="update()" class="custom-select custom-select-md d-inline-block w-auto">
+          <option *ngFor="let limit of [10, 20, 30, 40, 50]">{{limit}}</option>
+        </select>
+      </div>
+      <div class="col">
+        <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+          class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <form autocomplete="off">
+      <div class="form-group">
+        <div class="table-responsive mb-4">
+          <table class="table table-hover table-striped mb-0">
+            <thead>
+              <tr>
+                <th>Salary Head</th>
+                <th>Amount</th>
+                <th>Salary</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngIf="tempItems.length==0">
+                <td colspan="3" class="font-italic text-center">No item available</td>
+              </tr>
+              <tr *ngFor="let item of tempItems; let i=index">
+                <td>{{item}}</td>
+                <td>{{item}}</td>
+                <td>{{item}}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+
+        <!-- Pagination -->
+        <div class="card-body py-0">
+
+          <div class="row">
+            <div class="col-sm text-sm-left text-center pt-3">
+              <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+            </div>
+            <div class="col-sm pt-3">
+              <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+                (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+              </ngb-pagination>
+            </div>
+          </div>
+
+        </div>
+        <!-- / Pagination -->
+      </div>
+    </form>
+
+  </div>
+  <!--Button-->
+  <div class="form-group row m-auto">
+    <div class="demo-inline-spacing mt-3 center">
+      <button type="" class="btn btn-secondary">
+        <span class="far fa-window-close"></span> Close</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,159 @@
+<div class="card mb-4">
+    <h4 class="card-header text-center bg-light">PayScal Setup</h4>
+    <div class="card-body">
+      <!--Row -->
+      <div class="row pt-3" style="border: 1px solid lightgray;">
+        <!--Left column-->
+        <div class="col-6">
+          <!--Employee Type-->
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Employee Type</label>
+            <div class="col-sm-8">
+                <select class="form-control">
+                  <option>Select</option>
+                  <option>Option-1</option>
+                  <option>Option-2</option>
+                  <option>Option-3</option>
+                  <option>Option-4</option>
+                </select>
+              </div>
+          </div>
+          <!--Payscal Grade-->
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Payscal Grade</label>
+            <div class="col-sm-8">
+                <select class="form-control">
+                  <option>Select</option>
+                  <option>Option-1</option>
+                  <option>Option-2</option>
+                  <option>Option-3</option>
+                  <option>Option-4</option>
+                </select>
+              </div>
+          </div>
+
+        </div>
+  
+        <div class="vertical"></div>
+        <!--Right column-->
+        <div class="col-6">
+          <!--Leave Type-->
+          <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right">Salary Year</label>
+            <div class="col-sm-8">
+              <select class="form-control">
+                <option>Select</option>
+                <option>Option-1</option>
+                <option>Option-2</option>
+                <option>Option-3</option>
+                <option>Option-4</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--Button-->
+      <div class="form-group row m-auto">
+        <label class="col-form-label col-sm-5 text-sm-right"></label>
+        <div class="demo-inline-spacing mt-3">
+          <button type="submit" class="btn btn-success">
+            <span class="fas fa-eye"></span> Show</button>
+        </div>
+      </div>
+      <!--End 1st Row-->
+      <!--2nd Row-->
+      <div style="border: 1px solid lightgray;">
+        <!--Table-->
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              Per page: &nbsp;
+              <select [(ngModel)]="perPage" (change)="update()"
+                class="custom-select custom-select-md d-inline-block w-auto">
+                <option *ngFor="let limit of [10, 20, 30, 40, 50]">{{limit}}</option>
+              </select>
+            </div>
+            <div class="col">
+              <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+                class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <form autocomplete="off">
+            <div class="form-group">
+              <div class="table-responsive mb-4">
+                <table class="table table-hover table-striped mb-0">
+                  <thead>
+                    <tr>
+                      <th>Grade Description</th>
+                      <th>Increment Amount</th>
+                      <th>Basic</th>
+                      <th>Hrent</th>
+                      <th>DA</th>
+                      <th>Others</th>
+                      <th>Convance</th>
+                      <th>Medical</th>
+                      <th>Beverage</th>
+                      <th>Incentive</th>
+                      <th>Entertainment</th>
+  
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr *ngIf="tempItems.length==0">
+                      <td colspan="11" class="font-italic text-center">No item available</td>
+                    </tr>
+                    <tr *ngFor="let item of tempItems; let i=index">
+                      <td>{{item}}</td>
+                      <td>{{item}}</td>
+                      <td>{{item}}</td>
+                      <td>{{item}}</td>
+                      <td>{{item}}</td>
+                      <td>{{item}}</td>
+                      <td>{{item}}</td>
+                      <td>{{item}}</td>
+                      <td>{{item}}</td>
+                      <td><button class="btn btn--large"> <span class="fas fa-trash">Delete</span></button>></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+  
+  
+              <!-- Pagination -->
+              <div class="card-body py-0">
+  
+                <div class="row">
+                  <div class="col-sm text-sm-left text-center pt-3">
+                    <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+                  </div>
+                  <div class="col-sm pt-3">
+                    <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+                      (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+                    </ngb-pagination>
+                  </div>
+                </div>
+  
+              </div>
+              <!-- / Pagination -->
+  
+            </div>
+          </form>
+        </div>
+      </div>
+      <!--Button-->
+      <div class="form-group row">
+        <label class="col-form-label col-sm-8">Total Employee:</label>
+        <div class="demo-inline-spacing mt-3">
+          <button type="" class="btn btn-success">
+            <span class="fas fa-save"></span> Save</button>
+          <button type="" class="btn btn-info">
+            <span class="ion ion-ios-refresh"></span> Reset</button>
+          <button type="" class="btn btn-secondary">
+            <span class="fas fa-window-close"></span> Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

@@ -1,0 +1,49 @@
+<div class="card mb-4">
+  <h4 class="card-header text-center bg-light">
+    In Out Single Employee Report
+  </h4>
+  <div class="card-body">
+    <div class="col-md-7 center">
+        <form>
+            <!--Start Date-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">Start Date</label>
+              <div class="col-sm-7">
+                <div class="input-group">
+                  <input class="form-control" name="fromDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="fromDate"
+                    #d1="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="input-group-text" (click)="d1.toggle()" type="button">
+                      <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--End Date-->
+            <div class="form-group row">
+              <label class="col-form-label col-sm-3 text-sm-right">End Date</label>
+              <div class="col-sm-7">
+                <div class="input-group">
+                  <input class="form-control" name="endDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="endDate"
+                    #d2="ngbDatepicker">
+                  <div class="input-group-append">
+                    <button class="input-group-text" (click)="d2.toggle()" type="button">
+                      <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--Button-->
+            <div class="form-group row">
+              <div class="demo-inline-spacing mt-3 center">
+                <button type="submit" class="btn btn-success">
+                  <span class="fas fa-file-download"></span> Generate Report </button>
+              </div>
+            </div>
+          </form>
+    </div>
+
+
+  </div>

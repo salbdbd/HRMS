@@ -38,25 +38,117 @@
       <sidenav-router-link route="/order/order-approval" [active]="isActive('/order/order-approval')">Order Approval</sidenav-router-link>
       <sidenav-router-link route="/order/section4" [active]="isActive('/module1/section4')">Section 4</sidenav-router-link>
     </sidenav-menu>    -->
+    
+      <!-- Property -->
+      <sidenav-menu icon="ion ion-md-speedometer" text="Property" [active]="isMenuActive('/property')" [open]="isMenuOpen('/property')">
+        <sidenav-router-link route="/property/property-category" [active]="isActive('/property/property-category')">Property Category</sidenav-router-link>
+        <sidenav-router-link route="/property/property-name" [active]="isActive('/property/property-Name')">Property Name</sidenav-router-link>
+        <sidenav-router-link route="/property/vehicle-tax-assagin" [active]="isActive('/property/vehicle-tax-assagin')">Vehicle Tax Assagin</sidenav-router-link>
+        <sidenav-router-link route="/property/asset-addition" [active]="isActive('/property/asset-addition')">Asset Addition</sidenav-router-link>
+        <sidenav-router-link route="/property/property-assaign" [active]="isActive('/property/property-assaign')">Property Assaign</sidenav-router-link>
+        <sidenav-router-link route="/property/property-disposal" [active]="isActive('/property/property-disposal')">Property Disposal</sidenav-router-link>
+        <sidenav-router-link route="/property/report" [active]="isActive('/property/report')">Report</sidenav-router-link>
+
+        </sidenav-menu>
+      <!-- Leave  -->
+      <sidenav-menu icon="ion ion-md-speedometer" text="Leave" [active]="isMenuActive('/leave')" [open]="isMenuOpen('/leave')">
+        <sidenav-router-link route="/leave/leave-setup" [active]="isActive('/leave/leave-setup')">Leave Setup</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-entry" [active]="isActive('/leave/leave-entry')">Leave Entry</sidenav-router-link>
+        <sidenav-router-link route="/leave/manual-leave-entry" [active]="isActive('/leave/manual-leave-entry')">Manual Leave Entry</sidenav-router-link>
+        <sidenav-router-link route="/leave/update-leave-entry" [active]="isActive('/leave/update-leave-entry')">Update Leave Entry</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-approval" [active]="isActive('/leave/leave-approval')">Leave Approval</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-approval-by-hr" [active]="isActive('/leave/leave-approval-by-hr')">Leave Approval By HR</sidenav-router-link>
+        <sidenav-router-link route="/leave/emp-leave-opening-balance" [active]="isActive('/leave/emp-leave-opening-balance')">Employee Leave Opening Balance</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-carry-forward" [active]="isActive('/leave/leave-carry-forward')">Leave Carry Forward</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-encashment" [active]="isActive('/leave/leave-encashment')">Leave Encashment</sidenav-router-link>
+        <sidenav-router-link route="/leave/recreation-leave-encashment" [active]="isActive('/leave/recreation-leave-encashment')">Recreation Leave Encashment</sidenav-router-link>
+        <sidenav-router-link route="/leave/substitute-leave" [active]="isActive('/leave/substitute-leave')">Substitute Leave</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-report" [active]="isActive('/leave/leave-report')">Leave Report</sidenav-router-link>
+        <sidenav-router-link route="/leave/leave-info-details" [active]="isActive('/leave/leave-info-details')">Leave Info Details</sidenav-router-link>
+
+        </sidenav-menu>
+
+    <!-- Salary Setup -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Salary Setup" [active]="isMenuActive('/salary-setup')" [open]="isMenuOpen('/salary-setup')">
+    <sidenav-router-link route="/salary-setup/other-allowance" [active]="isActive('/salary-setup/other-allowance')">Other Allowance</sidenav-router-link>
+    <sidenav-router-link route="/salary-setup/salary-year-setup" [active]="isActive('/salary-setup/salary-year-setup')">Salary Year Setup</sidenav-router-link>
+    <sidenav-router-link route="/salary-setup/salary-period" [active]="isActive('/salary-setup/salary-period')">Salary Period</sidenav-router-link>
+    <sidenav-router-link route="/salary-setup/salary-head" [active]="isActive('/salary-setup/salary-head')">Salary Head</sidenav-router-link>
+    <sidenav-router-link route="/salary-setup/salary-grade" [active]="isActive('/salary-setup/salary-grade')">Salary Grade</sidenav-router-link>
+    <sidenav-router-link route="/salary-setup/payscale-grade" [active]="isActive('/salary-setup/payscale-grade')">Payscale Grade</sidenav-router-link>
+    <sidenav-router-link route="/salary-setup/payscal-setup" [active]="isActive('/salary-setup/payscale-setup')">Payscale Setup</sidenav-router-link>
+    </sidenav-menu>
+ 
+ 
+    <!-- Salary-Process -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Salary Process" [active]="isMenuActive('/salary-process')" [open]="isMenuOpen('/salary-process')">
+    <sidenav-router-link route="/salary-process/enrolment-information" [active]="isActive('/salary-process/enrolment-information')">Enrolment Information</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/allowance-add-deduct" [active]="isActive('/salary-process/allowance-add-deduct')">Allowance Add Deduct</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/confirm-or-inc" [active]="isActive('/salary-process/confirm-or-inc')">Confirmation Or Increment Information</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/salary-Inc" [active]="isActive('/salary-process/salary-Inc')">Salary Increment</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/salary-view" [active]="isActive('/salary-process/salary-view')">Salary View</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/salary-structure" [active]="isActive('/salary-process/salary-structure')">Salary Structure</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/emp-salary-structure" [active]="isActive('/salary-process/emp-salary-structure')">Emp Salary Structure</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/edit-emp-salary-structure" [active]="isActive('/salary-process/edit-emp-salary-structure')">Edit Emp Salary Structure</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/salary-process" [active]="isActive('/salary-process/salary-process')">Salary Process</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/undo-salary-process" [active]="isActive('/salary-process/undo-salary-process')">Undo Salary Process</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/block-salary-process" [active]="isActive('/salary-process/block-salary-process')">Block Salary Process</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/update-salary" [active]="isActive('/salary-process/update-salary')">Update Salary </sidenav-router-link>
+    <sidenav-router-link route="/salary-process/pay-slip-email" [active]="isActive('/salary-process/pay-slip-email')">Pay Slip Email </sidenav-router-link>
+    <sidenav-router-link route="/salary-process/new-join" [active]="isActive('/salary-process/new-join')">New Join</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/change-report" [active]="isActive('/salary-process/change-report')">Change Report</sidenav-router-link>
+    <sidenav-router-link route="/salary-process/extra-salary" [active]="isActive('/salary-process/extra-salary')">Extra Salary</sidenav-router-link>
+    </sidenav-menu>
+
+
+
+    <!-- Reports -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Reports" [active]="isMenuActive('/reports')" [open]="isMenuOpen('/reports')">
+    <sidenav-router-link route="/reports/salary-report" [active]="isActive('/reports/salary-report')">Salary Report</sidenav-router-link>
+    <sidenav-router-link route="/reports/bank-advice" [active]="isActive('/reports/bank-advice')">Bank Advice</sidenav-router-link>
+    <sidenav-router-link route="/reports/salary-reconciliation" [active]="isActive('/reports/salary-reconciliation')">Salary Reconciliation</sidenav-router-link>
+    <sidenav-router-link route="/reports/salary-summary" [active]="isActive('/reports/salary-summary')">Salary Summary</sidenav-router-link>
+    <sidenav-router-link route="/reports/basic-information" [active]="isActive('/reports/basic-information')">Basic Information</sidenav-router-link>
+    <sidenav-router-link route="/reports/payslip" [active]="isActive('/reports/payslip')">PaySlip</sidenav-router-link>
+    <sidenav-router-link route="/reports/employee-cv" [active]="isActive('/reports/employee-cv')">Employee CV</sidenav-router-link>
+    <sidenav-router-link route="/reports/provident-fund" [active]="isActive('/reports/provident-fund')">Provident Fund</sidenav-router-link>
+    <sidenav-router-link route="/reports/fooding-own" [active]="isActive('/reports/fooding-own')">Fooding Own</sidenav-router-link>
+    <sidenav-router-link route="/reports/in-out-own" [active]="isActive('/reports/in-out-own')">In Out Own</sidenav-router-link>
+    <sidenav-router-link route="/reports/asset-under-emp" [active]="isActive('/reports/asset-under-emp')">Asset Under Employee</sidenav-router-link>
+    <sidenav-router-link route="/reports/bank-account" [active]="isActive('/reports/bank-account')">Bank Account</sidenav-router-link>
+    <sidenav-router-link route="/reports/salary-yearly-detail" [active]="isActive('/reports/salary-yearly-detail')">Salary Yearly Detail</sidenav-router-link>
+    <sidenav-router-link route="/reports/yearly-summary" [active]="isActive('/reports/yearly-summary')">Yearly Summary</sidenav-router-link>
+    <sidenav-router-link route="/reports/employee-loan" [active]="isActive('/reports/employee-loan')">Employee Loan</sidenav-router-link>
+    <sidenav-router-link route="/reports/single-emp-salary" [active]="isActive('/reports/single-emp-salary')">Single Employee Salary</sidenav-router-link>
+    <sidenav-router-link route="/reports/single-emp-leave" [active]="isActive('/reports/single-emp-leave')">Single Employee Leave</sidenav-router-link>
+    <sidenav-router-link route="/reports/single-emp-increment" [active]="isActive('/reports/single-emp-increment')">Single Employee increment</sidenav-router-link>
+    <sidenav-router-link route="/reports/single-emp-income-tax" [active]="isActive('/reports/single-emp-income-tax')">Single Emp Income Tax</sidenav-router-link>
+    <sidenav-router-link route="/reports/" [active]="isActive('/reports/')"></sidenav-router-link>
+    </sidenav-menu>
+
+    <!-- Gl-Integration -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Gl Integration" [active]="isMenuActive('/gl-integration')" [open]="isMenuOpen('/gl-integration')">
+    <sidenav-router-link route="/gl-integration/cost-head" [active]="isActive('/gl-integration/cost-head')">Cost Head</sidenav-router-link>
+    <sidenav-router-link route="/gl-integration/gl-code" [active]="isActive('/gl-integration/gl-code')">GL-Code</sidenav-router-link>
+    <sidenav-router-link route="/gl-integration/salary-head-assign" [active]="isActive('/gl-integration/salary-head-assign')">Salary Head Assign</sidenav-router-link>
+    <sidenav-router-link route="/gl-integration/gl-report" [active]="isActive('/gl-integration/gl-report')">GL Report</sidenav-router-link>
+    </sidenav-menu>
+    
+    <!-- Recruitment -->
+    <sidenav-menu icon="ion ion-md-speedometer" text="Recruitment" [active]="isMenuActive('/recruitment')" [open]="isMenuOpen('/recruitment')">
+    <sidenav-router-link route="/recruitment/recruitment" [active]="isActive('/recruitment/recruitment')">Recruitment</sidenav-router-link>
+    <sidenav-router-link route="/recruitment/recruitment-approval" [active]="isActive('/recruitment/recruitment-approval')">Recruitment Approval</sidenav-router-link>
+    <sidenav-router-link route="/recruitment/approval-by-hr" [active]="isActive('/recruitment/approval-by-hr')">Approval By HR </sidenav-router-link>
+    <sidenav-router-link route="/recruitment/approval-by-account" [active]="isActive('/recruitment/approval-by-account')">Approval By Account </sidenav-router-link>
+    </sidenav-menu>
+    
+    
     <!-- Module1 -->
-    <sidenav-menu icon="ion ion-md-speedometer" text="Module 1" [active]="isMenuActive('/module1')" [open]="isMenuOpen('/module1')">
+    <!-- <sidenav-menu icon="ion ion-md-speedometer" text="Module 1" [active]="isMenuActive('/module1')" [open]="isMenuOpen('/module1')">
     <sidenav-router-link route="/module1/section1" [active]="isActive('/module1/section1')">Section 1</sidenav-router-link>
     <sidenav-router-link route="/module1/section2" [active]="isActive('/module1/section2')">Section 2</sidenav-router-link>
     <sidenav-router-link route="/module1/section3" [active]="isActive('/module1/section3')">Section 3</sidenav-router-link>
-    </sidenav-menu>
-    <!-- Module2 -->
-    <sidenav-menu icon="ion ion-md-speedometer" text="Module 2" [active]="isMenuActive('/module2')" [open]="isMenuOpen('/module2')">
-    <sidenav-router-link route="/module2/section1" [active]="isActive('/module2/section1')">Section 1</sidenav-router-link>
-    <sidenav-router-link route="/module2/section2" [active]="isActive('/module2/section2')">Section 2</sidenav-router-link>
-    <sidenav-router-link route="/module2/section3" [active]="isActive('/module2/section3')">Section 3</sidenav-router-link>
-    </sidenav-menu>
-
-    <!-- Module3 -->
-    <sidenav-menu icon="ion ion-md-speedometer" text="Module 3" [active]="isMenuActive('/module3')" [open]="isMenuOpen('/module3')">
-    <sidenav-router-link route="/module3/section1" [active]="isActive('/Module3/section1')">Section 1</sidenav-router-link>
-    <sidenav-router-link route="/module3/section2" [active]="isActive('/module3/section2')">Section 2</sidenav-router-link>
-    <sidenav-router-link route="/module3/section3" [active]="isActive('/module3/section3')">Section 3</sidenav-router-link>
-    </sidenav-menu>
+    </sidenav-menu> -->
 
   </div>
 </sidenav>
