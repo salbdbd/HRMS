@@ -1,0 +1,214 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">{{title}}</h4>
+  <div class="card-body">
+    <form action="">
+      <div class="row">
+        <div class="col-md-4">
+            <div class="form-group row">
+                <label for="empId" class="">Employee Id</label>
+                <div class="input-group">
+                  <input type="text" name="employeeId" id="empId" class="form-control" placeholder="Employee Id">
+                  <div class="input-group-append">
+                    <button class="input-group-text btn btn-info" type="button">
+                      <span class="fas fa-search" style="cursor: pointer;"></span>
+                    </button>
+                  </div>
+                </div>
+              </div> 
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="salaryPeriod" class="">Salary Period</label>
+            <select name="salaryPeriod" id="salaryPeriod" class="form-control">
+              <option value="">Select Period</option>
+            </select>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="form-group">
+            <label for="lastWorkingDate" class="">Last Working Date</label>
+            <div class="input-group">
+              <input class="form-control" placeholder="dd-mm-yyyy" id="lastWorkingDate" name="lastWorkingDate"
+                ngbDatepicker [(ngModel)]="date" [displayMonths]="1" #d1="ngbDatepicker">
+              <div class="input-group-append">
+                <button class="input-group-text" (click)="d1.toggle()" type="button">
+                  <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <button class="btn btn-primary center">Calculate</button>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <h6 class="card-header">Payable to Employee Salary</h6>
+            <div class="card-body">
+              <div class="form-group row">
+                <label for="dueSalary" class="col-md-6">Dues Salary of Month</label>
+                <div class="col-md-6">
+                  <input type="number" name="dueSalary" id="dueSalary" class="form-control"
+                    placeholder="Dues Salary of Month">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="noticePay" class="col-md-6">Notice Pay</label>
+                <div class="col-md-6">
+                  <input type="number" name="noticePay" id="noticePay" class="form-control" placeholder="Notice Pay">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="elEncashment" class="col-md-6">Encashment of EL</label>
+                <div class="col-md-6">
+                  <input type="text" name="elEncashment" id="elEncashment" class="form-control"
+                    placeholder="Encashment of EL">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="driverAllowance" class="col-md-6">Driver Allowance</label>
+                <div class="col-md-6">
+                  <input type="text" name="driverAllowance" id="driverAllowance" class="form-control"
+                    placeholder="Driver Allowance">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h6 class="card-header">Gratuity</h6>
+            <div class="card-body">
+              <div class="form-group row">
+                <label for="amount" class="col-md-6">Amount</label>
+                <div class="col-md-6">
+                  <input type="number" name="amount" id="amount" class="form-control" placeholder="Amount">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h6 class="card-header">Death Benefit</h6>
+            <div class="card-body">
+              <div class="form-group row">
+                <label for="amount" class="col-md-6">Amount</label>
+                <div class="col-md-6">
+                  <input type="number" name="amount" id="amount" class="form-control" placeholder="Amount">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="" class="col-md-6">Exgratia</label>
+                <div class="col-md-6">
+                  <input type="text" name="" id="" class="form-control" placeholder="Exgratia">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h6 class="card-header">Overtime and Shift Allowance</h6>
+            <div class="card-body">
+              <div class="form-group row">
+                <label for="" class="">Overtime/Shift-Allowance/Others</label>
+                <input type="text" name="" id="" class="form-control" placeholder="Overtime/Shift-Allowance/Others">
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <h6 class="card-header">Payable to Company</h6>
+            <div class="card-body">
+              <div class="form-group row">
+                <label for="compNoticePay" class="col-md-6">Notice Pay</label>
+                <div class="col-md-6">
+                  <input type="number" name="compNoticePay" id="compNoticePay" class="form-control"
+                    placeholder="Notice Pay">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="excessSalary" class="col-md-6">Excess Salary</label>
+                <div class="col-md-6">
+                  <input type="number" name="excessSalary" id="excessSalary" class="form-control"
+                    placeholder="Excess Salary">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="epsOutstanding" class="col-md-6">EPS Outstanding</label>
+                <div class="col-md-6">
+                  <input type="text" name="epsOutstanding" id="epsOutstanding" class="form-control"
+                    placeholder="EPS Outstanding">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="billOutstanding" class="col-md-6">Mobile Bill Outstanding</label>
+                <div class="col-md-6">
+                  <input type="text" name="billOutstanding" id="billOutstanding" class="form-control"
+                    placeholder="Mobile Bill Outstanding">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="iou" class="col-md-6">Advance to Staff and Others (IOU)</label>
+                <div class="col-md-6">
+                  <input type="text" name="iou" id="iou" class="form-control" placeholder="Advance to Staff and Others">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="incomeTax" class="col-md-6">Income Tax</label>
+                <div class="col-md-6">
+                  <input type="number" name="incomeTax" id="incomeTax" class="form-control" placeholder="Income Tax">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="providentFund" class="col-md-6">WPPF Portion Provident Fund</label>
+                <div class="col-md-6">
+                  <input type="number" name="providentFund" id="providentFund" class="form-control"
+                    placeholder="WPPF Portion Provident Fund">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="ownContribution" class="col-md-6">Own Contribution</label>
+                <div class="col-md-6">
+                  <input type="number" name="ownContribution" id="ownContribution" class="form-control"
+                    placeholder="Own Contribution">
+                </div>
+              </div>
+              <div class="form-group row">
+                <label for="compContribution" class="col-md-6">Company Contribution</label>
+                <div class="col-md-6">
+                  <input type="number" name="compContribution" id="compContribution" class="form-control"
+                    placeholder="Comp Contribution">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <h6 class="card-header">Less</h6>
+            <div class="card-body">
+              <div class="form-group row">
+                <label for="loanAdjust" class="col-md-6">Loan Adjusted</label>
+                <div class="col-md-6">
+                  <input type="number" name="loanAdjust" id="loanAdjust" class="form-control" placeholder="Loan Adjusted">
+                </div>
+              </div>
+              <div class="form-group row">
+                  <label for="interestAdjust" class="col-md-6">Interested Adjusted</label>
+                  <div class="col-md-6">
+                    <input type="number" name="interestAdjust" id="interestAdjust" class="form-control" placeholder="Interest Adjusted">
+                  </div>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+          <div class="center demo-inline-spacing">
+            <button class="btn btn-success"><span class="fas fa-save"></span> Save</button>
+            <button class="btn btn-info"><span class="ion ion-ios-refresh"></span> Clear</button>
+            <button class="btn btn-secondary"><span class="ion ion-ios-close"></span> Close</button>
+          </div>
+        </div>
+    </form>
+  </div>
+</div>

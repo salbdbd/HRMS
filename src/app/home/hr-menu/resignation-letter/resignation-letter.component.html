@@ -1,0 +1,163 @@
+<div class="card mb-4 section">
+  <h4 class="card-header text-center bg-light">
+    Resignation Letter
+  </h4>
+  <div class="container">
+    <br />
+    
+        <div class="form-group row">
+            <label class="col-form-label col-sm-4 text-sm-right"> Employee Id
+                <i class="text-danger">*</i>
+            </label>
+    
+            <div class="input-group col-sm-6">
+              <input class="form-control" name="" placeholder="Employee-Id" >
+              <div class="input-group-append">
+                <button class="input-group-text btn btn-info" type="button">
+                  <span class="ion ion-md-search" style="cursor: pointer;"></span>
+                </button>
+              </div>
+            </div>
+          </div>
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-sm-right">Employee Name
+        </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="Employee Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-sm-right">Designation
+        </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="Designation">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-sm-right ">Effective Date
+          <i class="text-danger">*</i>
+        </label>
+
+        <div class="input-group col-sm-6">
+          <input class="form-control" name="dp1" placeholder="dd-mm-yyyy" ngbDatepicker #d1="ngbDatepicker">
+          <div class="input-group-append">
+            <button class="input-group-text" (click)="d1.toggle()" type="button">
+              <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+            </button>
+          </div>
+        </div>
+      </div>
+   
+  
+    <div class="form-group">
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-sm-right">Reason
+          <i class="text-danger">*</i>
+        </label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" placeholder="Reason">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-form-label col-sm-4 text-sm-right">Letter
+          <i class="text-danger">*</i>
+        </label>
+        <div class="col-sm-6">
+          <textarea rows="5" class="form-control" placeholder="Letter"></textarea>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div class="container">
+    
+      <label class="col-form-label col-sm-5 text-sm-right">Apply to
+      </label>
+      <div class="form-group row">
+          <label class="col-form-label col-sm-4 text-sm-right"> Employee Id
+              <i class="text-danger">*</i>
+          </label>
+  
+          <div class="input-group col-sm-6">
+            <input class="form-control" name="" placeholder="Employee-Id" >
+            <div class="input-group-append">
+              <button class="input-group-text btn btn-info" type="button">
+                <span class="ion ion-md-search" style="cursor: pointer;"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      <div class="form-group row">
+        <label class="col-form-label col-md-4 text-sm-right ">Employee Name
+        </label>
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Employee Name">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label class="col-form-label col-md-4 text-sm-right">Designation
+        </label>
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Designation">
+        </div>
+      </div>
+    
+  
+    <div class="row"> 
+        <div class="demo-inline-spacing mt-3"  style="margin:0 auto">
+            <button type="" class="btn btn-success" >
+              <span class="fas fa-save"> Save</span>
+            </button>
+            <button type="clear" class="btn btn-info">
+                <span class="ion ion-ios-refresh"></span> Reset</button>
+            <button type="" class="btn btn-secondary ">
+              <span class="fas fa-window-close"> Close</span>
+            </button>
+          </div>
+        </div>
+  </div>
+  <div class="container">
+      <table class="table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Employee Code</th>
+              <th>Letter</th>
+              <th> </th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th>1</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+             
+            </tr>
+            <tr>
+              <th>2</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+             
+            </tr>
+            <tr>
+              <th>3</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>   
+            </tr>
+          </tbody>
+        </table>
+  </div>
+
+</div>

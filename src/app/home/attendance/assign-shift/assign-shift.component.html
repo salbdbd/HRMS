@@ -1,0 +1,127 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">
+    {{title}}
+  </h4>
+  <div class="card-body">
+    <form action="">
+      <div class="col-md-7 center">
+        <div class="form-group row">
+          <label for="department" class="col-md-4">Department</label>
+          <div class="col-md-8">
+            <select name="department" id="department" class="form-control">
+              <option value="">Select Department</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="designation" class="col-md-4">Designation</label>
+          <div class="col-md-8">
+            <select name="designation" id="designation" class="form-control">
+              <option value="">Select Designation</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="empId" class="col-md-4">Employee Id</label>
+          <div class="col-md-8">
+            <input type="text" name="employeeId" id="empId" class="form-control">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="shift" class="col-md-4">Shift</label>
+          <div class="col-md-8">
+            <select name="shift" id="shift" class="form-control">
+              <option value="">Select Shift</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="form-label col-md-4" for="fromDate">From Date</label>
+          <div class="input-group col-md-8">
+            <input class="form-control" placeholder="dd-mm-yyyy" id="fromDate" name="fromDate" ngbDatepicker
+              [(ngModel)]="attendanceDate" [displayMonths]="1" #d1="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="input-group-text" (click)="d1.toggle()" type="button">
+                <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="demo-inline-spacing center">
+            <button class="btn btn-primary">Get Employee(s)</button>
+            <button class="btn btn-info"><span class="ion ion-ios-refresh"></span> Refresh</button>
+          </div>
+        </div>
+      </div>
+    </form>
+
+    <div class="card mb-4">
+      <div class="card-header">
+        <div class="row">
+          <div class="col">
+            Per page: &nbsp;
+            <select [(ngModel)]="perPage" (change)="update()"
+              class="custom-select custom-select-md d-inline-block w-auto">
+              <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+            </select>
+          </div>
+          <div class="col">
+            <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+              class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+          </div>
+        </div>
+      </div>
+      <table class="table table-hover table-striped mb-2">
+        <thead>
+          <tr>
+            <th>
+              <input type="checkbox" value=""> Select
+            </th>
+            <th>Code</th>
+            <th>Employee Name</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngIf="tempItems.length==0">
+            <td colspan="11" class="font-italic text-center">No Item available</td>
+          </tr>
+          <tr *ngFor="let item of tempItems">
+            <td>
+              <input type="checkbox" value="">
+            </td>
+            <td>{{item}}</td>
+            <td>{{item}}</td>
+            <td>
+              <button class="btn btn-danger"><span class="fas fa-trash"></span></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- Pagination -->
+      <div class="card-body py-0">
+        <div class="row">
+          <div class="col-sm text-sm-left text-center pt-3">
+            <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+          </div>
+          <div class="col-sm pt-3">
+            <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+              (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+            </ngb-pagination>
+          </div>
+        </div>
+      </div>
+      <!-- / Pagination -->
+    </div>
+    <div class="row">
+        <div class="col-md-6">
+          <p>Total Employee (s) : 0</p>
+        </div>
+        <div class="demo-inline-spacing col-md-6">
+          <button class="btn btn-primary">Save</button>
+          <button class="btn btn-secondary">Close</button>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,194 @@
+<div class="card section">
+  <h4 class="card-header text-center bg-light">{{title}}</h4>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label for="empId" class="col-md-4">Employee Id</label>
+          <div class="input-group col-md-6">
+            <input type="text" name="employeeId" id="empId" class="form-control" placeholder="Employee Id">
+            <div class="input-group-append">
+              <button class="btn btn-info">
+                <span class="fas fa-search"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="empName" class="col-md-4">Employee Name</label>
+          <div class="col-md-8">
+            <input type="text" name="employeeName" id="empName" class="form-control" disabled>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="designation" class="col-md-4">Designation</label>
+          <div class="col-md-8">
+            <input type="text" name="designation" id="designation" class="form-control" disabled>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="department" class="col-md-4">Department</label>
+          <div class="col-md-8">
+            <input type="text" name="department" id="department" class="form-control" disabled>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group row">
+          <label for="purpose" class="col-md-4">Tour Purpose</label>
+          <div class="col-md-8">
+            <input type="text" name="purpose" id="purpose" class="form-control" placeholder="Tour Purpose">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="destination" class="col-md-4">Destination</label>
+          <div class="col-md-8">
+            <input type="text" name="destination" id="destination" class="form-control" placeholder="Destination">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="form-label col-md-4">From Date</label>
+          <div class="input-group col-md-8">
+            <input class="form-control" placeholder="dd-mm-yyyy" name="from" ngbDatepicker [(ngModel)]="from"
+              [displayMonths]="1" #d1="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="input-group-text" (click)="d1.toggle()" type="button">
+                <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="form-label col-md-4">To Date</label>
+          <div class="input-group col-md-8">
+            <input class="form-control" placeholder="dd-mm-yyyy" name="to" ngbDatepicker [(ngModel)]="to"
+              [displayMonths]="1" #d2="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="input-group-text" (click)="d2.toggle()" type="button">
+                <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="duration" class="col-md-4">Tour Duration</label>
+          <div class="col-md-8">
+            <input type="text" name="duration" id="duration" class="form-control" disabled>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="applyDate" class="form-label col-md-4">Apply Date</label>
+          <div class="input-group col-md-8">
+            <input class="form-control" placeholder="dd-mm-yyyy" name="applyDate" ngbDatepicker [(ngModel)]="applyDate"
+              [displayMonths]="1" #d3="ngbDatepicker">
+            <div class="input-group-append">
+              <button class="input-group-text" (click)="d3.toggle()" type="button">
+                <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="contactNo" class="col-md-4">Contact No</label>
+          <div class="input-group col-md-8">
+            <div class="input-group-append">
+              <button class="input-group-text btn btn-info">
+                <span class="ion ion-md-call"></span>
+              </button>
+            </div>
+            <input type="text" name="contactNo" id="contactNo" class="form-control" placeholder="Contact Number">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Apply Date</th>
+              <th>Start Date</th>
+              <th>End Date</th>
+              <th>Duration</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <div class="card">
+          <h6 class="card-header">Apply to</h6>
+          <div class="card-body">
+              <div class="form-group row">
+                  <label for="empId" class="col-md-4">Employee Id</label>
+                  <div class="input-group col-md-6">
+                    <input type="text" name="employeeId" id="empId" class="form-control" placeholder="Employee Id">
+                    <div class="input-group-append">
+                      <button class="btn btn-info">
+                        <span class="fas fa-search"></span>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="empName" class="col-md-4">Employee Name</label>
+                  <div class="col-md-8">
+                    <input type="text" name="employeeName" id="empName" class="form-control" disabled>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="designation" class="col-md-4">Designation</label>
+                  <div class="col-md-8">
+                    <input type="text" name="designation" id="designation" class="form-control" disabled>
+                  </div>
+                </div>
+          </div>
+        </div>
+        <div class="card">
+            <h6 class="card-header">Duties will be performed by</h6>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="empId" class="col-md-4">Employee Id</label>
+                    <div class="input-group col-md-6">
+                      <input type="text" name="employeeId" id="empId" class="form-control" placeholder="Employee Id">
+                      <div class="input-group-append">
+                        <button class="btn btn-info">
+                          <span class="fas fa-search"></span>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="empName" class="col-md-4">Employee Name</label>
+                    <div class="col-md-8">
+                      <input type="text" name="employeeName" id="empName" class="form-control" disabled>
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="designation" class="col-md-4">Designation</label>
+                    <div class="col-md-8">
+                      <input type="text" name="designation" id="designation" class="form-control" disabled>
+                    </div>
+                  </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-md-6"></div>
+      <div class="col-md-6 demo-inline-spacing center">
+        <button class="btn btn-success">Apply</button>
+        <button class="btn btn-primary"><span class="fas fa-print"></span> Print</button>
+        <button class="btn btn-secondary"><span class="ion ion-md-close"></span> Close</button>
+      </div>
+    </div>
+  </div>
+</div>

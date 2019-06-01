@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
   imports: [RouterModule.forChild([
     { path: '', component: StartupComponent },
     { path: 'dashboard', component: DashboardComponent },
+    { path: 'startup', component: StartupComponent }
   ])],
   exports: [RouterModule]
 })

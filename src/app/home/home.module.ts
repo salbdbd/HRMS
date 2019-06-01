@@ -17,7 +17,7 @@ import { StartupComponent } from './startup/startup.component';
     NgbModule,
     Ng2ChartsModule,
     PerfectScrollbarModule,
-    HomeRoutingModule,
+    HomeRoutingModule
 
   ],
   declarations: [
