@@ -11,38 +11,71 @@
             </select>
           </div>
         </div>
-        <ul class="list-group">
-          <li class="list-group-item">
-            <input type="checkbox" name="system" id="system" class="form-input-check"> &nbsp; &nbsp;
-            <label (click)="toggle()" for="system" class="">System Setup </label>
-            <span class="fas fa-caret-down" style="float:right"></span>
-            <ul *ngIf="isCollapse" class="list-group">
-              <li @listAnimation class="list-group-item">
-                <input type="checkbox" name="basicEntry" id="basicEntry" class="form-input-check"> &nbsp; &nbsp;
-                <label for="basicEntry" class="">Basic Entry </label>
+
+        <div class="container">
+          <div id="accordion">
+            <div class="card">
+              <div class="card-header " data-toggle="collapse" href="#system">
+                <input type="checkbox" name="sys" id="sys" class="form-input-check">
+                <a class="card-link"> &nbsp; &nbsp;
+                  <label for="sys" class="">System Setup </label>
+                </a>
                 <span class="fas fa-caret-down" style="float:right"></span>
-              </li>
-              <li @listAnimation class="list-group-item">
-                <input type="checkbox" name="bankBranch" id="bankBranch" class="form-input-check"> &nbsp; &nbsp;
-                <label for="bankBranch" class="">Bank Branch </label>
-              </li>
-              <li @listAnimation class="list-group-item">
-                <input type="checkbox" name="division" id="division" class="form-input-check"> &nbsp; &nbsp;
-                <label for="division" class="">Division </label>
-              </li>
-            </ul>
-          </li>
-          <li class="list-group-item">
-            <input type="checkbox" name="attendance" id="attendance" class="form-input-check"> &nbsp; &nbsp;
-            <label for="attendance" class="">Attendance </label>
-            <span class="fas fa-caret-down" style="float:right"></span>
-          </li>
-          <li class="list-group-item">
-            <input type="checkbox" name="shift" id="shift" class="form-input-check"> &nbsp; &nbsp;
-            <label for="shift" class="">Shift Allowance </label>
-            <span class="fas fa-caret-down" style="float:right"></span>
-          </li>
-        </ul>
+              </div>
+              <div id="system" class="collapse" data-parent="#accordion">
+                <li class="list-group-item">
+                  <input type="checkbox" name="basicEntry" id="basicEntry" class="form-input-check"> &nbsp; &nbsp;
+                  <label for="basicEntry" class="">Basic Entry </label>
+                  <span class="fas fa-caret-down" style="float:right"></span>
+                </li>
+                <li class="list-group-item">
+                  <input type="checkbox" name="bankBranch" id="bankBranch" class="form-input-check"> &nbsp; &nbsp;
+                  <label for="bankBranch" class="">Bank Branch </label>
+                </li>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header " data-toggle="collapse" href="#hr">
+                <input type="checkbox" name="hrMenu" id="hrMenu" class="form-input-check">
+                <a class="card-link"> &nbsp; &nbsp;
+                  <label for="hrMenu" class="">HR Menu </label>
+                </a>
+                <span class="fas fa-caret-down" style="float:right"></span>
+              </div>
+              <div id="hr" class="collapse" data-parent="#accordion">
+                <li class="list-group-item">
+                  <input type="checkbox" name="empGenInfo" id="empGenInfo" class="form-input-check"> &nbsp; &nbsp;
+                  <label for="empGenInfo" class="">Employee General Information </label>
+                </li>
+                <li class="list-group-item">
+                  <input type="checkbox" name="employmentInfo" id="employmentInfo" class="form-input-check"> &nbsp;
+                  &nbsp;
+                  <label for="employmentInfo" class="">Employment Information </label>
+                </li>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header " data-toggle="collapse" href="#property">
+                <input type="checkbox" name="propertyMenu" id="propertyMenu" class="form-input-check">
+                <a class="card-link"> &nbsp; &nbsp;
+                  <label for="propertyMenu" class="">Property </label>
+                </a>
+                <span class="fas fa-caret-down" style="float:right"></span>
+              </div>
+              <div id="property" class="collapse" data-parent="#accordion">
+                <li class="list-group-item">
+                  <input type="checkbox" name="category" id="category" class="form-input-check"> &nbsp; &nbsp;
+                  <label for="category" class="">Category </label>
+                </li>
+                <li class="list-group-item">
+                  <input type="checkbox" name="name" id="name" class="form-input-check"> &nbsp; &nbsp;
+                  <label for="name" class="">Name</label>
+                </li>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <br>
         <div class="row">
           <button class="btn btn-success center"><span class="fas fa-save"></span> Save</button>
