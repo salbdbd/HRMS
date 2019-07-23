@@ -45,4 +45,18 @@ export class NgbDateCustomParserFormatter extends NgbDateParserFormatter {
         }
     }
 
+    ngbDateToString(ngbDate: NgbDateStruct): string {
+        return ngbDate.year + '/' + ngbDate.month + '/' + ngbDate.day;
+    }
+
+    stringToNgbDate(date: string): NgbDateStruct {
+        let myDate: Date = new Date(date);
+        let ngbDate: NgbDateStruct = {
+            year: myDate.getFullYear(),
+            month: myDate.getMonth() + 1,
+            day: myDate.getDate()
+        };
+        return ngbDate;
+    }
+
 }

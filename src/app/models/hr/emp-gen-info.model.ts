@@ -1,0 +1,46 @@
+import { NgbDateStruct } from "@ng-bootstrap/ng-bootstrap";
+
+export class EmpGenInfo{
+    id : number;
+    empCode : string;
+    empName : string;
+    lastName : string;
+    shortName : string;
+    fName : string;
+    fatherOccupation : number;
+    mName : string;
+    motherOccupation : number;
+    wifeName : string;
+    email : string;
+    nationality : number;
+    weight : string;
+    height : string;
+    gender : number;
+    dob : string;
+    dobNgb : NgbDateStruct;
+    nationalId : string;
+    tinNo : string;
+    religion : number;
+    meritalStatus : number;
+    pasportNo : string;
+    bloodGroup : number;
+    remarks : string;
+    companyID : number;
+    gradeValue : number;
+    gradeId : number;
+    status : number;
+    originalBirthDate : string;
+    originalBirthDateNgb : NgbDateStruct;
+    age:string;
+    cardID : number;
+    active : number;
+    picture : string;
+    signature : string;
+    passportExpairedDate : string;
+    passportExpairedDateNgb : NgbDateStruct;
+    title : number;
+    suffix : number;
+    child : number;
+    passportIssueDate : string;
+    passportIssueDateNgb : NgbDateStruct;
+}

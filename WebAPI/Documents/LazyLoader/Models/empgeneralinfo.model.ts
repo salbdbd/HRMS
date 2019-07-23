@@ -1,0 +1,41 @@
+export class EmpGeneralInfo
+   {
+      id : number;
+      EmpCode : string;
+      EmpName : string;
+      LastName : string;
+      ShortName : string;
+      FName : string;
+      FatherOccupation : number;
+      MName : string;
+      MotherOccupation : number;
+      WifeName : string;
+      Email : string;
+      Nationality : number;
+      Weight : string;
+      Height : string;
+      Gender : number;
+      DOB : date;
+      NationalId : string;
+      TINNo : string;
+      Religion : number;
+      meritalStatus : number;
+      PasportNo : string;
+      BloodGroup : number;
+      Remarks : string;
+      CompanyID : number;
+      GradeValue : number;
+      GradeID : number;
+      Status : number;
+      OriginalBirthDate : date;
+      CardID : number;
+      Active : number;
+      Picture : string;
+      Signature : string;
+      PassportExpairedDate : string;
+      Title : number;
+      Suffix : number;
+      Child : number;
+      PassportIssueDate : string;
+   }
+}

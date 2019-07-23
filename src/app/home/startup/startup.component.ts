@@ -10,12 +10,6 @@ import { environment } from '../../../environments/environment';
 export class StartupComponent {
 
   public response: string;
-  constructor(private http: HttpClient) { }
-
-  call() {
-    this.http.get(environment.apiUrl + '/users').subscribe(data => {
-      this.response = data.toString();
-    });
-  }
+  constructor(private http: HttpClient) {}
 
 }

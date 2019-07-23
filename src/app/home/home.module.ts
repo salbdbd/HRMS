@@ -1,6 +1,6 @@
 
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
@@ -17,12 +17,14 @@ import { StartupComponent } from './startup/startup.component';
     NgbModule,
     Ng2ChartsModule,
     PerfectScrollbarModule,
-    HomeRoutingModule
+    HomeRoutingModule,
+    
 
   ],
   declarations: [
     DashboardComponent,
     StartupComponent
-  ]
+  ],
+  providers:[DatePipe]
 })
 export class HomeModule { }

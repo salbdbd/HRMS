@@ -37,7 +37,6 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppErrorHandler } from './app.error.handler';
 import { NgbDateCustomParserFormatter } from './shared/dateformat';
 import { SweetAlert2Module } from '@toverux/ngx-sweetalert2';
-import { OrderService } from './services/order.service';
 import { AppErrorComponent } from './error/app-error/app-error.component';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 
@@ -83,7 +82,6 @@ import { NgxDatatableModule } from '@swimlane/ngx-datatable';
   providers: [
     Title,
     AppService,
-    OrderService,
     AuthService,
     HomeGuard,
     LoginGuard,

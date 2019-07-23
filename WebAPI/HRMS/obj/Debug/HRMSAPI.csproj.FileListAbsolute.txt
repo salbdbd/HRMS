@@ -1,0 +1,111 @@
+D:\Office\Best Api\HRMS\obj\Debug\HRMSAPI.csprojAssemblyReference.cache
+D:\Office\Best Api\HRMS\obj\Debug\HRMSAPI.csproj.CoreCompileInputs.cache
+D:\Office\Best Api\HRMS\bin\HRMS.dll.config
+D:\Office\Best Api\HRMS\bin\HRMS.dll
+D:\Office\Best Api\HRMS\bin\HRMS.pdb
+D:\Office\Best Api\HRMS\bin\Dapper.Framework.dll
+D:\Office\Best Api\HRMS\bin\Microsoft.AspNet.Identity.Core.dll
+D:\Office\Best Api\HRMS\bin\Microsoft.AspNet.Identity.Owin.dll
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Cors.dll
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.dll
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Security.Cookies.dll
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Security.dll
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Security.OAuth.dll
+D:\Office\Best Api\HRMS\bin\Newtonsoft.Json.dll
+D:\Office\Best Api\HRMS\bin\Owin.dll
+D:\Office\Best Api\HRMS\bin\System.Net.Http.Formatting.dll
+D:\Office\Best Api\HRMS\bin\System.Web.Cors.dll
+D:\Office\Best Api\HRMS\bin\System.Web.Http.dll
+D:\Office\Best Api\HRMS\bin\System.Web.Http.WebHost.dll
+D:\Office\Best Api\HRMS\bin\Dapper.Framework.pdb
+D:\Office\Best Api\HRMS\bin\Microsoft.AspNet.Identity.Core.xml
+D:\Office\Best Api\HRMS\bin\Microsoft.AspNet.Identity.Owin.xml
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.xml
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Cors.xml
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Security.xml
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Security.Cookies.xml
+D:\Office\Best Api\HRMS\bin\Microsoft.Owin.Security.OAuth.xml
+D:\Office\Best Api\HRMS\bin\Newtonsoft.Json.pdb
+D:\Office\Best Api\HRMS\bin\Newtonsoft.Json.xml
+D:\Office\Best Api\HRMS\bin\System.Net.Http.Formatting.xml
+D:\Office\Best Api\HRMS\bin\System.Web.Http.xml
+D:\Office\Best Api\HRMS\bin\System.Web.Http.WebHost.xml
+D:\Office\Best Api\HRMS\obj\Debug\HRMSAPI.csproj.CopyComplete
+D:\Office\Best Api\HRMS\obj\Debug\HRMS.dll
+D:\Office\Best Api\HRMS\obj\Debug\HRMS.pdb
+E:\Ashiq\Best Api\HRMS\obj\Debug\HRMSAPI.csprojAssemblyReference.cache
+E:\Ashiq\Best Api\HRMS\obj\Debug\HRMSAPI.csproj.CoreCompileInputs.cache
+E:\Ashiq\Best Api\HRMS\obj\Debug\HRMS.dll
+E:\Ashiq\Best Api\HRMS\obj\Debug\HRMS.pdb
+E:\Ashiq\Best Api\HRMS\bin\HRMS.dll.config
+E:\Ashiq\Best Api\HRMS\bin\HRMS.dll
+E:\Ashiq\Best Api\HRMS\bin\HRMS.pdb
+E:\Ashiq\Best Api\HRMS\bin\Dapper.Framework.dll
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Cors.dll
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.dll
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Security.dll
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Ashiq\Best Api\HRMS\bin\Newtonsoft.Json.dll
+E:\Ashiq\Best Api\HRMS\bin\Owin.dll
+E:\Ashiq\Best Api\HRMS\bin\System.Net.Http.Formatting.dll
+E:\Ashiq\Best Api\HRMS\bin\System.Web.Cors.dll
+E:\Ashiq\Best Api\HRMS\bin\System.Web.Http.dll
+E:\Ashiq\Best Api\HRMS\bin\System.Web.Http.WebHost.dll
+E:\Ashiq\Best Api\HRMS\bin\Dapper.Framework.pdb
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.xml
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Cors.xml
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Security.xml
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Ashiq\Best Api\HRMS\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Ashiq\Best Api\HRMS\bin\Newtonsoft.Json.pdb
+E:\Ashiq\Best Api\HRMS\bin\Newtonsoft.Json.xml
+E:\Ashiq\Best Api\HRMS\bin\System.Net.Http.Formatting.xml
+E:\Ashiq\Best Api\HRMS\bin\System.Web.Http.xml
+E:\Ashiq\Best Api\HRMS\bin\System.Web.Http.WebHost.xml
+E:\Ashiq\Best Api\HRMS\obj\Debug\HRMSAPI.csproj.CopyComplete
+E:\Ashiq\HRMS\HRMS\bin\HRMS.dll.config
+E:\Ashiq\HRMS\HRMS\bin\HRMS.dll
+E:\Ashiq\HRMS\HRMS\bin\HRMS.pdb
+E:\Ashiq\HRMS\HRMS\bin\Dapper.Framework.dll
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.AspNet.Identity.Core.dll
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.AspNet.Identity.Owin.dll
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Cors.dll
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.dll
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Host.SystemWeb.dll
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Security.Cookies.dll
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Security.dll
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Security.OAuth.dll
+E:\Ashiq\HRMS\HRMS\bin\Newtonsoft.Json.dll
+E:\Ashiq\HRMS\HRMS\bin\Owin.dll
+E:\Ashiq\HRMS\HRMS\bin\System.Net.Http.Formatting.dll
+E:\Ashiq\HRMS\HRMS\bin\System.Web.Cors.dll
+E:\Ashiq\HRMS\HRMS\bin\System.Web.Http.dll
+E:\Ashiq\HRMS\HRMS\bin\System.Web.Http.WebHost.dll
+E:\Ashiq\HRMS\HRMS\bin\Dapper.Framework.pdb
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.AspNet.Identity.Core.xml
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.AspNet.Identity.Owin.xml
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.xml
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Cors.xml
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Host.SystemWeb.xml
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Security.xml
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Security.Cookies.xml
+E:\Ashiq\HRMS\HRMS\bin\Microsoft.Owin.Security.OAuth.xml
+E:\Ashiq\HRMS\HRMS\bin\Newtonsoft.Json.pdb
+E:\Ashiq\HRMS\HRMS\bin\Newtonsoft.Json.xml
+E:\Ashiq\HRMS\HRMS\bin\System.Net.Http.Formatting.xml
+E:\Ashiq\HRMS\HRMS\bin\System.Web.Http.xml
+E:\Ashiq\HRMS\HRMS\bin\System.Web.Http.WebHost.xml
+E:\Ashiq\HRMS\HRMS\obj\Debug\HRMSAPI.csprojAssemblyReference.cache
+E:\Ashiq\HRMS\HRMS\obj\Debug\HRMSAPI.csproj.CoreCompileInputs.cache
+E:\Ashiq\HRMS\HRMS\obj\Debug\HRMSAPI.csproj.CopyComplete
+E:\Ashiq\HRMS\HRMS\obj\Debug\HRMS.dll
+E:\Ashiq\HRMS\HRMS\obj\Debug\HRMS.pdb

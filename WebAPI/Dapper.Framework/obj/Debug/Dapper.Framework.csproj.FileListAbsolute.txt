@@ -1,0 +1,18 @@
+D:\Office\Best Api\Dapper.Framework\bin\Debug\Dapper.Framework.dll
+D:\Office\Best Api\Dapper.Framework\bin\Debug\Dapper.Framework.pdb
+D:\Office\Best Api\Dapper.Framework\obj\Debug\Dapper.Framework.csprojAssemblyReference.cache
+D:\Office\Best Api\Dapper.Framework\obj\Debug\Dapper.Framework.csproj.CoreCompileInputs.cache
+D:\Office\Best Api\Dapper.Framework\obj\Debug\Dapper.Framework.dll
+D:\Office\Best Api\Dapper.Framework\obj\Debug\Dapper.Framework.pdb
+E:\Ashiq\Best Api\Dapper.Framework\bin\Debug\Dapper.Framework.dll
+E:\Ashiq\Best Api\Dapper.Framework\bin\Debug\Dapper.Framework.pdb
+E:\Ashiq\Best Api\Dapper.Framework\obj\Debug\Dapper.Framework.csprojAssemblyReference.cache
+E:\Ashiq\Best Api\Dapper.Framework\obj\Debug\Dapper.Framework.csproj.CoreCompileInputs.cache
+E:\Ashiq\Best Api\Dapper.Framework\obj\Debug\Dapper.Framework.dll
+E:\Ashiq\Best Api\Dapper.Framework\obj\Debug\Dapper.Framework.pdb
+E:\Ashiq\HRMS\Dapper.Framework\bin\Debug\Dapper.Framework.dll
+E:\Ashiq\HRMS\Dapper.Framework\bin\Debug\Dapper.Framework.pdb
+E:\Ashiq\HRMS\Dapper.Framework\obj\Debug\Dapper.Framework.csprojAssemblyReference.cache
+E:\Ashiq\HRMS\Dapper.Framework\obj\Debug\Dapper.Framework.csproj.CoreCompileInputs.cache
+E:\Ashiq\HRMS\Dapper.Framework\obj\Debug\Dapper.Framework.dll
+E:\Ashiq\HRMS\Dapper.Framework\obj\Debug\Dapper.Framework.pdb

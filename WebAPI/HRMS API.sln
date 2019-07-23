@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dapper.Framework", "Dapper.Framework\Dapper.Framework.csproj", "{9DDC5C35-C34E-4B03-B0DA-522082611DF3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRMSAPI", "HRMS\HRMSAPI.csproj", "{646A9A46-3F6C-441E-A515-B900590A6697}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9DDC5C35-C34E-4B03-B0DA-522082611DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9DDC5C35-C34E-4B03-B0DA-522082611DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9DDC5C35-C34E-4B03-B0DA-522082611DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9DDC5C35-C34E-4B03-B0DA-522082611DF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{646A9A46-3F6C-441E-A515-B900590A6697}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{646A9A46-3F6C-441E-A515-B900590A6697}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{646A9A46-3F6C-441E-A515-B900590A6697}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{646A9A46-3F6C-441E-A515-B900590A6697}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {95473CE0-9E1F-43B1-ADE1-87AB76204FB1}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://dev.azure.com/salbdbd
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = Dapper.Framework\\Dapper.Framework.csproj
+		SccProjectName1 = Dapper.Framework
+		SccLocalPath1 = Dapper.Framework
+		SccProjectUniqueName2 = HRMS\\HRMSAPI.csproj
+		SccProjectName2 = HRMS
+		SccLocalPath2 = HRMS
+	EndGlobalSection
+EndGlobal

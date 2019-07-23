@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { EmpGenInfoComponent } from './emp-gen-info/emp-gen-info.component';
 import { NgbDateAdapter, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgxDatatableModule } from '@swimlane/ngx-datatable';
 import { EmployentInfoComponent } from './employent-info/employent-info.component';
 import { AdditionalDutiesComponent } from './additional-duties/additional-duties.component';
@@ -27,6 +27,7 @@ import { BasicHrReportComponent } from './basic-hr-report/basic-hr-report.compon
 import { UploadFilesComponent } from './upload-files/upload-files.component';
 import { PersonalFileComponent } from './personal-file/personal-file.component';
 import { EmpCertificateUploadComponent } from './emp-certificate-upload/emp-certificate-upload.component';
+import { NgbDateCustomParserFormatter } from '../../shared/dateformat';
 
 @NgModule({
   imports: [
@@ -34,6 +35,7 @@ import { EmpCertificateUploadComponent } from './emp-certificate-upload/emp-cert
     HrMenuRoutingModule,
     NgbModule,
     FormsModule,
+    ReactiveFormsModule,
     NgxDatatableModule
   ],
   declarations: [
@@ -60,7 +62,7 @@ import { EmpCertificateUploadComponent } from './emp-certificate-upload/emp-cert
     UploadFilesComponent,
     PersonalFileComponent,
     EmpCertificateUploadComponent
-
   ],
+  providers:[NgbDateCustomParserFormatter]
 })
 export class HrMenuModule { }

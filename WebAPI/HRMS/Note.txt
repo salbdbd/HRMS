@@ -1,0 +1,29 @@
+﻿1. .Net Framework 4.5.2
+2. Check Web API only (No Authentication)
+
+3. Install packages:
+Install-package Microsoft.AspNet.WebApi.Owin
+Install-Package Microsoft.Owin.Host.SystemWeb
+Install-Package Microsoft.AspNet.Identity.Owin
+Install-package Microsoft.Owin.Cors
+
+Token Request:
+Type: POST
+URL: http://localhost:4898/token
+BODY: x-www-form-urlencoded
+KEY : VALUES
+grant_type : password
+username : admin
+password : 1234
+
+Other request:
+any request with Headers
+Key : value
+Authorization : bearer c23sd3xcds3dfsf
+
+
+Angular Token Request:
+var userData = "username=" + user.UserName + "&password=" + user.Password + "&grant_type=password";
+var reqHeader = new HttpHeaders({ 'Content-Type': 'application/x-www-form-urlencoded','No-Auth':'True' });
+return this.httpClient.post(this.apiURL+ '/token',userData,{ headers: reqHeader });
+
