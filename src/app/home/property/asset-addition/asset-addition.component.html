@@ -9,12 +9,9 @@
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Category Name</label>
         <div class="col-sm-8">
-          <select class="form-control">
-            <option>Select</option>
-            <option>Option-1</option>
-            <option>Option-2</option>
-            <option>Option-3</option>
-            <option>Option-4</option>
+          <select [(ngModel)]="asset.assetCatagoryId" name="assetCatagoryId" (change)="GetAssetByCategory(asset.assetCatagoryId)" class="form-control">
+            <option value="0">---Select Category---</option>
+            <option *ngFor="let c of categories" value="{{c.id}}">{{c.categoryName}}</option>
           </select>
         </div>
       </div>
@@ -22,12 +19,9 @@
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Assain Name</label>
         <div class="col-sm-8">
-          <select class="form-control">
-            <option>Select</option>
-            <option>Option-1</option>
-            <option>Option-2</option>
-            <option>Option-3</option>
-            <option>Option-4</option>
+          <select [(ngModel)]="asset.assetID" name="assetID" class="form-control">
+            <option value="0">---Select Asset---</option>
+            <option *ngFor="let a of assetname" value="{{a.id}}">{{a.assetName}}</option>
           </select>
         </div>
       </div>
@@ -35,38 +29,38 @@
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Model</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" placeholder="Model">
+          <input [(ngModel)]="asset.model" name="model" type="text" class="form-control" placeholder="Model">
         </div>
       </div>
       <!--Serial No-->
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Serial No</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" placeholder="Serial No">
+          <input [(ngModel)]="asset.serial" name="serial" type="text" class="form-control" placeholder="Serial No">
         </div>
       </div>
       <!--Purchase Price-->
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Purchase Price</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" placeholder="Purchase Price">
+          <input [(ngModel)]="asset.purchesPrice" name="purchesPrice" type="text" class="form-control" placeholder="Purchase Price">
         </div>
       </div>
       <!--Configuration-->
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Configuration</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" placeholder="Configuration">
+          <input [(ngModel)]="asset.confiruration" name="confiruration" type="text" class="form-control" placeholder="Configuration">
         </div>
       </div>
       <!--Warranty Type-->
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Warranty Type</label>
         <div class="col-sm-8">
-          <select class="form-control">
-            <option>Select</option>
-            <option>Yes</option>
-            <option>No</option>
+          <select [(ngModel)]="asset.warrentyType" name="warrentyType" class="form-control">
+            <option >Select</option>
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
           </select>
         </div>
       </div>
@@ -75,8 +69,8 @@
         <label class="col-form-label col-sm-4 text-sm-right">Purchase Date</label>
         <div class="col-sm-8">
           <div class="input-group">
-            <input class="form-control" name="purchaseDate" placeholder="dd-mm-yyyy" ngbDatepicker
-              [(ngModel)]="purchaseDate" #d1="ngbDatepicker">
+            <input [(ngModel)]="asset.purchesDateNg"  name="purchesDateNg" class="form-control" value="{{asset.purchesate | date: 'dd-MM-yyyy'}}" placeholder="dd-mm-yyyy" ngbDatepicker
+               #d1="ngbDatepicker">
             <div class="input-group-append">
               <button class="input-group-text" (click)="d1.toggle()" type="button">
                 <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
@@ -90,8 +84,8 @@
         <label class="col-form-label col-sm-4 text-sm-right">Warranty Expire Date</label>
         <div class="col-sm-8">
           <div class="input-group">
-            <input class="form-control" name="expireDate" placeholder="dd-mm-yyyy" ngbDatepicker
-              [(ngModel)]="expireDate" #d2="ngbDatepicker">
+            <input class="form-control" [(ngModel)]="asset.warrentyDateNg" name="warrentyDateNg" value="{{asset.warrentydate | date: 'dd-MM-yyyy'}}" placeholder="dd-mm-yyyy" ngbDatepicker
+               #d2="ngbDatepicker">
             <div class="input-group-append">
               <button class="input-group-text" (click)="d2.toggle()" type="button">
                 <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
@@ -104,19 +98,19 @@
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Note</label>
         <div class="col-sm-8">
-          <textarea class="form-control" placeholder="Note"></textarea>
+          <textarea [(ngModel)]="asset.note" name="note" class="form-control" placeholder="Note"></textarea>
         </div>
       </div>
       <!--Button-->
       <div class="form-group row">
-        <div class="demo-inline-spacing mt-3 center">
-          <button type="submit" class="btn btn-success">
-            <span class="fas fa-save"></span> Save</button>
-          <button type="clear" class="btn btn-info">
-            <span class="ion ion-ios-refresh"></span> Reset</button>
-          <button type="" class="btn btn-secondary">
-            <span class="far fa-window-close"></span> Close</button>
-        </div>
+          <div class="demo-inline-spacing mt-3  center">
+              <button *ngIf="btnStatus=='Save'" (click)="Save()" type="submit" class="btn btn-success">
+                <span class="fas fa-save"></span> Save</button>
+              <button *ngIf="btnStatus=='Update'" (click)="Update()" type="clear" class="btn btn-primary">
+                <span class="fas fa-pen"></span> Update</button>
+              <button (click)="Reset()" type="clear" class="btn btn-info">
+                <span  class="ion ion-ios-refresh"></span> Reset</button>
+            </div>
       </div>
     </form>
     </div>
@@ -124,33 +118,70 @@
     <hr class="border-light container-m--x mt-0 mb-4">
     <div class="demo-vertical-spacing">
       <div class="table-responsive">
-        <table class="table table-bordered">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Model</th>
-              <th>Serial</th>
-              <th>Configuration</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <th>1</th>
-              <td>Hyundai Venue</td>
-              <td>Ka-154754</td>
-              <td>1999cc</td>
-            </tr>
-          </tbody>
-          <tbody>
-            <tr>
-              <th>2</th>
-              <td>Tata Harrier</td>
-              <td>Ka-154754</td>
-              <td>1999cc</td>
-            </tr>
-          </tbody>
-        </table>
+          <div class="card-header">
+              <div class="row">
+                <div class="col">
+                  Per page: &nbsp;
+                  <select [(ngModel)]="perPage" (change)="update()"
+                    class="custom-select custom-select-md d-inline-block w-auto">
+                    <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+                  </select>
+                </div>
+                <div class="col">
+                  <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+                    class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+                </div>
+              </div>
+            </div>
+          <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Model</th>
+                  <th>Serial</th>
+                  <th>Configuration</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let prop of tempItems;let i = index">
+                  <td>{{prop.id}}</td>
+                  <td>{{prop.model}}</td>
+                  <td>{{prop.serial}}</td>
+                  <td>{{prop.confiruration}}</td>
+                  <td><button (click)="GetAssetById(prop.id)" type="" class="btn btn-info">
+                    <span class="fas fa-edit"></span></button>&nbsp;
+                  <button (click)="AssetDelete(prop.id,deleteModal)" type="" class="btn btn-danger">
+                    <span class="fas fa-trash"></span></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="card-body py-0">
+                <div class="row">
+                  <div class="col-sm text-sm-left text-center pt-3">
+                    <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+                  </div>
+                  <div class="col-sm pt-3">
+                    <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+                      (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+                    </ngb-pagination>
+                  </div>
+                </div>
+              </div>
       </div>
-    </div>
+      </div>
   </div>
 </div>
+<ng-template #deleteModal>
+  <div class="modal-header">
+    <h5 class="modal-title">Confirmation</h5>
+  </div>
+  <div class="modal-body">
+    <p>Are you sure want to delete?</p>
+  </div>
+  <div class="modal-footer">
+    <button (click)="Cancel()" class="btn btn-secondary">Cancel</button>
+    <button (click)="Confirm()" class="btn btn-danger">Confirm</button>
+  </div>
+</ng-template>

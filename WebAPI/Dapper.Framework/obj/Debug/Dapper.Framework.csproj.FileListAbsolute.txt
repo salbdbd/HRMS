@@ -16,3 +16,9 @@ E:\Ashiq\HRMS\Dapper.Framework\obj\Debug\Dapper.Framework.csprojAssemblyReferenc
 E:\Ashiq\HRMS\Dapper.Framework\obj\Debug\Dapper.Framework.csproj.CoreCompileInputs.cache
 E:\Ashiq\HRMS\Dapper.Framework\obj\Debug\Dapper.Framework.dll
 E:\Ashiq\HRMS\Dapper.Framework\obj\Debug\Dapper.Framework.pdb
+D:\Office\HrmsApiAngular\HRMS\WebAPI\Dapper.Framework\bin\Debug\Dapper.Framework.dll
+D:\Office\HrmsApiAngular\HRMS\WebAPI\Dapper.Framework\bin\Debug\Dapper.Framework.pdb
+D:\Office\HrmsApiAngular\HRMS\WebAPI\Dapper.Framework\obj\Debug\Dapper.Framework.csprojAssemblyReference.cache
+D:\Office\HrmsApiAngular\HRMS\WebAPI\Dapper.Framework\obj\Debug\Dapper.Framework.csproj.CoreCompileInputs.cache
+D:\Office\HrmsApiAngular\HRMS\WebAPI\Dapper.Framework\obj\Debug\Dapper.Framework.dll
+D:\Office\HrmsApiAngular\HRMS\WebAPI\Dapper.Framework\obj\Debug\Dapper.Framework.pdb
