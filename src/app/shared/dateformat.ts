@@ -50,6 +50,7 @@ export class NgbDateCustomParserFormatter extends NgbDateParserFormatter {
     }
 
     stringToNgbDate(date: string): NgbDateStruct {
+        if(date==null){return null;}
         let myDate: Date = new Date(date);
         let ngbDate: NgbDateStruct = {
             year: myDate.getFullYear(),

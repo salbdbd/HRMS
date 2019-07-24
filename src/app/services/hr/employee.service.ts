@@ -10,7 +10,16 @@ export class EmployeeService {
 
   constructor(private http:HttpClient) {}
 
-  getGenInfo(empCode:string, compId:number):any{
-    return this.http.get(environment.apiUrl+'/employee/genInfo/get/empCode/'+empCode+'/compId/'+compId);
+  saveOrUpdateEmpGenInfo(empGenInfo:EmpGenInfo){
+    return this.http.post(environment.apiUrl+'/employee/genInfo/save', empGenInfo);
+  }
+  getGenInfo(gradeVal:number, compId:number, empCode:string):any{
+    return this.http.get(environment.apiUrl+'/employee/genInfo/get/gradeVal/'+gradeVal+'/compId/'+compId+'/empCode/'+empCode);
+  }
+  getFamilyInfo(companyId:number, empCode:string){
+    return this.http.get(environment.apiUrl+'/employee/familyInfo/get/compId/'+companyId+'/empCode/'+empCode);
+  }
+  getFamilyMember(personId:number){
+    return this.http.get(environment.apiUrl+'/employee/familyMember/get/personId/'+personId);
   }
 }
