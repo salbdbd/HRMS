@@ -1,67 +1,108 @@
 <div class="card mb-4">
-    <h4 class="card-header text-center bg-light">
-        Asset Category Setup
-    </h4>
-    <div class="card-body">
-      <div class="col-md-7 center">
+  <h4 class="card-header text-center bg-light">
+    Asset Category Setup
+  </h4>
+  <div class="card-body">
+    <div class="col-md-7 center">
       <form>
-      <!--Asset Category Name-->
+        <!--Asset Category Name-->
         <div class="form-group row">
           <label class="col-form-label col-sm-4 text-sm-right">Asset Category Name</label>
           <div class="col-sm-8">
-            <input type="text" class="form-control" placeholder="Asset Category Name">
+            <input [(ngModel)]="propCategory.categoryName" name="categoryName" type="text" class="form-control"
+              placeholder="Asset Category Name">
           </div>
         </div>
-      <!--Description-->
+        <!--Description-->
         <div class="form-group row">
           <label class="col-form-label col-sm-4 text-sm-right">Description</label>
           <div class="col-sm-8">
-            <textarea class="form-control" placeholder="Description"></textarea>
+            <textarea [(ngModel)]="propCategory.description" name="description" class="form-control"
+              placeholder="Description"></textarea>
           </div>
         </div>
-      <!--Button-->
+        <!--Button-->
         <div class="form-group row">
-            <div class="demo-inline-spacing mt-3  center">
-            <button type="submit" class="btn btn-success">
+          <div class="demo-inline-spacing mt-3  center">
+            <button *ngIf="btnStatus=='Save'" (click)="savePropCategory()" type="submit" class="btn btn-success">
               <span class="fas fa-save"></span> Save</button>
-            <button type="clear" class="btn btn-info">
-              <span class="ion ion-ios-refresh"></span> Clear</button>
-            <button type="" class="btn btn-danger">
-              <span class="fas fa-trash"></span> Delete</button>
-            <button type="" class="btn btn-secondary">
-              <span class="fas fa-arrow-circle-left"></span> Back</button>
+            <button *ngIf="btnStatus=='Update'" (click)="updateCategory()" type="clear" class="btn btn-primary">
+              <span class="fas fa-pen"></span> Update</button>
+            <button (click)="reset()" type="clear" class="btn btn-info">
+              <span class="ion ion-ios-refresh"></span> Reset</button>
           </div>
         </div>
       </form>
     </div>
-      <!-- Table-->
-      <hr class="border-light container-m--x mt-0 mb-4">
+    <!-- Table-->
+    <hr class="border-light container-m--x mt-0 mb-4">
 
-<div class="demo-vertical-spacing">
-    <div class="table-responsive">
+    <div class="demo-vertical-spacing">
+      <div class="table-responsive">
+        <div class="card-header">
+          <div class="row">
+            <div class="col">
+              Per page: &nbsp;
+              <select [(ngModel)]="perPage" (change)="update()"
+                class="custom-select custom-select-md d-inline-block w-auto">
+                <option *ngFor="let limit of [5, 10, 20, 30, 40, 50]">{{limit}}</option>
+              </select>
+            </div>
+            <div class="col">
+              <input type="text" [(ngModel)]="filterVal" (input)="currentPage = 1; update()"
+                class="form-control form-control-md d-inline-block w-auto float-sm-right" placeholder="Search...">
+            </div>
+          </div>
+        </div>
         <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Asset Category Name</th>
-                <th>Description</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <th>1</th>
-                <td>Camera</td>
-                <td>Nikon</td>
-              </tr>
-            </tbody>
-            <tbody>
-              <tr>
-                <th>2</th>
-                <td>Laptop</td>
-                <td>Samsung</td>
-              </tr>
-            </tbody>
-          </table>
-    </div>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Category Name</th>
+              <th>Description</th>
+              <th>Action</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let cat of tempItems; let i = index">
+              <th>{{i+1}}</th>
+              <td>{{cat.categoryName}}</td>
+              <td>{{cat.description}}</td>
+              <td><button (click)="getById(cat.id)" type="" class="btn btn-info">
+                  <span class="fas fa-edit"></span></button>&nbsp;
+                <button (click)="deleteCategory(cat.id, deleteModal)" type="" class="btn btn-danger">
+                  <span class="fas fa-trash"></span></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="card-body py-0">
+            <div class="row">
+              <div class="col-sm text-sm-left text-center pt-3">
+                <span class="text-muted" *ngIf="totalItems">Page {{ currentPage }} of {{ totalPages }}</span>
+              </div>
+              <div class="col-sm pt-3">
+                <ngb-pagination [collectionSize]="totalItems" [pageSize]="perPage" [(page)]="currentPage"
+                  (pageChange)="update()" size="sm" class="d-flex justify-content-center justify-content-sm-end m-0">
+                </ngb-pagination>
+              </div>
+            </div>
+          </div>
+      </div>
     </div>
   </div>
+
+
+  <ng-template #deleteModal>
+    <div class="modal-header">
+      <h5 class="modal-title">Confirmation</h5>
+    </div>
+    <div class="modal-body">
+      <p>Are you sure want to delete?</p>
+    </div>
+    <div class="modal-footer">
+      <button (click)="cancel()" class="btn btn-secondary">Cancel</button>
+      <button (click)="confirm()" class="btn btn-danger">Confirm</button>
+    </div>
+  </ng-template>

@@ -1,4 +1,4 @@
-﻿namespace HRMS.Models
+namespace HRMS.Models
 {
     public class UserModel
     {
