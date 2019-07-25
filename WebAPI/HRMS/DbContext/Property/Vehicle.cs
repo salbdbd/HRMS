@@ -16,7 +16,7 @@ namespace HRMS.DbContext
             var conn = new SqlConnection(Connection.ConnectionString());
             var param = new
                 {
-                vehicle.ID,
+                  vehicle.ID,
                 vehicle.EmpCode,
                 vehicle.AssainDate,
                 vehicle.Type,

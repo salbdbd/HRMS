@@ -10,9 +10,9 @@
         <label class="col-form-label col-sm-4 text-sm-right">Employee ID</label>
         <div class="col-sm-8">
           <div class="input-group">
-            <input class="form-control" type="text" placeholder="Employee ID">
+            <input class="form-control" #empCode type="text" placeholder="Employee ID">
             <div class="input-group-append">
-              <button class="input-group-text btn btn-primary" type="button">
+              <button (click)="getEmployment(empCode.value)" class="input-group-text btn btn-primary" type="button">
                 <span class="fas fa-search" style="cursor: pointer;"></span>
               </button>
             </div>
@@ -21,23 +21,23 @@
       </div>
       <!--Employee Name-->
       <div class="form-group row">
-        <label class="col-form-label col-sm-4 text-sm-right">Employee Name</label>
+        <label  class="col-form-label col-sm-4 text-sm-right">Employee Name</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" placeholder="Employee Name">
+          <input disabled [(ngModel)]="employmentInfo.empName" name="empName" type="text" class="form-control" placeholder="Employee Name">
         </div>
       </div>
       <!--Department Name-->
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Department Name</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" placeholder="Department Name">
+          <input disabled [(ngModel)]="employmentInfo.department" name="department" type="text" class="form-control" placeholder="Department Name">
         </div>
       </div>
       <!--Designation Name-->
       <div class="form-group row">
         <label class="col-form-label col-sm-4 text-sm-right">Designation Name</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" placeholder="Designation Name">
+          <input disabled [(ngModel)]="employmentInfo.designation" name="designation" type="text" class="form-control" placeholder="Designation Name">
         </div>
       </div>
       <!--Joining Date-->
@@ -45,10 +45,10 @@
         <label class="col-form-label col-sm-4 text-sm-right">Joining Date</label>
         <div class="col-sm-8">
           <div class="input-group">
-            <input class="form-control" name="joiningDate" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="joiningDate"
+            <input disabled [(ngModel)]="employmentInfo.joinDateNgb" name="joinDateNgb" class="form-control" value="{{employmentInfo.joinDate | date: 'dd-MM-yyyy'}}" placeholder="dd-mm-yyyy" ngbDatepicker [(ngModel)]="joiningDate"
               #d1="ngbDatepicker">
             <div class="input-group-append">
-              <button class="input-group-text" (click)="d1.toggle()" type="button">
+              <button disabled class="input-group-text" (click)="d1.toggle()" type="button">
                 <span class="ion ion-md-calendar" style="cursor: pointer;"></span>
               </button>
             </div>

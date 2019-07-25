@@ -1,9 +1,9 @@
-import { PropertyName } from './../models/property-name.model';
-import { PropertyCategory } from './../models/property-category.model';
+import { PropertyName } from '../models/Property/property-name.model';
+import { PropertyCategory } from '../models/Property/property-category.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment.prod';
-import { AssetAddition } from '../models/asset-addition.model';
+import { AssetAddition } from '../models/Property/asset-addition.model';
 
 @Injectable({
   providedIn: 'root'
@@ -12,6 +12,7 @@ export class PropertyService {
 
   constructor(private http:HttpClient) { }
 //property-Catagory
+
   saveCategory(propertyCat:PropertyCategory){
     return this.http.post(environment.apiUrl+'/property/category/save',propertyCat);
   }

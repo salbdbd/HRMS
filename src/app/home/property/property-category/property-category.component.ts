@@ -1,7 +1,7 @@
 import { Pagination } from './../../../shared/paginate';
 import { ToastrService } from 'ngx-toastr';
 import { PropertyService } from './../../../services/property.service';
-import { PropertyCategory } from './../../../models/property-category.model';
+import { PropertyCategory } from '../../../models/Property/property-category.model';
 import { Component, OnInit } from '@angular/core';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 

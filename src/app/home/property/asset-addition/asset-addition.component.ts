@@ -1,8 +1,8 @@
 import { NgbModal, NgbDateStruct, NgbDate } from '@ng-bootstrap/ng-bootstrap';
 import { Component, OnInit } from '@angular/core';
-import { AssetAddition } from '../../../models/asset-addition.model';
-import { PropertyCategory } from '../../../models/property-category.model';
-import { PropertyName } from '../../../models/property-name.model';
+import { AssetAddition } from '../../../models/Property/asset-addition.model';
+import { PropertyCategory } from '../../../models/Property/property-category.model';
+import { PropertyName } from '../../../models/Property/property-name.model';
 import { PropertyService } from '../../../services/property.service';
 import { ToastrService } from 'ngx-toastr';
 import { Pagination } from '../../../shared/paginate';

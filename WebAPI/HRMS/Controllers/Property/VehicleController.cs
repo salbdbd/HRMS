@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,14 +10,15 @@ namespace HRMS.Controllers
 {
     public class VehicleController : ApiController
     {
-        [HttpGet]
-        [Route("api/property/vehicle/saveUpdate")]
-        public IHttpActionResult SaveUpdate(VehicleModel vehicle)
-        {
-            bool result = DbContext.Vehicle.Saveupdate(vehicle);
-            return Ok(result);
-        }
-        [HttpGet]
+      [HttpGet]
+      [Route("api/property/vehicle/saveUpdate")]
+      public IHttpActionResult SaveUpdate(VehicleModel vehicle)
+      {
+        bool result = DbContext.Vehicle.Saveupdate(vehicle);
+        return Ok(result);
+      }
+
+      [HttpGet]
         [Route("api/property/vehicle/getall")]
         public IHttpActionResult Categorygetall()
         {
