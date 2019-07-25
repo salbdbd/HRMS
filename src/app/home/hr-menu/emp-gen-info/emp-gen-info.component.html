@@ -18,8 +18,8 @@
                     <input [(ngModel)]="empGenInfo.empCode" name="empCode" #empCode class="form-control"
                       placeholder="Employee-Id">
                     <div class="input-group-append">
-                      <button (click)="getEmpGenInfo(empCode.value)" (keydown)="getEmpGenInfo(empCode.value)" class="input-group-text btn btn-info"
-                        type="button">
+                      <button (click)="getEmpGenInfo(empCode.value)" (keydown)="getEmpGenInfo(empCode.value)"
+                        class="input-group-text btn btn-info" type="button">
                         <span class="ion ion-md-search" style="cursor: pointer;"></span>
                       </button>
                     </div>
@@ -34,6 +34,10 @@
                   <div class="col-sm-8">
                     <select [(ngModel)]="empGenInfo.title" name="title" id="" class="custom-select">
                       <option value="0">---Select Title---</option>
+                      <option value="1">Miss</option>
+                      <option value="2">Mr.</option>
+                      <option value="3">Mrs.</option>
+                      <option value="4">Ms.</option>
                     </select>
                   </div>
                 </div>
@@ -71,7 +75,8 @@
                   </label>
                   <div class="col-sm-8">
                     <select [(ngModel)]="empGenInfo.suffix" name="suffix" id="" class="custom-select ">
-                      <option>---Select Suffix</option>
+                      <option value="0">---Select Suffix---</option>
+                      <option *ngFor="let s of allSuffix" value="{{s.id}}">{{s.description}}</option>
                     </select>
                   </div>
                 </div>
@@ -81,9 +86,8 @@
                   </label>
                   <div class="col-sm-8">
                     <select [(ngModel)]="empGenInfo.gradeId" name="gradeId" id="" class="custom-select ">
-                      <option>Male</option>
-                      <option>Female</option>
-                      <option>Other</option>
+                      <option value="0">---Select Gender---</option>
+                      <option *ngFor="let g of allGender" value="{{g.id}}">{{g.description}}</option>
 
                     </select>
                   </div>
@@ -109,12 +113,8 @@
                   </label>
                   <div class="col-sm-8">
                     <select [(ngModel)]="empGenInfo.bloodGroup" name="bloodGroup" id="" class="custom-select ">
-                      <option>A+</option>
-                      <option>B+</option>
-                      <option>Ab+</option>
-                      <option>Ab+</option>
-                      <option>Ab-</option>
-
+                      <option value="0">---Select Blood Group---</option>
+                      <option *ngFor="let b of allBloodGroup" value="{{b.id}}">{{b.description}}</option>
                     </select>
                   </div>
                 </div>
@@ -144,11 +144,8 @@
                   </label>
                   <div class="col-sm-8">
                     <select [(ngModel)]="empGenInfo.religion" name="religion" class="custom-select ">
-                      <option>Muslim</option>
-                      <option>Hindu</option>
-                      <option>Buddhist</option>
-                      <option>Khristan</option>
-
+                      <option value="0">---Select Religion---</option>
+                      <option *ngFor="let r of allReligion" value="{{r.id}}">{{r.description}}</option>
                     </select>
                   </div>
                 </div>
@@ -158,10 +155,8 @@
                   </label>
                   <div class="col-sm-8">
                     <select [(ngModel)]="empGenInfo.nationality" name="nationality" class="custom-select ">
-                      <option>Bangladeshi</option>
-                      <option>Indian</option>
-                      <option>Pakhistani</option>
-
+                      <option value="0">---Select Nationality---</option>
+                      <option *ngFor="let n of allNationality" value="{{n.id}}">{{n.description}}</option>
                     </select>
                   </div>
                 </div>
@@ -230,7 +225,7 @@
                   </label>
                   <div class="col-md-8">
                     <div class="row">
-                      <input id="" type="file" class="form-input-file">
+                      <input [(ngModel)]="empGenInfo.pictureFile" name="pictureFile" id="" type="file" class="form-input-file">
                     </div>
                     <br />
                     <div class="row">
@@ -256,7 +251,7 @@
                   </label>
                   <div class="col-md-8">
                     <div class="row">
-                      <input id="" type="file" class="form-input-file">
+                      <input [(ngModel)]="empGenInfo.signatureFile" name="signatureFile" id="" type="file" class="form-input-file">
                     </div>
                     <div class="row">
                       <img *ngIf="empGenInfo.signature" src="data:image/jpg;base64,{{empGenInfo.signature}}"
@@ -269,29 +264,26 @@
                     </div>
                     <br>
                     <div class="row">
-                        <button type="" class="btn btn-danger">
-                          Remove
-                        </button>
-                      </div>
+                      <button type="" class="btn btn-danger">
+                        Remove
+                      </button>
+                    </div>
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label class="col-form-label col-sm-4 text-sm-right">Maritial Status
+                  <label class="col-form-label col-sm-4 text-sm-right">Marital Status
                     <i class="text-danger">*</i>
                   </label>
                   <div class="col-sm-8">
                     <select [(ngModel)]="empGenInfo.meritalStatus" name="meritalStatus" id="" class="custom-select ">
-                      <option>Single </option>
-                      <option>mrried</option>
-                      <option></option>
-                      <option></option>
-
+                      <option value="-1">---Select Marital Status---</option>
+                      <option value="0">Single</option>
+                      <option value="1">Married</option>
                     </select>
                   </div>
                 </div>
                 <div class="form-group row">
                   <label class="col-form-label col-sm-4 text-sm-right ">Age
-
                   </label>
                   <div class="col-sm-8">
                     <input id="" value="{{empGenInfo.age}}" type="text" class="form-control" placeholder="Age" disabled>
@@ -325,8 +317,8 @@
                   <div class="col-sm-8">
                     <select [(ngModel)]="empGenInfo.fatherOccupation" name="fatherOccupation" id=""
                       class="custom-select ">
-                      <option>Select</option>
-
+                      <option value="0">---Select Occupation---</option>
+                      <option *ngFor="let o of allOccupation" value="{{o.id}}">{{o.description}}</option>
                     </select>
                   </div>
                 </div>
@@ -347,8 +339,8 @@
                   <div class="col-sm-8">
                     <select [(ngModel)]="empGenInfo.motherOccupation" name="motherOccupation" id=""
                       class="custom-select ">
-                      <option>Select</option>
-
+                      <option value="0">---Select Occupation---</option>
+                      <option *ngFor="let o of allOccupation" value="{{o.id}}">{{o.description}}</option>
                     </select>
                   </div>
                 </div>
@@ -398,10 +390,10 @@
                   <label class="col-form-label col-sm-4 text-sm-right">Employee Id
                   </label>
                   <div class="col-sm-3">
-                    <input type="text" class="form-control" value="{{empCode}}" placeholder="Employee Id" disabled>
+                    <input type="text" class="form-control" value="{{empCode}}" placeholder="ID" disabled>
                   </div>
                   <div class="col-sm-5">
-                      <input type="text" class="form-control" value="{{empName}}" placeholder="Employee Id" disabled>
+                    <input type="text" class="form-control" value="{{empName}}" placeholder="Employee" disabled>
                   </div>
                 </div>
                 <div class="row">
@@ -415,10 +407,6 @@
                       <option>Select state</option>
                       <option>California</option>
                       <option>Hawaii</option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
                     </select>
                   </div>
                 </div>
@@ -427,7 +415,8 @@
                     <i class="text-danger">*</i>
                   </label>
                   <div class="col-sm-8">
-                    <input type="text" class="form-control" placeholder="Family Member's Name">
+                    <input [(ngModel)]="empFamilyMember.personName" name="personName" type="text" class="form-control"
+                      placeholder="Family Member's Name">
                   </div>
                 </div>
                 <div class="form-group row">
@@ -483,10 +472,6 @@
                       <option>Select state</option>
                       <option>California</option>
                       <option>Hawaii</option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
                     </select>
                   </div>
                 </div>
@@ -499,10 +484,6 @@
                       <option>Select state</option>
                       <option>California</option>
                       <option>Hawaii</option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
                     </select>
                   </div>
                 </div>
@@ -554,8 +535,11 @@
                         </button>
                       </div>
                       <div class="col-md-6">
-                        <img id="preview" class="" src="../../../../assets/img/default.png" alt="image preview place"
-                          name="Picture" class="form-control" style="height: 100px; width:100px;" />
+                        <img *ngIf="empFamilyMember.photo" id="preview" class="" src="data:image/jpg;base64,{{empFamilyMember.photo}}"accept="image/*" id="preview" class=""
+                        alt="image preview place" name="Picture" class="form-control"
+                        style="height: 100px; width:100px;"  />
+                        <img *ngIf="!empFamilyMember.photo" id="preview" class="" src="../../../../assets/img/default.png" alt="image preview place"
+                         class="form-control" style="height: 100px; width:100px;" />
                       </div>
                     </div>
                   </div>
@@ -586,11 +570,6 @@
                     <select class="custom-select ">
                       <option></option>
                       <option></option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
-                      <option></option>
                     </select>
                   </div>
                 </div>
@@ -619,7 +598,7 @@
                   </div>
                 </div>
               </div>
-              <table class="table">
+              <table class="table table-bordered">
                 <thead>
                   <tr>
                     <th>#</th>
@@ -629,26 +608,23 @@
                     <th>Contact No</th>
                     <th>Nominee Status</th>
                     <th>percentage</th>
+                    <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <th>1</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>2</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <th>3</th>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                  <tr *ngFor="let empF of empFamilyInfo; let i = index">
+                    <th>{{i+1}}</th>
+                    <td>{{empF.personName}}</td>
+                    <td>{{empF.relationship}}</td>
+                    <td>{{empF.districtName}}</td>
+                    <td>{{empF.contactNo}}</td>
+                    <td>{{empF.isNominee}}</td>
+                    <td>{{empF.usedPer}}</td>
+                    <td class="demo-inline-spacing">
+                      <button (click)="getFamilyMember(empF.id)" class="btn btn-info"><span
+                          class="fas fa-edit"></span></button>
+                      <button class="btn btn-danger"><span class="fas fa-trash"></span></button>
+                    </td>
                   </tr>
                 </tbody>
               </table>

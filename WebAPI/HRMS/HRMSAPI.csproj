@@ -133,6 +133,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helper\AgeCalculator.cs" />
     <Compile Include="Helper\Gmail.cs" />
     <Compile Include="Models\HR\Employee\EmpAdditionalDutyModel.cs" />
     <Compile Include="Models\HR\Employee\EmpAwardModel.cs" />
@@ -169,8 +170,14 @@
     <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+<<<<<<< HEAD
     <Compile Include="ViewModels\EmployeeViewModel.cs" />
     <Compile Include="ViewModels\EmploymentViewModel.cs" />
+=======
+    <Compile Include="ViewModels\HR\Employee\EmpFamilyInfoVM.cs" />
+    <Compile Include="ViewModels\HR\Employee\EmpGenInfoVM.cs" />
+    <Compile Include="ViewModels\HR\Employee\EmployeeVM.cs" />
+>>>>>>> ff308ab255741a4f96d0f59c262923390864a550
     <Compile Include="ViewModels\Response.cs" />
     <Compile Include="ViewModels\UserViewModel.cs" />
   </ItemGroup>
