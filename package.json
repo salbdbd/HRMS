@@ -44,7 +44,7 @@
     "date-diff": "^0.2.1",
     "date-fns": "^1.29.0",
     "hammerjs": "~2.0.8",
-    "highlight.js": "~9.12.0",
+    "highlight.js": "~10.1.2",
     "intl": "~1.2.5",
     "marked": "^0.6.2",
     "masonry-layout": "~4.2.1",
